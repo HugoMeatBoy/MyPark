@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17B48" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
         <attribute name="activityDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="activityDurationH" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -61,7 +61,7 @@
         <relationship name="contain" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="beA" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <entity name="TypeEvent" representedClassName="TypeEvent" syncable="YES" codeGenerationType="class">
-        <attribute name="nameTypeEvent" optional="YES" syncable="YES"/>
+        <attribute name="nameTypeEvent" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="contain" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="beA" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="TypeMotorState" representedClassName="TypeMotorState" syncable="YES" codeGenerationType="class">
@@ -87,9 +87,9 @@
         <element name="MotorState" positionX="115" positionY="-333" width="128" height="103"/>
         <element name="Speciality" positionX="351" positionY="-99" width="128" height="73"/>
         <element name="Treatment" positionX="-297" positionY="-129" width="128" height="148"/>
-        <element name="User" positionX="-45" positionY="-45" width="128" height="163"/>
         <element name="TypeActivity" positionX="79" positionY="387" width="128" height="73"/>
-        <element name="TypeEvent" positionX="-209" positionY="360" width="128" height="73"/>
+        <element name="TypeEvent" positionX="-209" positionY="360" width="128" height="75"/>
         <element name="TypeMotorState" positionX="304" positionY="-297" width="128" height="73"/>
+        <element name="User" positionX="-45" positionY="-45" width="128" height="163"/>
     </elements>
 </model>

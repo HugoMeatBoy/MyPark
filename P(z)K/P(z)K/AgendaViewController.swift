@@ -11,19 +11,41 @@ import UIKit
 class AgendaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
 
-    @IBOutlet weak var controlled: UISegmentedControl!
     
+    @IBOutlet weak var tableView: UITableView!
+
+    @IBOutlet weak var tableView1: UITableView!
+   
+    @IBOutlet weak var control: UISegmentedControl!
+
     
-    @IBOutlet weak var rdvTable: UITableView!
-  
- 
     
 
     
+    
+    
+    
+    
+    /// A simple data structure to populate the table view.
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
         
-        // Do any additional setup after loading the view.
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(AgendaRdvTableCell.self, forCellReuseIdentifier: "rdvCell")
+        
+        tableView1.dataSource = self
+        tableView1.delegate = self
+        tableView1.register(AgendaMedicTableCell.self, forCellReuseIdentifier: "medicCell")
+        
+        
+        controlleur(0)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,41 +55,61 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        // Return the number of items in the sample data structure.
+        
+        var count:Int?
+        
+        if tableView == self.tableView {
+            count = 1
+        }
+        
+        if tableView == self.tableView1 {
+            count =  1
+        }
+        
+        return count!
+        
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell
+        var cell:UITableViewCell?
         
-        if(controlled.selectedSegmentIndex == 0){
-            cell = tableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath) as! AgendaRdvTableCell
-            
-        }else{
-            cell = tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath) as! AgendaMedicTableCell
+        if tableView == self.tableView {
+            cell = tableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath as IndexPath)
+   
         }
-        /*
-        let fruitName = fruits[indexPath.row]
-        cell.label?.text = fruitName
-        cell.fruitImageView?.image = UIImage(named: fruitName)
-        */
         
-        return cell
-    }
+        if tableView == self.tableView1 {
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath as IndexPath)
 
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+            
+        }
+        
+        
+        
+        return cell!
+    }
+    
+  
+
+    
+    
+    @IBAction func controlleur(_ sender: Any) {
+        switch control.selectedSegmentIndex
+        {
+        case 0:
+            tableView.isHidden = false
+            tableView1.isHidden = true
+        case 1:
+            tableView.isHidden = true
+            tableView1.isHidden = false
+        default:
+            break
+        }
+    }
+    
     
 }

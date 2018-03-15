@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		604D43F52056E19C005B2F31 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D43F42056E19C005B2F31 /* AgendaViewController.swift */; };
+		606E119C205AC56200990E96 /* AgendaControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E119B205AC56200990E96 /* AgendaControllerView.swift */; };
 		9C925DCA205938BD00EBD759 /* AgendaRdvTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C925DC9205938BD00EBD759 /* AgendaRdvTableCell.swift */; };
 		9C925DCC2059448500EBD759 /* AgendaMedicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C925DCB2059448500EBD759 /* AgendaMedicTableCell.swift */; };
 		9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87212046944100C74F3C /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		604D43F42056E19C005B2F31 /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
+		606E119B205AC56200990E96 /* AgendaControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaControllerView.swift; sourceTree = "<group>"; };
 		9C925DC9205938BD00EBD759 /* AgendaRdvTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaRdvTableCell.swift; sourceTree = "<group>"; };
 		9C925DCB2059448500EBD759 /* AgendaMedicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaMedicTableCell.swift; sourceTree = "<group>"; };
 		9CAD871E2046944000C74F3C /* P(z)K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P(z)K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 				9CAD872D2046944100C74F3C /* LaunchScreen.storyboard */,
 				9CAD87302046944100C74F3C /* Info.plist */,
 				9CAD87282046944100C74F3C /* P_z_K.xcdatamodeld */,
+				606E119B205AC56200990E96 /* AgendaControllerView.swift */,
 			);
 			path = "P(z)K";
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */,
 				9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */,
 				604D43F52056E19C005B2F31 /* AgendaViewController.swift in Sources */,
+				606E119C205AC56200990E96 /* AgendaControllerView.swift in Sources */,
 				9C925DCC2059448500EBD759 /* AgendaMedicTableCell.swift in Sources */,
 				9CAD874520469ED800C74F3C /* AccueilViewController.swift in Sources */,
 				9C925DCA205938BD00EBD759 /* AgendaRdvTableCell.swift in Sources */,
