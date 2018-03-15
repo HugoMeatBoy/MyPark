@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
+
+class ViewController: UIViewController, UITableViewDelegate {
 
 class ViewController: UIViewController {
     
     var patient : String = "";
     
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
 
 
@@ -36,7 +44,19 @@ class ViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
+            else {
+                return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let userEntity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)!
+        
         if (UserLastNameField.text != nil && UserFirstNameField.text != nil){
+            let user = NSManagedObject(entity: userEntity, insertInto: managedContext)
+            user.setValue(UserLastNameField.text, forKeyPath: "lastName")
+            user.setValue(UserFirstNameField.text, forKey: "firstName")
+            
             patient = "Bonjour " + UserLastNameField.text!;
             patient += " ";
             patient += UserFirstNameField.text!;
