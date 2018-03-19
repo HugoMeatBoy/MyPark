@@ -269,27 +269,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Signaler un évènement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlw-Ec-5x3">
-                                <rect key="frame" x="16" y="40" width="338" height="44"/>
+                                <rect key="frame" x="21" y="64" width="338" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="31"/>
                                 <color key="textColor" red="0.25111991169999998" green="0.2474742234" blue="0.22241595389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LY6-R1-3e4">
-                                <rect key="frame" x="31" y="95" width="316" height="216"/>
+                                <rect key="frame" x="29" y="116" width="316" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pI-8w-T1b">
-                                <rect key="frame" x="143" y="551" width="93" height="30"/>
+                                <rect key="frame" x="144" y="556" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.42424241750000002" green="0.41453153879999999" blue="0.37415854310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="ValidateEvent:" destination="cVN-Dn-2D6" eventType="touchUpInside" id="jy8-Hb-hIG"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9lp-gb-dUG">
-                                <rect key="frame" x="34" y="296" width="310" height="216"/>
+                                <rect key="frame" x="35" y="301" width="310" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="540831648.53258002">
                                     <!--2018-02-20 15:00:48 +0000-->
@@ -298,6 +301,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="DateEventPicker" destination="9lp-gb-dUG" id="DhR-cq-8WI"/>
+                        <outlet property="EventValidation" destination="6pI-8w-T1b" id="y5i-Qi-trw"/>
+                        <outlet property="TypeEventPicker" destination="LY6-R1-3e4" id="d3z-H6-VXn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2N-JR-GuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,10 +375,10 @@
             </objects>
             <point key="canvasLocation" x="5382" y="304"/>
         </scene>
-        <!--Compte User View Controller-->
+        <!--Mon compte-->
         <scene sceneID="jCs-tX-4AF">
             <objects>
-                <viewController id="DoD-i4-CfV" customClass="CompteUserViewController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mon compte" id="DoD-i4-CfV" customClass="CompteUserViewController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nmg-sh-u41"/>
                         <viewControllerLayoutGuide type="bottom" id="sEH-x5-ODE"/>
@@ -379,13 +387,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jean.ne DUPONT.E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-md-waq">
-                                <rect key="frame" x="5" y="98" width="338" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="34"/>
-                                <color key="textColor" red="0.3676513642" green="0.35923585070000003" blue="0.32424833800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dr. Kawashima" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLT-ue-Ejx">
                                 <rect key="frame" x="8" y="263" width="179" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -443,6 +444,13 @@
                                 <color key="textColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jean.ne DUPONT.E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-md-waq">
+                                <rect key="frame" x="18" y="86" width="338" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="34"/>
+                                <color key="textColor" red="0.3676513642" green="0.35923585070000003" blue="0.32424833800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -486,7 +494,7 @@
                                         <rect key="frame" x="0.0" y="28" width="322" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="hzb-e9-HeU" id="vNB-gk-okS">
-                                            <rect key="frame" x="0.0" y="0.0" width="322" height="135.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="322" height="136"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STn-Rh-s46">
@@ -541,10 +549,10 @@
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.97368019819259644" blue="0.90252441167831421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="rdvCell" rowHeight="103" id="Opx-8F-TEY" customClass="AgendaRdvTableCell" customModule="P_z_K" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="322" height="103"/>
+                                        <rect key="frame" x="0.0" y="56" width="322" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Opx-8F-TEY" id="aSg-bN-Di9">
-                                            <rect key="frame" x="0.0" y="0.0" width="322" height="102.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="322" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="16h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeX-aC-89I">
@@ -700,6 +708,9 @@
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="5Mu-YL-5DY"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nDp-e7-oen">
                                 <rect key="frame" x="164" y="338" width="211" height="84"/>
@@ -708,6 +719,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="DosagePicker" destination="nDp-e7-oen" id="jOB-hg-UtS"/>
+                        <outlet property="MedicPicker" destination="Bmy-pf-BXf" id="d9t-sY-AAu"/>
+                        <outlet property="MedicValidation" destination="X9T-pD-lzp" id="8BX-AG-Y2P"/>
+                        <outlet property="NbJoursMedic" destination="QV1-A6-y64" id="xvg-IZ-U8b"/>
+                        <outlet property="PrisesJourMedic" destination="t4C-1A-gbv" id="AFa-6F-5ee"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VuO-lb-deC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -749,13 +767,6 @@
                                 <rect key="frame" x="29" y="191" width="316" height="156"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1l-fI-jna">
-                                <rect key="frame" x="52" y="334" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO1-I2-dSM">
                                 <rect key="frame" x="141" y="544" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -764,9 +775,12 @@
                                 <state key="normal" title="Valider">
                                     <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="RdvValidate:" destination="Y91-DH-z4M" eventType="touchUpInside" id="pne-yC-fYe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Docteur.e" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdH-bL-B2X">
-                                <rect key="frame" x="52" y="176" width="107" height="21"/>
+                                <rect key="frame" x="37" y="174" width="107" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -779,9 +793,21 @@
                                 <color key="textColor" red="0.25111991169999998" green="0.2474742234" blue="0.22241595389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1l-fI-jna">
+                                <rect key="frame" x="37" y="334" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="DocteurPicker" destination="jEJ-O7-XvA" id="ata-W5-58g"/>
+                        <outlet property="RdvDatePicker" destination="k7U-nV-qOG" id="0wY-wJ-jJS"/>
+                        <outlet property="RdvValidation" destination="FO1-I2-dSM" id="OJQ-nW-U16"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8W-YH-CER" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -901,7 +927,7 @@ avec
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjx-cP-kJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2706" y="896"/>
+            <point key="canvasLocation" x="2769" y="971"/>
         </scene>
         <!--Medic Alert View Controller-->
         <scene sceneID="JcQ-es-PZJ">
@@ -1012,7 +1038,7 @@ Vous avez un traitement
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Emn-sO-RVF"/>
+        <segue reference="e3U-xH-fwY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

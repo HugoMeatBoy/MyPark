@@ -12,4 +12,13 @@ import CoreData
 
 class AgendaRdvForm: UIViewController{
     
+    @IBOutlet weak var DocteurPicker: UIPickerView!
+    
+    @IBOutlet weak var RdvDatePicker: UIDatePicker!
+    
+    @IBOutlet weak var RdvValidation: UIButton!
+    
+    @IBAction func RdvValidate(_ sender: Any) {
+    }
+    
 }

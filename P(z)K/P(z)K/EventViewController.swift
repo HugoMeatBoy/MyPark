@@ -12,4 +12,12 @@ import CoreData
 
 class EventViewController: UIViewController{
     
+    @IBOutlet weak var TypeEventPicker: UIPickerView!
+    
+    @IBOutlet weak var DateEventPicker: UIDatePicker!
+    
+    @IBOutlet weak var EventValidation: UIButton!
+    
+    @IBAction func ValidateEvent(_ sender: Any) {
+    }
 }
