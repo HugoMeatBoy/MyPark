@@ -17,9 +17,8 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView1: UITableView!
    
     @IBOutlet weak var control: UISegmentedControl!
-
     
-    
+    @IBOutlet weak var tableViewMedics: UITableView!
 
     
     
@@ -34,14 +33,15 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+    
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(AgendaRdvTableCell.self, forCellReuseIdentifier: "rdvCell")
+   
         
         tableView1.dataSource = self
         tableView1.delegate = self
-        tableView1.register(AgendaMedicTableCell.self, forCellReuseIdentifier: "medicCell")
+      
         
         
         controlleur(0)
@@ -65,9 +65,9 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         if tableView == self.tableView1 {
-            count =  1
+            count =  2
         }
-        
+ 
         return count!
         
     }
@@ -77,19 +77,18 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         var cell:UITableViewCell?
         
         if tableView == self.tableView {
-            cell = tableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath as IndexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath as IndexPath) as! AgendaRdvTableCell
    
         }
         
+        
         if tableView == self.tableView1 {
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath as IndexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath as IndexPath) as! AgendaMedicTableCell
 
             
         }
-        
-        
-        
+    
         return cell!
     }
     

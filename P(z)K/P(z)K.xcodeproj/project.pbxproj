@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		604D43F52056E19C005B2F31 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604D43F42056E19C005B2F31 /* AgendaViewController.swift */; };
-		606E119C205AC56200990E96 /* AgendaControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E119B205AC56200990E96 /* AgendaControllerView.swift */; };
-		9C925DCA205938BD00EBD759 /* AgendaRdvTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C925DC9205938BD00EBD759 /* AgendaRdvTableCell.swift */; };
-		9C925DCC2059448500EBD759 /* AgendaMedicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C925DCB2059448500EBD759 /* AgendaMedicTableCell.swift */; };
+		606A3D942060077E00B9B8FC /* AccueilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3D922060077E00B9B8FC /* AccueilViewController.swift */; };
+		606A3D952060077E00B9B8FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3D932060077E00B9B8FC /* ViewController.swift */; };
+		606A3D9F2060084600B9B8FC /* AgendaMedicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3D9C2060084600B9B8FC /* AgendaMedicTableCell.swift */; };
+		606A3DA02060084600B9B8FC /* AgendaRdvTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3D9D2060084600B9B8FC /* AgendaRdvTableCell.swift */; };
+		606A3DA12060084600B9B8FC /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3D9E2060084600B9B8FC /* AgendaViewController.swift */; };
+		606A3DA82060090800B9B8FC /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DA72060090800B9B8FC /* EventViewController.swift */; };
+		606A3DAA2060091F00B9B8FC /* CoachSportifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DA92060091F00B9B8FC /* CoachSportifViewController.swift */; };
+		606A3DAC2060092E00B9B8FC /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DAB2060092E00B9B8FC /* JournalViewController.swift */; };
+		606A3DAE2060093E00B9B8FC /* CompteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DAD2060093E00B9B8FC /* CompteUserViewController.swift */; };
+		606A3DB02060094E00B9B8FC /* RdvAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DAF2060094E00B9B8FC /* RdvAlertViewController.swift */; };
+		606A3DB22060095F00B9B8FC /* MedicAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DB12060095F00B9B8FC /* MedicAlertViewController.swift */; };
+		606A3DB620600DBE00B9B8FC /* AgendaRdvForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */; };
+		606A3DB920600DD100B9B8FC /* AgendaMedicForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */; };
 		9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87212046944100C74F3C /* AppDelegate.swift */; };
-		9CAD87242046944100C74F3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87232046944100C74F3C /* ViewController.swift */; };
 		9CAD87272046944100C74F3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD87252046944100C74F3C /* Main.storyboard */; };
 		9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87282046944100C74F3C /* P_z_K.xcdatamodeld */; };
 		9CAD872C2046944100C74F3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD872B2046944100C74F3C /* Assets.xcassets */; };
 		9CAD872F2046944100C74F3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD872D2046944100C74F3C /* LaunchScreen.storyboard */; };
 		9CAD873A2046944100C74F3C /* P_z_KTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87392046944100C74F3C /* P_z_KTests.swift */; };
-		9CAD874520469ED800C74F3C /* AccueilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD874420469ED800C74F3C /* AccueilViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +39,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		604D43F42056E19C005B2F31 /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
-		606E119B205AC56200990E96 /* AgendaControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaControllerView.swift; sourceTree = "<group>"; };
-		9C925DC9205938BD00EBD759 /* AgendaRdvTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaRdvTableCell.swift; sourceTree = "<group>"; };
-		9C925DCB2059448500EBD759 /* AgendaMedicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaMedicTableCell.swift; sourceTree = "<group>"; };
+		606A3D922060077E00B9B8FC /* AccueilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccueilViewController.swift; path = Accueil/AccueilViewController.swift; sourceTree = "<group>"; };
+		606A3D932060077E00B9B8FC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Accueil/ViewController.swift; sourceTree = "<group>"; };
+		606A3D9C2060084600B9B8FC /* AgendaMedicTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgendaMedicTableCell.swift; path = Agenda/AgendaMedicTableCell.swift; sourceTree = "<group>"; };
+		606A3D9D2060084600B9B8FC /* AgendaRdvTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgendaRdvTableCell.swift; path = Agenda/AgendaRdvTableCell.swift; sourceTree = "<group>"; };
+		606A3D9E2060084600B9B8FC /* AgendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgendaViewController.swift; path = Agenda/AgendaViewController.swift; sourceTree = "<group>"; };
+		606A3DA72060090800B9B8FC /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		606A3DA92060091F00B9B8FC /* CoachSportifViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoachSportifViewController.swift; sourceTree = "<group>"; };
+		606A3DAB2060092E00B9B8FC /* JournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		606A3DAD2060093E00B9B8FC /* CompteUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompteUserViewController.swift; sourceTree = "<group>"; };
+		606A3DAF2060094E00B9B8FC /* RdvAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RdvAlertViewController.swift; sourceTree = "<group>"; };
+		606A3DB12060095F00B9B8FC /* MedicAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicAlertViewController.swift; sourceTree = "<group>"; };
+		606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaRdvForm.swift; sourceTree = "<group>"; };
+		606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaMedicForm.swift; sourceTree = "<group>"; };
 		9CAD871E2046944000C74F3C /* P(z)K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P(z)K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD87212046944100C74F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CAD87232046944100C74F3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9CAD87262046944100C74F3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CAD87292046944100C74F3C /* P_z_K.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = P_z_K.xcdatamodel; sourceTree = "<group>"; };
 		9CAD872B2046944100C74F3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,7 +62,6 @@
 		9CAD87352046944100C74F3C /* P(z)KTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P(z)KTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD87392046944100C74F3C /* P_z_KTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P_z_KTests.swift; sourceTree = "<group>"; };
 		9CAD873B2046944100C74F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CAD874420469ED800C74F3C /* AccueilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccueilViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		606A3D96206007CE00B9B8FC /* Accueil */ = {
+			isa = PBXGroup;
+			children = (
+				606A3D932060077E00B9B8FC /* ViewController.swift */,
+				606A3D922060077E00B9B8FC /* AccueilViewController.swift */,
+			);
+			name = Accueil;
+			sourceTree = "<group>";
+		};
+		606A3D97206007E500B9B8FC /* Agenda */ = {
+			isa = PBXGroup;
+			children = (
+				606A3DB420600DA800B9B8FC /* AgendaForms */,
+				606A3DB320600D9500B9B8FC /* AgendaTableViews */,
+				606A3D9E2060084600B9B8FC /* AgendaViewController.swift */,
+			);
+			name = Agenda;
+			sourceTree = "<group>";
+		};
+		606A3DA22060086500B9B8FC /* Evenements */ = {
+			isa = PBXGroup;
+			children = (
+				606A3DA72060090800B9B8FC /* EventViewController.swift */,
+			);
+			name = Evenements;
+			sourceTree = "<group>";
+		};
+		606A3DA32060087000B9B8FC /* Coach Sportif */ = {
+			isa = PBXGroup;
+			children = (
+				606A3DA92060091F00B9B8FC /* CoachSportifViewController.swift */,
+			);
+			name = "Coach Sportif";
+			sourceTree = "<group>";
+		};
+		606A3DA42060088900B9B8FC /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				606A3DAB2060092E00B9B8FC /* JournalViewController.swift */,
+			);
+			name = Journal;
+			sourceTree = "<group>";
+		};
+		606A3DA5206008A300B9B8FC /* Compte Utilisateur */ = {
+			isa = PBXGroup;
+			children = (
+				606A3DAD2060093E00B9B8FC /* CompteUserViewController.swift */,
+			);
+			name = "Compte Utilisateur";
+			sourceTree = "<group>";
+		};
+		606A3DA6206008CA00B9B8FC /* Alertes */ = {
+			isa = PBXGroup;
+			children = (
+				606A3DAF2060094E00B9B8FC /* RdvAlertViewController.swift */,
+				606A3DB12060095F00B9B8FC /* MedicAlertViewController.swift */,
+			);
+			name = Alertes;
+			sourceTree = "<group>";
+		};
+		606A3DB320600D9500B9B8FC /* AgendaTableViews */ = {
+			isa = PBXGroup;
+			children = (
+				606A3D9D2060084600B9B8FC /* AgendaRdvTableCell.swift */,
+				606A3D9C2060084600B9B8FC /* AgendaMedicTableCell.swift */,
+			);
+			name = AgendaTableViews;
+			sourceTree = "<group>";
+		};
+		606A3DB420600DA800B9B8FC /* AgendaForms */ = {
+			isa = PBXGroup;
+			children = (
+				606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */,
+				606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */,
+			);
+			name = AgendaForms;
+			sourceTree = "<group>";
+		};
 		9CAD87152046944000C74F3C = {
 			isa = PBXGroup;
 			children = (
@@ -89,18 +181,19 @@
 		9CAD87202046944000C74F3C /* P(z)K */ = {
 			isa = PBXGroup;
 			children = (
+				606A3DA6206008CA00B9B8FC /* Alertes */,
+				606A3DA5206008A300B9B8FC /* Compte Utilisateur */,
+				606A3DA42060088900B9B8FC /* Journal */,
+				606A3DA32060087000B9B8FC /* Coach Sportif */,
+				606A3DA22060086500B9B8FC /* Evenements */,
+				606A3D97206007E500B9B8FC /* Agenda */,
+				606A3D96206007CE00B9B8FC /* Accueil */,
 				9CAD87212046944100C74F3C /* AppDelegate.swift */,
-				9CAD87232046944100C74F3C /* ViewController.swift */,
 				9CAD87252046944100C74F3C /* Main.storyboard */,
-				604D43F42056E19C005B2F31 /* AgendaViewController.swift */,
-				9CAD874420469ED800C74F3C /* AccueilViewController.swift */,
-				9C925DC9205938BD00EBD759 /* AgendaRdvTableCell.swift */,
-				9C925DCB2059448500EBD759 /* AgendaMedicTableCell.swift */,
 				9CAD872B2046944100C74F3C /* Assets.xcassets */,
 				9CAD872D2046944100C74F3C /* LaunchScreen.storyboard */,
 				9CAD87302046944100C74F3C /* Info.plist */,
 				9CAD87282046944100C74F3C /* P_z_K.xcdatamodeld */,
-				606E119B205AC56200990E96 /* AgendaControllerView.swift */,
 			);
 			path = "P(z)K";
 			sourceTree = "<group>";
@@ -217,14 +310,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CAD87242046944100C74F3C /* ViewController.swift in Sources */,
+				606A3DB22060095F00B9B8FC /* MedicAlertViewController.swift in Sources */,
 				9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */,
 				9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */,
-				604D43F52056E19C005B2F31 /* AgendaViewController.swift in Sources */,
-				606E119C205AC56200990E96 /* AgendaControllerView.swift in Sources */,
-				9C925DCC2059448500EBD759 /* AgendaMedicTableCell.swift in Sources */,
-				9CAD874520469ED800C74F3C /* AccueilViewController.swift in Sources */,
-				9C925DCA205938BD00EBD759 /* AgendaRdvTableCell.swift in Sources */,
+				606A3DB02060094E00B9B8FC /* RdvAlertViewController.swift in Sources */,
+				606A3D952060077E00B9B8FC /* ViewController.swift in Sources */,
+				606A3D942060077E00B9B8FC /* AccueilViewController.swift in Sources */,
+				606A3DAC2060092E00B9B8FC /* JournalViewController.swift in Sources */,
+				606A3D9F2060084600B9B8FC /* AgendaMedicTableCell.swift in Sources */,
+				606A3DA82060090800B9B8FC /* EventViewController.swift in Sources */,
+				606A3DAE2060093E00B9B8FC /* CompteUserViewController.swift in Sources */,
+				606A3DAA2060091F00B9B8FC /* CoachSportifViewController.swift in Sources */,
+				606A3DA12060084600B9B8FC /* AgendaViewController.swift in Sources */,
+				606A3DB620600DBE00B9B8FC /* AgendaRdvForm.swift in Sources */,
+				606A3DA02060084600B9B8FC /* AgendaRdvTableCell.swift in Sources */,
+				606A3DB920600DD100B9B8FC /* AgendaMedicForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

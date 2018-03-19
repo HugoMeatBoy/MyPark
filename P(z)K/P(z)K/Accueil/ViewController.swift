@@ -12,7 +12,6 @@ import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate {
 
-class ViewController: UIViewController {
     
     var patient : String = "";
     
@@ -32,11 +31,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var UserLastNameField: UITextField!
     
     @IBOutlet weak var ValidateNameFields: UIButton!
-
-    @IBOutlet weak var LabelName: UILabel!
-    
-   
- 
 
     
 
@@ -86,4 +80,3 @@ class ViewController: UIViewController {
     }
     
 }
-
