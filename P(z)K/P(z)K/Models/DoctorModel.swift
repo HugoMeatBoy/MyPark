@@ -1,5 +1,5 @@
 //
-//  UserModel.swift
+//  DoctorModel.swift
 //  P(z)K
 //
 //  Created by Thais Aurard on 15/03/2018.

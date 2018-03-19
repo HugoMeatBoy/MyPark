@@ -1,5 +1,5 @@
 //
-//  appointmentDAO.swift
+//  AppointmentDAO.swift
 //  P(z)K
 //
 //  Created by Thais Aurard on 19/03/2018.
