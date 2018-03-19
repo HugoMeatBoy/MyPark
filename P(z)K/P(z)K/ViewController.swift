@@ -12,7 +12,6 @@ import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate {
 
-class ViewController: UIViewController {
     
     var patient : String = "";
     
