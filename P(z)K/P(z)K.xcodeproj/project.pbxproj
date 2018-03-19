@@ -26,6 +26,9 @@
 		75BD2B342060258E00E7380F /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2F2060258E00E7380F /* PatientModel.swift */; };
 		75BD2B352060258E00E7380F /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B302060258E00E7380F /* EventModel.swift */; };
 		75BD2B372060259C00E7380F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B362060259C00E7380F /* CoreDataManager.swift */; };
+		75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B38206030F900E7380F /* AppointmentModel.swift */; };
+		75BD2B3C206036CE00E7380F /* AppointmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B3B206036CE00E7380F /* AppointmentDAO.swift */; };
+		75BD2B3E206045E100E7380F /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B3D206045E100E7380F /* CoreDataConnection.swift */; };
 		9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87212046944100C74F3C /* AppDelegate.swift */; };
 		9CAD87272046944100C74F3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD87252046944100C74F3C /* Main.storyboard */; };
 		9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87282046944100C74F3C /* P_z_K.xcdatamodeld */; };
@@ -64,6 +67,9 @@
 		75BD2B2F2060258E00E7380F /* PatientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientModel.swift; path = Models/PatientModel.swift; sourceTree = "<group>"; };
 		75BD2B302060258E00E7380F /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventModel.swift; path = Models/EventModel.swift; sourceTree = "<group>"; };
 		75BD2B362060259C00E7380F /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Helpers/CoreDataManager.swift; sourceTree = "<group>"; };
+		75BD2B38206030F900E7380F /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
+		75BD2B3B206036CE00E7380F /* AppointmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDAO.swift; sourceTree = "<group>"; };
+		75BD2B3D206045E100E7380F /* CoreDataConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
 		9CAD871E2046944000C74F3C /* P(z)K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P(z)K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD87212046944100C74F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CAD87262046944100C74F3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 				75BD2B2E2060258E00E7380F /* DoctorModel.swift */,
 				75BD2B302060258E00E7380F /* EventModel.swift */,
 				75BD2B2F2060258E00E7380F /* PatientModel.swift */,
+				75BD2B38206030F900E7380F /* AppointmentModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -188,8 +195,17 @@
 			isa = PBXGroup;
 			children = (
 				75BD2B362060259C00E7380F /* CoreDataManager.swift */,
+				75BD2B3D206045E100E7380F /* CoreDataConnection.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		75BD2B3A206036B700E7380F /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				75BD2B3B206036CE00E7380F /* AppointmentDAO.swift */,
+			);
+			name = DAO;
 			sourceTree = "<group>";
 		};
 		9CAD87152046944000C74F3C = {
@@ -213,6 +229,7 @@
 		9CAD87202046944000C74F3C /* P(z)K */ = {
 			isa = PBXGroup;
 			children = (
+				75BD2B3A206036B700E7380F /* DAO */,
 				75BD2B292060255D00E7380F /* Helpers */,
 				75BD2B282060254E00E7380F /* Models */,
 				606A3DA6206008CA00B9B8FC /* Alertes */,
@@ -346,6 +363,7 @@
 			files = (
 				75BD2B312060258E00E7380F /* Brouillon.swift in Sources */,
 				606A3DB22060095F00B9B8FC /* MedicAlertViewController.swift in Sources */,
+				75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */,
 				9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */,
 				9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */,
 				606A3DB02060094E00B9B8FC /* RdvAlertViewController.swift in Sources */,
@@ -358,12 +376,14 @@
 				75BD2B322060258E00E7380F /* ActivityModel.swift in Sources */,
 				75BD2B372060259C00E7380F /* CoreDataManager.swift in Sources */,
 				606A3DAE2060093E00B9B8FC /* CompteUserViewController.swift in Sources */,
+				75BD2B3C206036CE00E7380F /* AppointmentDAO.swift in Sources */,
 				75BD2B342060258E00E7380F /* PatientModel.swift in Sources */,
 				606A3DAA2060091F00B9B8FC /* CoachSportifViewController.swift in Sources */,
 				606A3DA12060084600B9B8FC /* AgendaViewController.swift in Sources */,
 				606A3DB620600DBE00B9B8FC /* AgendaRdvForm.swift in Sources */,
 				606A3DA02060084600B9B8FC /* AgendaRdvTableCell.swift in Sources */,
 				75BD2B352060258E00E7380F /* EventModel.swift in Sources */,
+				75BD2B3E206045E100E7380F /* CoreDataConnection.swift in Sources */,
 				606A3DB920600DD100B9B8FC /* AgendaMedicForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

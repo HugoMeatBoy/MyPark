@@ -10,12 +10,8 @@ import Foundation
 import UIKit
 import CoreData
 
-class EventModel{
-    var eventName : String = ""
-    var eventDate : Date
+extension Event {
+
     
-    init(eventName : String, eventDate : Date){
-        self.eventName = eventName
-        self.eventDate = eventDate
-    }
+
 }

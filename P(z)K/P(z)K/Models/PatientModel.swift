@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 import CoreData
 
-class PatientModel{
-    var firstName : String
-    var lastName : String
+extension Patient {
+
     
   /* private let dao : PatientModel
      var firstName : String{
@@ -34,29 +33,13 @@ class PatientModel{
     */
     
 
-   init(firstName : String, lastName : String){
-        /*self.dao.firstName.set(firstName)
-        self.dao.lastName.set(lastName)*/
-    self.firstName = firstName
-    self.lastName  = lastName
-    
-    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        else {
-            return
-    }
-   let managedContext = appDelegate.persistentContainer.viewContext
-    let patientEntity = NSEntityDescription.entity(forEntityName: "Patient", in: managedContext)!
-    
-   
-        let patient = NSManagedObject(entity: patientEntity, insertInto: managedContext)
-        patient.setValue(lastName, forKeyPath: "lastName")
-        patient.setValue(firstName, forKey: "firstName")
+
     
     
 
     
 
-    }
+
 }
 
 

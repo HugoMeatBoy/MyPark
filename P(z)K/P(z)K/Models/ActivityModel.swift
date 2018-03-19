@@ -10,16 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class ActivityModel{
-    var activityName : String = ""
-    var activityDescription : String = ""
-    var activityDurationH : Int
-    var activityDurationMin : Int
-    
-    init(activityName : String, activityDescription : String, activityDurationH: Int, activityDurationMin: Int){
-        self.activityName = activityName
-        self.activityDescription = activityDescription
-        self.activityDurationH = activityDurationH
-        self.activityDurationMin = activityDurationMin
-    }
+extension Activity {
+
+
 }

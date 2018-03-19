@@ -11,10 +11,7 @@ import UIKit
 import CoreData
 
 class Address {
-    var num : String = ""
-    var street : String = ""
-    var postal : String = ""
-    var city : String = ""
+
     
     init(num : String, street: String, postal : String, city : String){
         self.num = num
