@@ -31,25 +31,22 @@ class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var UserLastNameField: UITextField!
     
     @IBOutlet weak var ValidateNameFields: UIButton!
-
-    
-
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        /*guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
             else {
                 return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let userEntity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)!
+        }*/
+        //let managedContext = appDelegate.persistentContainer.viewContext
+        
+        //let userEntity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)!
         
         if (UserLastNameField.text != nil && UserFirstNameField.text != nil){
-            let user = NSManagedObject(entity: userEntity, insertInto: managedContext)
-            user.setValue(UserLastNameField.text, forKeyPath: "lastName")
-            user.setValue(UserFirstNameField.text, forKey: "firstName")
+            //let user = NSManagedObject(entity: userEntity, insertInto: managedContext)
+            //user.setValue(UserLastNameField.text, forKeyPath: "lastName")
+            //user.setValue(UserFirstNameField.text, forKey: "firstName")
             
             patient = "Bonjour " + UserLastNameField.text!;
             patient += " ";

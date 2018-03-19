@@ -12,6 +12,7 @@ class AgendaMedicTableCell : UITableViewCell {
     
     @IBOutlet weak var MedicPrises: UILabel!
     @IBOutlet weak var MedicName: UILabel!
-    @IBOutlet weak var MedicDose: UIView!
+    @IBOutlet weak var MedicDose: UILabel!
+
     
 }

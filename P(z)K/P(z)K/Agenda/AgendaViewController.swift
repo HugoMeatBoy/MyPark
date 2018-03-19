@@ -18,9 +18,7 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
    
     @IBOutlet weak var control: UISegmentedControl!
     
-    @IBOutlet weak var tableViewMedics: UITableView!
-
-    
+  
     
     
     
@@ -61,11 +59,11 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         var count:Int?
         
         if tableView == self.tableView {
-            count = 1
+            count = 3
         }
         
         if tableView == self.tableView1 {
-            count =  2
+            count =  3
         }
  
         return count!
@@ -75,20 +73,41 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell:UITableViewCell?
+        let cellRdv:AgendaRdvTableCell?
+        let cellMedics:AgendaMedicTableCell?
         
         if tableView == self.tableView {
-            cell = tableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath as IndexPath) as! AgendaRdvTableCell
+            
+            cellRdv = (tableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath as IndexPath) as! AgendaRdvTableCell)
    
+            
+           
+            cellRdv?.date.text = "ok"
+            
+            /*
+             TODO here : Charger le core data des rdv
+             
+             cellRdv?.date.text = "ok"
+            */
+            cell = cellRdv
         }
         
         
         if tableView == self.tableView1 {
             
-            cell = tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath as IndexPath) as! AgendaMedicTableCell
-
+            cellMedics = (tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath as IndexPath) as! AgendaMedicTableCell)
+            
+            cell = cellMedics
             
         }
+        
+        
+        
     
+        
+
+      
+        
         return cell!
     }
     
