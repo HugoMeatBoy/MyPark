@@ -15,7 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     var patient : String = "";
     
-
+    var patienttest : Patient?
+    var patientDAO : PatientDAO
 
 
     override func viewDidLoad() {
@@ -55,6 +56,20 @@ class ViewController: UIViewController, UITableViewDelegate {
             let data = UILabel()
             data.text = patient
             
+
+            let patientt = Patient(context: CoreDataManager.context)
+            patientt.firstName = UserLastNameField.text
+            patientt.lastName = UserFirstNameField.text
+            
+            do{
+                try CoreDataManager.context.save()
+            }catch let error as NSError{
+                ManageErrorHelper.alertError(view: self, error: error)
+            }
+            
+            
+            
+            
             if let AccueilViewController = segue.destination as? AccueilViewController {
                 
                 AccueilViewController.data = data.text
@@ -63,12 +78,8 @@ class ViewController: UIViewController, UITableViewDelegate {
         }
 }
  
-    
-
-    
-
-
    
+    
     
     
     override func didReceiveMemoryWarning() {

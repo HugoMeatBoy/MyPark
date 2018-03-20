@@ -31,11 +31,10 @@ class AppointmentDAO{
         }
     }
     
-    func addAppointment(context : NSManagedObjectContext) throws {
-            do {
-                try context.save()
-            } catch let error {
-                throw error
-            }
+    
+    
+    
+    func addAppointment(appointment : Appointment) {
+         CoreDataManager.save()
     }
 }
