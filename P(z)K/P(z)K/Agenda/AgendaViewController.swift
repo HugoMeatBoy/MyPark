@@ -17,9 +17,10 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView1: UITableView!
    
     @IBOutlet weak var control: UISegmentedControl!
-    
   
+    @IBOutlet weak var AddMedic: UIButton!
     
+    @IBOutlet weak var AddRdv: UIButton!
     
     
     
@@ -121,9 +122,13 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         case 0:
             tableView.isHidden = false
             tableView1.isHidden = true
+            AddMedic.isHidden = true
+            AddRdv.isHidden = false
         case 1:
             tableView.isHidden = true
             tableView1.isHidden = false
+            AddMedic.isHidden = false
+            AddRdv.isHidden = true
         default:
             break
         }

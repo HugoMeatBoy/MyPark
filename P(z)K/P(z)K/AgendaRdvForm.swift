@@ -19,6 +19,7 @@ class AgendaRdvForm: UIViewController{
     @IBOutlet weak var RdvValidation: UIButton!
     
     @IBAction func RdvValidate(_ sender: Any) {
+        
     }
     
 }

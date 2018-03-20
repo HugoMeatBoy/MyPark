@@ -16,6 +16,7 @@ class Address {
     var postal : String = ""
     var city : String = ""
     
+    
     init(num : String, street: String, postal : String, city : String){
         self.num = num
         self.street = street
