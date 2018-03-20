@@ -29,6 +29,8 @@
 		75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B38206030F900E7380F /* AppointmentModel.swift */; };
 		75BD2B3C206036CE00E7380F /* AppointmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B3B206036CE00E7380F /* AppointmentDAO.swift */; };
 		75BD2B3E206045E100E7380F /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B3D206045E100E7380F /* CoreDataConnection.swift */; };
+		75BD2B402061029500E7380F /* MedecineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B3F2061029500E7380F /* MedecineModel.swift */; };
+		75BD2B42206102EA00E7380F /* MotorStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B41206102EA00E7380F /* MotorStateModel.swift */; };
 		9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87212046944100C74F3C /* AppDelegate.swift */; };
 		9CAD87272046944100C74F3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD87252046944100C74F3C /* Main.storyboard */; };
 		9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87282046944100C74F3C /* P_z_K.xcdatamodeld */; };
@@ -70,6 +72,8 @@
 		75BD2B38206030F900E7380F /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
 		75BD2B3B206036CE00E7380F /* AppointmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDAO.swift; sourceTree = "<group>"; };
 		75BD2B3D206045E100E7380F /* CoreDataConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
+		75BD2B3F2061029500E7380F /* MedecineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecineModel.swift; sourceTree = "<group>"; };
+		75BD2B41206102EA00E7380F /* MotorStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorStateModel.swift; sourceTree = "<group>"; };
 		9CAD871E2046944000C74F3C /* P(z)K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P(z)K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD87212046944100C74F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CAD87262046944100C74F3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 				75BD2B302060258E00E7380F /* EventModel.swift */,
 				75BD2B2F2060258E00E7380F /* PatientModel.swift */,
 				75BD2B38206030F900E7380F /* AppointmentModel.swift */,
+				75BD2B3F2061029500E7380F /* MedecineModel.swift */,
+				75BD2B41206102EA00E7380F /* MotorStateModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -365,6 +371,8 @@
 				606A3DB22060095F00B9B8FC /* MedicAlertViewController.swift in Sources */,
 				75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */,
 				9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */,
+				75BD2B402061029500E7380F /* MedecineModel.swift in Sources */,
+				75BD2B42206102EA00E7380F /* MotorStateModel.swift in Sources */,
 				9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */,
 				606A3DB02060094E00B9B8FC /* RdvAlertViewController.swift in Sources */,
 				606A3D952060077E00B9B8FC /* ViewController.swift in Sources */,

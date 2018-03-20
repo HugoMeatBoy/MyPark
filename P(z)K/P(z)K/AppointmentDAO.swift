@@ -14,6 +14,7 @@ class AppointmentDAO{
     
     var context : NSManagedObjectContext
     
+    
     init() {
         let CDC  = CoreDataConnection()
         self.context = CDC.getContext()
