@@ -13,7 +13,7 @@ import UIKit
 class PatientDAO : DAO {
     
     
-    func getPatient() -> [Patient]? {
+   /* func getPatient() -> [Patient]? {
         let request: NSFetchRequest<Patient> = NSFetchRequest(entityName: "Patient")
         do {
             let patient : [Patient] = try self.context.fetch(request)
@@ -22,8 +22,17 @@ class PatientDAO : DAO {
             print("Error getting patient")
             return nil
         }
-    }
+    }*/
     
+    static func getPatient() throws -> Patient? {
+        let request : NSFetchRequest<Patient> = Patient.fetchRequest()
+        do {
+            let patientL = try CoreDataManager.context.fetch(request)
+            return patientL.first
+        } catch let error as NSError {
+            throw error
+        }
+    }
     
     
     
