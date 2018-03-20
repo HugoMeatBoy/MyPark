@@ -12,6 +12,8 @@ class AccueilViewController: UIViewController {
 
     var data: String?
     
+  
+    
     @IBOutlet weak var Welcome: UILabel!
     
     

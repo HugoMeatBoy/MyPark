@@ -15,14 +15,12 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     var patient : String = "";
     
-    var patienttest : Patient?
-    var patientDAO : PatientDAO
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        
     }
 
 

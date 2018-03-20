@@ -59,7 +59,7 @@
                                     <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2El-YY-QnC" kind="show" id="Uel-EC-hRM"/>
+                                    <segue destination="c26-q5-NRf" kind="show" id="E5g-ow-chx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez votre prénom" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bY7-ev-aoF">
@@ -250,6 +250,7 @@
                             <constraint firstItem="Zlb-TI-TlK" firstAttribute="top" secondItem="32s-c6-zKC" secondAttribute="bottom" id="p4f-iB-Txm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rvi-2v-ipF"/>
                     <connections>
                         <outlet property="Welcome" destination="k3d-lz-mXq" id="Fuz-uo-gAZ"/>
                     </connections>
@@ -1167,10 +1168,10 @@ Vous avez un traitement
             </objects>
             <point key="canvasLocation" x="1561" y="1170"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Home Controller-->
         <scene sceneID="jGX-Yd-pGv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sy6-gt-1HM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sy6-gt-1HM" customClass="NavigationHomeController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IgV-KO-ckb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1178,16 +1179,33 @@ Vous avez un traitement
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DLC-TA-lbq"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginSegue" id="UVL-qp-Max"/>
+                        <segue destination="2El-YY-QnC" kind="show" identifier="HomeSegue" id="G49-Zb-vuR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Utl-Qt-MQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="356" y="21"/>
+            <point key="canvasLocation" x="1807" y="-883"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IgE-tV-4uv">
+            <objects>
+                <navigationController id="c26-q5-NRf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3n7-4y-UBo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2El-YY-QnC" kind="relationship" relationship="rootViewController" id="DJB-qt-haV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ExA-ZD-cCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2951" y="-871"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uel-EC-hRM"/>
+        <segue reference="G49-Zb-vuR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.29108687108044795" green="0.16781314518775173" blue="0.064231447651561649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
