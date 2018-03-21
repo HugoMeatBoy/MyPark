@@ -12,11 +12,20 @@ import CoreData
 
 class NavigationHomeController: UINavigationController {
     
-    var test = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(!test){
+        
+        var patientL : [Patient]?
+        
+        let request : NSFetchRequest<Patient> = Patient.fetchRequest()
+        
+        do {
+            patientL = try CoreDataManager.context.fetch(request)
+        } catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        
+        if(patientL != nil){
             self.performSegue(withIdentifier: "HomeSegue", sender: self)
         }else{
             self.performSegue(withIdentifier: "LoginSegue", sender: self)
