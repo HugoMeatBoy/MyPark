@@ -53,6 +53,9 @@
         <relationship name="notify" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="happenTo" inverseEntity="Event" syncable="YES"/>
         <relationship name="take" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Treatment" inverseName="concern" inverseEntity="Treatment" syncable="YES"/>
     </entity>
+    <entity name="Patientt" representedClassName="Patientt" syncable="YES" codeGenerationType="class">
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Speciality" representedClassName="Speciality" syncable="YES" codeGenerationType="class">
         <attribute name="speName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="beHeldBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Doctor" inverseName="specialize" inverseEntity="Doctor" syncable="YES"/>
@@ -86,6 +89,7 @@
         <element name="Medecine" positionX="-83" positionY="-243" width="128" height="75"/>
         <element name="MotorState" positionX="115" positionY="-333" width="128" height="105"/>
         <element name="Patient" positionX="-45" positionY="-45" width="128" height="165"/>
+        <element name="Patientt" positionX="-99" positionY="-189" width="128" height="60"/>
         <element name="Speciality" positionX="351" positionY="-99" width="128" height="75"/>
         <element name="Treatment" positionX="-297" positionY="-129" width="128" height="150"/>
         <element name="TypeActivity" positionX="79" positionY="387" width="128" height="75"/>

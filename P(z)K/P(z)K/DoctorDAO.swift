@@ -35,6 +35,11 @@ class DoctorDAO{
     
     
     func addDoctor(doctor : Doctor) {
-        CoreDataManager.save()
+        do{
+        try CoreDataManager.context.save()
+        } catch {
+            print ("error")
+        }
     }
 }
+

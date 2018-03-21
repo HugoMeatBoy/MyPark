@@ -35,6 +35,11 @@ class AppointmentDAO{
     
     
     func addAppointment(appointment : Appointment) {
-         CoreDataManager.save()
+        do{
+            try CoreDataManager.context.save()
+        } catch {
+            print ("error")
+        }
     }
 }
+ 

@@ -16,7 +16,7 @@ class NavigationHomeController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(test){
+        if(!test){
             self.performSegue(withIdentifier: "HomeSegue", sender: self)
         }else{
             self.performSegue(withIdentifier: "LoginSegue", sender: self)

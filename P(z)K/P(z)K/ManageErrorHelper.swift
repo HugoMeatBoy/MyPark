@@ -22,3 +22,4 @@ class ManageErrorHelper{
         self.alertError(view: view, WithTitle: "\(error)", andMessage: "\(error.userInfo)")
     }
 }
+
