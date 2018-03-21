@@ -38,7 +38,7 @@ class DoctorDAO{
         do{
         try CoreDataManager.context.save()
         } catch {
-            print ("error")
+            print ("Error adding doctor")
         }
     }
 }

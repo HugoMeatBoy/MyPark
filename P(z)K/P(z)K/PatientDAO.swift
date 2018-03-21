@@ -25,21 +25,30 @@ class PatientDAO : DAO {
     }*/
     
     static func getPatient() throws -> Patient? {
+        var patientL : [Patient]?
+        var pati : Patient?
+        
         let request : NSFetchRequest<Patient> = Patient.fetchRequest()
+        
         do {
-            let patientL = try CoreDataManager.context.fetch(request)
-            return patientL.first
+            patientL = try CoreDataManager.context.fetch(request)
         } catch let error as NSError {
             throw error
         }
+        
+        if (patientL != nil) {
+            pati = patientL?.first
+        }
+        else{
+            print ("could not fetch patient")
+        }
+        return pati
     }
     
-    
-    
-    func create() throws -> Patient {
-        return Patient(context: self.context)
+    func deletePatient(patient: Patient) {
+        self.context.delete(patient)
     }
-    
+
     
 }
 

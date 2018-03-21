@@ -38,7 +38,7 @@ class AppointmentDAO{
         do{
             try CoreDataManager.context.save()
         } catch {
-            print ("error")
+            print ("Error adding the appointment")
         }
     }
 }
