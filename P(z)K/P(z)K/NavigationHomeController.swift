@@ -28,6 +28,11 @@ class NavigationHomeController: UINavigationController {
         if(patientL != nil){
             self.performSegue(withIdentifier: "HomeSegue", sender: self)
         }else{
+            
+            //--------------MEDECINE----------------
+            
+            //--------------------------------------
+            
             self.performSegue(withIdentifier: "LoginSegue", sender: self)
         }
         

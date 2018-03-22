@@ -41,5 +41,9 @@ class DoctorDAO{
             print ("Error adding doctor")
         }
     }
+    
+    func deleteDoctor(doctor: Doctor) {
+        self.context.delete(doctor)
+    }
 }
 
