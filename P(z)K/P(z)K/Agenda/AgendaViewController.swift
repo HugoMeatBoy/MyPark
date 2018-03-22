@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import CoreData
 
 class AgendaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -81,6 +83,7 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
             
             cellRdv = (tableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath as IndexPath) as! AgendaRdvTableCell)
    
+
             
            
             cellRdv?.date.text = "ok"
@@ -95,6 +98,7 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         
         
         if tableView == self.tableView1 {
+            
             
             cellMedics = (tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath as IndexPath) as! AgendaMedicTableCell)
             

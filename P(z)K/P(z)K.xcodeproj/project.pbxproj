@@ -19,9 +19,12 @@
 		606A3DB22060095F00B9B8FC /* MedicAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DB12060095F00B9B8FC /* MedicAlertViewController.swift */; };
 		606A3DB620600DBE00B9B8FC /* AgendaRdvForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */; };
 		606A3DB920600DD100B9B8FC /* AgendaMedicForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */; };
-		7540E1252063EF1C00CB9CC4 /* MedecineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1242063EF1C00CB9CC4 /* MedecineDAO.swift */; };
+		750CF28620646B66000B4DE3 /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750CF28520646B66000B4DE3 /* CoreDataDAOFactory.swift */; };
 		7540E1272063EFBB00CB9CC4 /* AccueilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1262063EFBB00CB9CC4 /* AccueilController.swift */; };
 		7540E1292063EFCC00CB9CC4 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1282063EFCB00CB9CC4 /* RegistrationController.swift */; };
+		7540E12D20640F4F00CB9CC4 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */; };
+		7540E12F206410BC00CB9CC4 /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12E206410BC00CB9CC4 /* PatientDAO.swift */; };
+		7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1362064110200CB9CC4 /* CoreDataDAO.swift */; };
 		75BD2B312060258E00E7380F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2C2060258D00E7380F /* Address.swift */; };
 		75BD2B322060258E00E7380F /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2D2060258E00E7380F /* ActivityModel.swift */; };
 		75BD2B332060258E00E7380F /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2E2060258E00E7380F /* DoctorModel.swift */; };
@@ -29,12 +32,10 @@
 		75BD2B352060258E00E7380F /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B302060258E00E7380F /* EventModel.swift */; };
 		75BD2B372060259C00E7380F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B362060259C00E7380F /* CoreDataManager.swift */; };
 		75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B38206030F900E7380F /* AppointmentModel.swift */; };
-		75BD2B3C206036CE00E7380F /* AppointmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B3B206036CE00E7380F /* AppointmentDAO.swift */; };
 		75BD2B3E206045E100E7380F /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B3D206045E100E7380F /* CoreDataConnection.swift */; };
 		75BD2B402061029500E7380F /* MedecineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B3F2061029500E7380F /* MedecineModel.swift */; };
 		75BD2B42206102EA00E7380F /* MotorStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B41206102EA00E7380F /* MotorStateModel.swift */; };
-		75BD2B442061125400E7380F /* DoctorDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B432061125400E7380F /* DoctorDAO.swift */; };
-		75BD2B46206112B700E7380F /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B45206112B700E7380F /* PatientDAO.swift */; };
+		75BD2B46206112B700E7380F /* PatientCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B45206112B700E7380F /* PatientCoreDataDAO.swift */; };
 		75BD2B48206119D300E7380F /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B47206119D300E7380F /* DAO.swift */; };
 		75BD2B4A20611E5200E7380F /* ManageErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B4920611E5200E7380F /* ManageErrorHelper.swift */; };
 		9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87212046944100C74F3C /* AppDelegate.swift */; };
@@ -68,9 +69,12 @@
 		606A3DB12060095F00B9B8FC /* MedicAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicAlertViewController.swift; sourceTree = "<group>"; };
 		606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaRdvForm.swift; sourceTree = "<group>"; };
 		606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaMedicForm.swift; sourceTree = "<group>"; };
-		7540E1242063EF1C00CB9CC4 /* MedecineDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecineDAO.swift; sourceTree = "<group>"; };
+		750CF28520646B66000B4DE3 /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
 		7540E1262063EFBB00CB9CC4 /* AccueilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilController.swift; sourceTree = "<group>"; };
 		7540E1282063EFCB00CB9CC4 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
+		7540E12E206410BC00CB9CC4 /* PatientDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
+		7540E1362064110200CB9CC4 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
 		75BD2B2C2060258D00E7380F /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = Models/Address.swift; sourceTree = "<group>"; };
 		75BD2B2D2060258E00E7380F /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = Models/ActivityModel.swift; sourceTree = "<group>"; };
 		75BD2B2E2060258E00E7380F /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorModel.swift; path = Models/DoctorModel.swift; sourceTree = "<group>"; };
@@ -78,12 +82,10 @@
 		75BD2B302060258E00E7380F /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventModel.swift; path = Models/EventModel.swift; sourceTree = "<group>"; };
 		75BD2B362060259C00E7380F /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Helpers/CoreDataManager.swift; sourceTree = "<group>"; };
 		75BD2B38206030F900E7380F /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
-		75BD2B3B206036CE00E7380F /* AppointmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDAO.swift; sourceTree = "<group>"; };
 		75BD2B3D206045E100E7380F /* CoreDataConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
 		75BD2B3F2061029500E7380F /* MedecineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecineModel.swift; sourceTree = "<group>"; };
 		75BD2B41206102EA00E7380F /* MotorStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorStateModel.swift; sourceTree = "<group>"; };
-		75BD2B432061125400E7380F /* DoctorDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDAO.swift; sourceTree = "<group>"; };
-		75BD2B45206112B700E7380F /* PatientDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
+		75BD2B45206112B700E7380F /* PatientCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientCoreDataDAO.swift; sourceTree = "<group>"; };
 		75BD2B47206119D300E7380F /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		75BD2B4920611E5200E7380F /* ManageErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageErrorHelper.swift; sourceTree = "<group>"; };
 		9CAD871E2046944000C74F3C /* P(z)K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P(z)K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +197,15 @@
 			name = AgendaForms;
 			sourceTree = "<group>";
 		};
+		750CF28B206470E4000B4DE3 /* Patient */ = {
+			isa = PBXGroup;
+			children = (
+				7540E12E206410BC00CB9CC4 /* PatientDAO.swift */,
+				75BD2B45206112B700E7380F /* PatientCoreDataDAO.swift */,
+			);
+			name = Patient;
+			sourceTree = "<group>";
+		};
 		75BD2B282060254E00E7380F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,11 +234,11 @@
 		75BD2B3A206036B700E7380F /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				75BD2B3B206036CE00E7380F /* AppointmentDAO.swift */,
-				75BD2B432061125400E7380F /* DoctorDAO.swift */,
-				75BD2B45206112B700E7380F /* PatientDAO.swift */,
+				750CF28B206470E4000B4DE3 /* Patient */,
+				750CF28520646B66000B4DE3 /* CoreDataDAOFactory.swift */,
+				7540E1362064110200CB9CC4 /* CoreDataDAO.swift */,
+				7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */,
 				75BD2B47206119D300E7380F /* DAO.swift */,
-				7540E1242063EF1C00CB9CC4 /* MedecineDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -385,7 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75BD2B46206112B700E7380F /* PatientDAO.swift in Sources */,
+				75BD2B46206112B700E7380F /* PatientCoreDataDAO.swift in Sources */,
 				75BD2B312060258E00E7380F /* Address.swift in Sources */,
 				606A3DB22060095F00B9B8FC /* MedicAlertViewController.swift in Sources */,
 				75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */,
@@ -398,6 +409,7 @@
 				606A3DB02060094E00B9B8FC /* RdvAlertViewController.swift in Sources */,
 				606A3DAC2060092E00B9B8FC /* JournalViewController.swift in Sources */,
 				6005231020612173004CBCD6 /* NavigationHomeController.swift in Sources */,
+				7540E12F206410BC00CB9CC4 /* PatientDAO.swift in Sources */,
 				75BD2B332060258E00E7380F /* DoctorModel.swift in Sources */,
 				7540E1272063EFBB00CB9CC4 /* AccueilController.swift in Sources */,
 				606A3D9F2060084600B9B8FC /* AgendaMedicTableCell.swift in Sources */,
@@ -405,15 +417,15 @@
 				75BD2B322060258E00E7380F /* ActivityModel.swift in Sources */,
 				75BD2B372060259C00E7380F /* CoreDataManager.swift in Sources */,
 				606A3DAE2060093E00B9B8FC /* CompteUserViewController.swift in Sources */,
-				75BD2B3C206036CE00E7380F /* AppointmentDAO.swift in Sources */,
 				75BD2B342060258E00E7380F /* PatientModel.swift in Sources */,
+				7540E12D20640F4F00CB9CC4 /* AbstractDAOFactory.swift in Sources */,
 				606A3DAA2060091F00B9B8FC /* CoachSportifViewController.swift in Sources */,
 				606A3DA12060084600B9B8FC /* AgendaViewController.swift in Sources */,
 				606A3DB620600DBE00B9B8FC /* AgendaRdvForm.swift in Sources */,
-				75BD2B442061125400E7380F /* DoctorDAO.swift in Sources */,
-				7540E1252063EF1C00CB9CC4 /* MedecineDAO.swift in Sources */,
 				75BD2B4A20611E5200E7380F /* ManageErrorHelper.swift in Sources */,
 				606A3DA02060084600B9B8FC /* AgendaRdvTableCell.swift in Sources */,
+				7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */,
+				750CF28620646B66000B4DE3 /* CoreDataDAOFactory.swift in Sources */,
 				75BD2B352060258E00E7380F /* EventModel.swift in Sources */,
 				75BD2B3E206045E100E7380F /* CoreDataConnection.swift in Sources */,
 				606A3DB920600DD100B9B8FC /* AgendaMedicForm.swift in Sources */,

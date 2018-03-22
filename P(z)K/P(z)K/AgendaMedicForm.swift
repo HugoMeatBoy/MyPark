@@ -33,6 +33,37 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         MedicPicker.delegate = self
         MedicPicker.dataSource = self
         
+        
+        //RECUP MEDICINES =========================
+        var med : [Medecine]?
+        let request : NSFetchRequest<Medecine> = Medecine.fetchRequest()
+        
+        do {
+            med = try CoreDataManager.context.fetch(request)
+        } catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        
+        print(med)
+        print(med!.first)
+        
+        var medcount : Int = (med?.count)!
+        
+        var medname : [String]?
+        
+      /*  for i in med! {
+            var test: Medecine
+            var name : String!
+            
+            test = med![i]
+            
+            name = test.name
+               // .medecineName
+        }
+        */
+        //========================================
+        
+        
         // Input data into the Array:
         pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
     }

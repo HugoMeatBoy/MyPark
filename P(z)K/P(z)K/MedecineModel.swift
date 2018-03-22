@@ -12,4 +12,9 @@ import UIKit
 
 extension Medecine{
     
+    func affectNameDose(name : String, dose : String){
+        self.medecineName = name
+        self.medecineDose = dose
+    }
+    
 }

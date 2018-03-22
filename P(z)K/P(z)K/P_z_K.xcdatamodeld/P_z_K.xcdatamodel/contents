@@ -34,6 +34,7 @@
         <relationship name="happenTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="notify" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <entity name="Medecine" representedClassName="Medecine" syncable="YES" codeGenerationType="class">
+        <attribute name="medecineDose" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="medecineName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="appearIn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Treatment" inverseName="contain" inverseEntity="Treatment" syncable="YES"/>
     </entity>
@@ -86,7 +87,7 @@
         <element name="Appointment" positionX="144" positionY="-198" width="128" height="120"/>
         <element name="Doctor" positionX="304" positionY="11" width="128" height="195"/>
         <element name="Event" positionX="-99" positionY="189" width="128" height="105"/>
-        <element name="Medecine" positionX="-83" positionY="-243" width="128" height="75"/>
+        <element name="Medecine" positionX="-83" positionY="-243" width="128" height="90"/>
         <element name="MotorState" positionX="115" positionY="-333" width="128" height="105"/>
         <element name="Patient" positionX="-45" positionY="-45" width="128" height="165"/>
         <element name="Patientt" positionX="-99" positionY="-189" width="128" height="60"/>

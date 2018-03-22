@@ -7,25 +7,12 @@
 //
 
 import Foundation
-import CoreData
 
-class DAO {
-    var context: NSManagedObjectContext
+protocol DAO {
+    associatedtype Object
     
-    init() {
-        let CDC  = CoreDataConnection()
-        self.context = CDC.getContext()
-    }
-    
-    // =============================
-    
-    func save() throws {
-        do {
-            try context.save()
-        } catch let error {
-            throw error
-        }
-        
-    }
+    func create() throws -> Object
+    func delete(obj: Object)
+    func getAll() throws -> [Object?]
 }
 

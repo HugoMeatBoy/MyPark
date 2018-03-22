@@ -11,33 +11,38 @@ import Foundation
 import CoreData
 
 class NavigationHomeController: UINavigationController {
+    //let medecineDAO = CoreDataDAOFactory.getInstance().getExerciseDAO()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let patientDAO = CoreDataDAOFactory.getInstance().getPatientDAO()
+        
+        var patientEnregistre : Patient? = nil
+        
+        do{
+            patientEnregistre = try patientDAO.get()
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        /*
         var patientL : [Patient]?
         
         let request : NSFetchRequest<Patient> = Patient.fetchRequest()
+        */
         
-        do {
-            patientL = try CoreDataManager.context.fetch(request)
-        } catch let error as NSError {
-            ManageErrorHelper.alertError(view: self, error: error)
-        }
-        
-        if(patientL?.first != nil){
-            print(patientL?.first?.firstName as Any)
+        if(patientEnregistre != nil){
+            //--------------MEDECINE----------------
             
+            
+            //--------------------------------------
             self.performSegue(withIdentifier: "HomeSegue", sender: self)
             
         }else{
-            
-            //--------------MEDECINE----------------
-            
-            //--------------------------------------
-            
+
             self.performSegue(withIdentifier: "LoginSegue", sender: self)
         }
+ 
         
     }
     

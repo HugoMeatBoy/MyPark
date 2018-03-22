@@ -74,7 +74,7 @@ class RegistrationController: UIViewController, UITableViewDelegate {
         }
     }
     
-    func alertError(errorMsg error : String, userInfo user : String = ""){
+    /*func alertError(errorMsg error : String, userInfo user : String = ""){
         let alert = UIAlertController(title: error,
                                       message: user,
                                       preferredStyle: .alert)
@@ -83,7 +83,7 @@ class RegistrationController: UIViewController, UITableViewDelegate {
         alert.addAction(cancelAction)
         present(alert, animated: true)
     }
-    /*
+    
      func saveNewPatient(withName lastName: String){
      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
      self.alertError(errorMsg: "Could not save Patient", userInfo: "unknown reason")
