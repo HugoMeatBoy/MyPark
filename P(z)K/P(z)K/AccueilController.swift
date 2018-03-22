@@ -35,19 +35,14 @@ class AccueilController: UIViewController {
         
         if (patientL?.first != nil) {
             pati = patientL?.first
-            
-            
-            print(pati?.firstName)
-            print(pati?.lastName)
-           /* let patientFirstName = (pati?.firstName)!
+        
+            let patientFirstName = (pati?.firstName)!
             
             let patientLastName = (pati?.lastName)!
             
             let dato : String = "Bonjour " + patientFirstName + " " + patientLastName
             
              Welcome.text = dato
-            */
-            Welcome.text = "Helllo"
         }
         else{
             print ("could not fetch patient")

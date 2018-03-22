@@ -32,13 +32,7 @@ extension Patient {
         }
     }
     */
-    
 
-
-
-    
-
-    
 
 
 }

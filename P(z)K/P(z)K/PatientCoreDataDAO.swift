@@ -17,6 +17,12 @@ class PatientCoreDataDAO: CoreDataDAO, PatientDAO {
     
     func delete(obj: Patient) {
         self.context.delete(obj)
+        do{
+            try self.context.save()
+        }catch let error{
+            print(error)
+        }
+        
     }
     
     func getAll() throws -> [Patient?] {

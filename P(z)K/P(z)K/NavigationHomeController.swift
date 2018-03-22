@@ -17,25 +17,30 @@ class NavigationHomeController: UINavigationController {
         super.viewDidLoad()
         
         let patientDAO = CoreDataDAOFactory.getInstance().getPatientDAO()
-        
+       
         var patientEnregistre : Patient? = nil
         
         do{
             patientEnregistre = try patientDAO.get()
+         
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
         }
+        
         /*
         var patientL : [Patient]?
         
         let request : NSFetchRequest<Patient> = Patient.fetchRequest()
         */
         
+        
+        
         if(patientEnregistre != nil){
             //--------------MEDECINE----------------
             
             
             //--------------------------------------
+            
             self.performSegue(withIdentifier: "HomeSegue", sender: self)
             
         }else{

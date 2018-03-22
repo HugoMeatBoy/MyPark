@@ -20,6 +20,8 @@
 		606A3DB620600DBE00B9B8FC /* AgendaRdvForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */; };
 		606A3DB920600DD100B9B8FC /* AgendaMedicForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */; };
 		750CF28620646B66000B4DE3 /* CoreDataDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750CF28520646B66000B4DE3 /* CoreDataDAOFactory.swift */; };
+		750CF28E20647637000B4DE3 /* MedecineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750CF28D20647637000B4DE3 /* MedecineDAO.swift */; };
+		750CF2902064764F000B4DE3 /* MedecineCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750CF28F2064764F000B4DE3 /* MedecineCoreDataDAO.swift */; };
 		7540E1272063EFBB00CB9CC4 /* AccueilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1262063EFBB00CB9CC4 /* AccueilController.swift */; };
 		7540E1292063EFCC00CB9CC4 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1282063EFCB00CB9CC4 /* RegistrationController.swift */; };
 		7540E12D20640F4F00CB9CC4 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */; };
@@ -70,6 +72,8 @@
 		606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaRdvForm.swift; sourceTree = "<group>"; };
 		606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgendaMedicForm.swift; sourceTree = "<group>"; };
 		750CF28520646B66000B4DE3 /* CoreDataDAOFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAOFactory.swift; sourceTree = "<group>"; };
+		750CF28D20647637000B4DE3 /* MedecineDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecineDAO.swift; sourceTree = "<group>"; };
+		750CF28F2064764F000B4DE3 /* MedecineCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecineCoreDataDAO.swift; sourceTree = "<group>"; };
 		7540E1262063EFBB00CB9CC4 /* AccueilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilController.swift; sourceTree = "<group>"; };
 		7540E1282063EFCB00CB9CC4 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
@@ -206,6 +210,15 @@
 			name = Patient;
 			sourceTree = "<group>";
 		};
+		750CF28C206475EE000B4DE3 /* Medecine */ = {
+			isa = PBXGroup;
+			children = (
+				750CF28D20647637000B4DE3 /* MedecineDAO.swift */,
+				750CF28F2064764F000B4DE3 /* MedecineCoreDataDAO.swift */,
+			);
+			name = Medecine;
+			sourceTree = "<group>";
+		};
 		75BD2B282060254E00E7380F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +247,7 @@
 		75BD2B3A206036B700E7380F /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				750CF28C206475EE000B4DE3 /* Medecine */,
 				750CF28B206470E4000B4DE3 /* Patient */,
 				750CF28520646B66000B4DE3 /* CoreDataDAOFactory.swift */,
 				7540E1362064110200CB9CC4 /* CoreDataDAO.swift */,
@@ -404,11 +418,13 @@
 				9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */,
 				75BD2B402061029500E7380F /* MedecineModel.swift in Sources */,
 				75BD2B42206102EA00E7380F /* MotorStateModel.swift in Sources */,
+				750CF28E20647637000B4DE3 /* MedecineDAO.swift in Sources */,
 				75BD2B48206119D300E7380F /* DAO.swift in Sources */,
 				9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */,
 				606A3DB02060094E00B9B8FC /* RdvAlertViewController.swift in Sources */,
 				606A3DAC2060092E00B9B8FC /* JournalViewController.swift in Sources */,
 				6005231020612173004CBCD6 /* NavigationHomeController.swift in Sources */,
+				750CF2902064764F000B4DE3 /* MedecineCoreDataDAO.swift in Sources */,
 				7540E12F206410BC00CB9CC4 /* PatientDAO.swift in Sources */,
 				75BD2B332060258E00E7380F /* DoctorModel.swift in Sources */,
 				7540E1272063EFBB00CB9CC4 /* AccueilController.swift in Sources */,
