@@ -25,8 +25,11 @@ class NavigationHomeController: UINavigationController {
             ManageErrorHelper.alertError(view: self, error: error)
         }
         
-        if(patientL != nil){
+        if(patientL?.first != nil){
+            print(patientL?.first?.firstName as Any)
+            
             self.performSegue(withIdentifier: "HomeSegue", sender: self)
+            
         }else{
             
             //--------------MEDECINE----------------

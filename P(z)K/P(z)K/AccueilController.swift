@@ -33,8 +33,21 @@ class AccueilController: UIViewController {
             ManageErrorHelper.alertError(view: self, error: error)
         }
         
-        if (patientL != nil) {
+        if (patientL?.first != nil) {
             pati = patientL?.first
+            
+            
+            print(pati?.firstName)
+            print(pati?.lastName)
+           /* let patientFirstName = (pati?.firstName)!
+            
+            let patientLastName = (pati?.lastName)!
+            
+            let dato : String = "Bonjour " + patientFirstName + " " + patientLastName
+            
+             Welcome.text = dato
+            */
+            Welcome.text = "Helllo"
         }
         else{
             print ("could not fetch patient")
@@ -42,9 +55,7 @@ class AccueilController: UIViewController {
         
         
         
-        let patientFirstName = (pati?.firstName)!
-        let patientLastName = (pati?.lastName)!
-        
+      
         
         
         /* do{
@@ -55,10 +66,7 @@ class AccueilController: UIViewController {
          ManageErrorHelper.alertError(view: self, error: error)
          }*/
         
-        let dato : String = "Bonjour " + patientFirstName + " " + patientLastName
-        
-        
-        Welcome.text = dato
+       
         
         // Do any additional setup after loading the view.
     }
