@@ -105,14 +105,6 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
             cell = cellMedics
             
         }
-        
-        
-        
-    
-        
-
-      
-        
         return cell!
     }
     

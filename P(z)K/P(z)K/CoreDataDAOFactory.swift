@@ -11,6 +11,7 @@ import Foundation
 class CoreDataDAOFactory: AbstractDAOFactory {
     
     typealias PatientDAO = PatientCoreDataDAO
+    typealias MedecineDAO = MedecineCoreDataDAO
     /*typealias PractitionerDAO = CDPractitionerDAO
     typealias SpecialismDAO = CDSpecialismDAO
     */
@@ -32,10 +33,10 @@ class CoreDataDAOFactory: AbstractDAOFactory {
         return PatientCoreDataDAO()
     }
     
-  /*  func getPractitionerDAO() -> CDPractitionerDAO {
-        return CDPractitionerDAO()
+    func getMedecineDAO() -> MedecineCoreDataDAO {
+        return MedecineCoreDataDAO()
     }
-    
+    /*
     func getSpecialismDAO() -> CDSpecialismDAO {
         return CDSpecialismDAO()
     }

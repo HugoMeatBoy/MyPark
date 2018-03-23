@@ -14,6 +14,10 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
     var pickerData: [String] = [String]()
     
+    var medsName: [String] = [String]()
+    
+    var medsDoses: [String] = [String]()
+    
     @IBOutlet weak var MedicPicker: UIPickerView!
     
     @IBOutlet weak var DosagePicker: UIPickerView!
@@ -25,7 +29,10 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     @IBOutlet weak var MedicValidation: UIButton!
     
     @IBAction func MedicValidate(_ sender: Any) {
+        
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,39 +40,25 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         MedicPicker.delegate = self
         MedicPicker.dataSource = self
         
+        DosagePicker.delegate = self
+        DosagePicker.dataSource = self
         
-        //RECUP MEDICINES =========================
-        var med : [Medecine]?
-        let request : NSFetchRequest<Medecine> = Medecine.fetchRequest()
+        let medecineDAO = CoreDataDAOFactory.getInstance().getMedecineDAO()
         
-        do {
-            med = try CoreDataManager.context.fetch(request)
-        } catch let error as NSError {
+        var medecines : [Medecine] = [Medecine]()
+
+        do{
+            medecines = try medecineDAO.getAll() as! [Medecine]
+
+            for _ in (medecines){
+                medsName.append(medecines.first?.medecineName as! String)
+                medsDoses.append(medecines.first?.medecineDose as! String)
+                medecines.removeFirst()
+            }
+            
+        }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
         }
-        
-        print(med)
-        print(med!.first)
-        
-        var medcount : Int = (med?.count)!
-        
-        var medname : [String]?
-        
-      /*  for i in med! {
-            var test: Medecine
-            var name : String!
-            
-            test = med![i]
-            
-            name = test.name
-               // .medecineName
-        }
-        */
-        //========================================
-        
-        
-        // Input data into the Array:
-        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,12 +74,20 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        if pickerView == self.MedicPicker {
+            return medsName.count
+        }else{
+            return medsDoses.count
+        }
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        if pickerView == self.MedicPicker {
+            return medsName[row]
+        }else{
+            return medsDoses[row]
+        }
     }
 
 }

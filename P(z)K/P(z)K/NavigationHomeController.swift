@@ -36,19 +36,35 @@ class NavigationHomeController: UINavigationController {
         
         
         if(patientEnregistre != nil){
-            //--------------MEDECINE----------------
-            
-            
-            //--------------------------------------
-            
+          
             self.performSegue(withIdentifier: "HomeSegue", sender: self)
             
         }else{
-
+            //--------------MEDECINE----------------
+            self.loadMedecines()
+            
+            //--------------------------------------
+            
             self.performSegue(withIdentifier: "LoginSegue", sender: self)
         }
  
         
+    }
+    
+    func loadMedecines(){
+        let modopar = Medecine(context: CoreDataManager.context)
+        modopar.medecineName = "MODOPAR"
+        modopar.medecineDose = "1,2,3"
+        
+        let doliprane = Medecine(context: CoreDataManager.context)
+        doliprane.medecineName = "DOLIPRANE"
+        doliprane.medecineDose = "200,500"
+        
+        do{
+            try CoreDataManager.context.save()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
     }
     
 }
