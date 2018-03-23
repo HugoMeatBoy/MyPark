@@ -21,8 +21,7 @@ class PatientCoreDataDAO: CoreDataDAO, PatientDAO {
             try self.context.save()
         }catch let error{
             print(error)
-        }
-        
+        }        
     }
     
     func getAll() throws -> [Patient?] {

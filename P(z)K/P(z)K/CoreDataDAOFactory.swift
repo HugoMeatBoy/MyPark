@@ -9,12 +9,13 @@
 import Foundation
 
 class CoreDataDAOFactory: AbstractDAOFactory {
+
     
     typealias PatientDAO = PatientCoreDataDAO
     typealias MedecineDAO = MedecineCoreDataDAO
-    /*typealias PractitionerDAO = CDPractitionerDAO
-    typealias SpecialismDAO = CDSpecialismDAO
-    */
+    typealias DoctorDAO = DoctorCoreDataDAO
+    typealias AppointmentDAO = AppointmentCoreDataDAO
+    
     private static var instance: CoreDataDAOFactory?
     
     
@@ -36,15 +37,15 @@ class CoreDataDAOFactory: AbstractDAOFactory {
     func getMedecineDAO() -> MedecineCoreDataDAO {
         return MedecineCoreDataDAO()
     }
+   
+    func getDoctorDAO() -> DoctorCoreDataDAO {
+        return DoctorCoreDataDAO()
+    }
+    
+    func getAppointmentDAO() -> AppointmentCoreDataDAO {
+        return AppointmentCoreDataDAO()
+    }
     /*
-    func getSpecialismDAO() -> CDSpecialismDAO {
-        return CDSpecialismDAO()
-    }
-    
-    func getAppointmentDAO() -> CDAppointmentDAO {
-        return CDAppointmentDAO()
-    }
-    
     func getExerciseDAO() -> CDExerciseDAO {
         return CDExerciseDAO()
     }
