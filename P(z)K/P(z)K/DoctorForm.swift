@@ -22,7 +22,7 @@ class DoctorForm : UIViewController, UIPickerViewDelegate{
     
     @IBOutlet weak var NewDoctorNum: UITextField!
     
-    @IBOutlet weak var NewDoctorAddress: UITextField!
+  //  @IBOutlet weak var NewDoctorAddress: UITextField! 
     
     
     override func viewDidLoad() {
