@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import CoreData
+import UserNotifications
 
 class RegistrationController: UIViewController, UITableViewDelegate {
     
@@ -17,9 +18,23 @@ class RegistrationController: UIViewController, UITableViewDelegate {
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let center = UNUserNotificationCenter.current()
+        let options: UNAuthorizationOptions = [.alert, .sound]
+      
+        center.getNotificationSettings { (settings) in
+                if settings.authorizationStatus != .authorized {
+                    center.requestAuthorization(options: options) {
+                        (granted, error) in
+                        if !granted {
+                            print("Something went wrong")
+                        }
+                    }
+                }
+        }
         
     }
     

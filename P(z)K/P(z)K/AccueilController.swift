@@ -9,10 +9,15 @@
 import UIKit
 import CoreData
 import Foundation
+import UserNotifications
 
 class AccueilController: UIViewController {
     
     var data: String?
+    
+    let center = UNUserNotificationCenter.current()
+    
+    let options: UNAuthorizationOptions = [.alert, .sound]
     
     @IBOutlet weak var Welcome: UILabel!
     
@@ -46,18 +51,43 @@ class AccueilController: UIViewController {
             print ("could not fetch patient")
         }
         
+        let content = UNMutableNotificationContent()
+        content.title = "Veuillez indiquer votre état actuel"
+        content.body = "RDV dans 2 jours - ON/OFF/DYS"
+        content.sound = UNNotificationSound.default()
         
+        
+        
+        let date = Date(timeIntervalSinceNow: 10)
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
+                                                    repeats: false)
+        
+        let requestTest = UNNotificationRequest(identifier: "stateNotification", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(requestTest, withCompletionHandler: nil)
+        
+   
         
       
-        
-        
-        /* do{
-         let patientL : Patient = try fetchPatient()!
-         patientFirstName = (patientL.firstName)!
-         patientLastName = (patientL.lastName)!
-         } catch let error as NSError {
-         ManageErrorHelper.alertError(view: self, error: error)
-         }*/
+        /*   let date = Date(timeIntervalSinceNow: 3600)
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
+         
+         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
+         repeats: false)
+
+         
+            SCHEDULING
+         
+         let identifier = "UYLLocalNotification"
+         let request = UNNotificationRequest(identifier: identifier,
+         content: content, trigger: trigger)
+         center.add(request, withCompletionHandler: { (error) in
+         if let error = error {
+         // Something went wrong
+         }
+         })
+         */
         
        
         
@@ -69,6 +99,11 @@ class AccueilController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+   
+    
+
+ 
     
     @IBOutlet weak var but: UIButton!
     

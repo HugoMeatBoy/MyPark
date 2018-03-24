@@ -602,7 +602,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wcb-wM-UMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500" y="1158"/>
+            <point key="canvasLocation" x="697" y="618"/>
         </scene>
         <!--Mon compte-->
         <scene sceneID="jCs-tX-4AF">
@@ -1425,9 +1425,6 @@ avec
                                 <state key="normal" title="OK">
                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="2El-YY-QnC" kind="show" id="e3U-xH-fwY"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1450,7 +1447,7 @@ avec
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xjx-cP-kJf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2734" y="1170"/>
+            <point key="canvasLocation" x="2569" y="1170"/>
         </scene>
         <!--Medic Alert View Controller-->
         <scene sceneID="JcQ-es-PZJ">
@@ -1471,9 +1468,6 @@ avec
                                 <state key="normal" title="Valider prise">
                                     <color key="titleColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="2El-YY-QnC" kind="show" id="Emn-sO-RVF"/>
-                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DO5-sS-9Zo">
                                 <rect key="frame" x="47" y="162" width="293" height="321"/>
@@ -1560,16 +1554,17 @@ Vous avez un traitement
             </objects>
             <point key="canvasLocation" x="1807" y="-883"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Notification Controller-->
         <scene sceneID="IgE-tV-4uv">
             <objects>
-                <navigationController id="c26-q5-NRf" sceneMemberID="viewController">
+                <navigationController id="c26-q5-NRf" customClass="NavigationNotificationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3n7-4y-UBo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2El-YY-QnC" kind="relationship" relationship="rootViewController" id="DJB-qt-haV"/>
+                        <segue destination="6hA-2o-qwo" kind="showDetail" identifier="StateSegue" action="showViewController:sender:" id="od3-4e-Buc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExA-ZD-cCT" userLabel="First Responder" sceneMemberID="firstResponder"/>
