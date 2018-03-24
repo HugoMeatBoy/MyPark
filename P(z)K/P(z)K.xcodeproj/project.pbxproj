@@ -41,6 +41,7 @@
 		75BD2B48206119D300E7380F /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B47206119D300E7380F /* DAO.swift */; };
 		75BD2B4A20611E5200E7380F /* ManageErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B4920611E5200E7380F /* ManageErrorHelper.swift */; };
 		75E4B23520650A2600E53C7B /* TableViewCellDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4B23420650A2600E53C7B /* TableViewCellDoctor.swift */; };
+		75E4B2372065CA0300E53C7B /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4B2362065CA0300E53C7B /* StateViewController.swift */; };
 		9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87212046944100C74F3C /* AppDelegate.swift */; };
 		9CAD87272046944100C74F3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD87252046944100C74F3C /* Main.storyboard */; };
 		9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87282046944100C74F3C /* P_z_K.xcdatamodeld */; };
@@ -102,6 +103,7 @@
 		75BD2B47206119D300E7380F /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		75BD2B4920611E5200E7380F /* ManageErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageErrorHelper.swift; sourceTree = "<group>"; };
 		75E4B23420650A2600E53C7B /* TableViewCellDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellDoctor.swift; sourceTree = "<group>"; };
+		75E4B2362065CA0300E53C7B /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
 		9CAD871E2046944000C74F3C /* P(z)K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P(z)K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD87212046944100C74F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CAD87262046944100C74F3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				606A3DAB2060092E00B9B8FC /* JournalViewController.swift */,
+				75E4B2362065CA0300E53C7B /* StateViewController.swift */,
 			);
 			name = Journal;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				75BD2B4A20611E5200E7380F /* ManageErrorHelper.swift in Sources */,
 				606A3DA02060084600B9B8FC /* AgendaRdvTableCell.swift in Sources */,
 				75E4B23520650A2600E53C7B /* TableViewCellDoctor.swift in Sources */,
+				75E4B2372065CA0300E53C7B /* StateViewController.swift in Sources */,
 				7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */,
 				750CF28620646B66000B4DE3 /* CoreDataDAOFactory.swift in Sources */,
 				75BD2B352060258E00E7380F /* EventModel.swift in Sources */,
