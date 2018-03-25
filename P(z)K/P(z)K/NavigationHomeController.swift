@@ -27,13 +27,6 @@ class NavigationHomeController: UINavigationController {
             ManageErrorHelper.alertError(view: self, error: error)
         }
         
-        /*
-        var patientL : [Patient]?
-        
-        let request : NSFetchRequest<Patient> = Patient.fetchRequest()
-        */
-        
-        
         
         if(patientEnregistre != nil){
           

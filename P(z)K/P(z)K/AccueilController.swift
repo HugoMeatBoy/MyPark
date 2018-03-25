@@ -15,6 +15,8 @@ class AccueilController: UIViewController {
     
     var data: String?
     
+    var actualStateFilled : Bool?
+    
     let center = UNUserNotificationCenter.current()
     
     let options: UNAuthorizationOptions = [.alert, .sound]
@@ -51,13 +53,15 @@ class AccueilController: UIViewController {
             print ("could not fetch patient")
         }
         
+        
+        //SI L'APP EST INACTIVE > Notification iOS
         let content = UNMutableNotificationContent()
         content.title = "Veuillez indiquer votre état actuel"
         content.body = "RDV dans 2 jours - ON/OFF/DYS"
         content.sound = UNNotificationSound.default()
         
         
-        
+      
         let date = Date(timeIntervalSinceNow: 10)
         let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
         
@@ -68,30 +72,26 @@ class AccueilController: UIViewController {
         UNUserNotificationCenter.current().add(requestTest, withCompletionHandler: nil)
         
    
-        
+        //SI L'APP EST ACTIVE - ASYNCHRONE >>>> Decomment to tests
       
-        /*   let date = Date(timeIntervalSinceNow: 3600)
-        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
-         
-         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
-         repeats: false)
-
-         
-            SCHEDULING
-         
-         let identifier = "UYLLocalNotification"
-         let request = UNNotificationRequest(identifier: identifier,
-         content: content, trigger: trigger)
-         center.add(request, withCompletionHandler: { (error) in
-         if let error = error {
-         // Something went wrong
-         }
-         })
-         */
+    /*    let group = DispatchGroup()
+        group.enter()
         
+        DispatchQueue.main.async {
+            if(self.actualStateFilled == nil || self.actualStateFilled == false){
+                sleep(10)
+                self.alert(message: "Veuillez indiquer votre état actuel", title: "Suivi pré RDV", type: "suivi")
+            }
+            group.leave()
+        }
+        
+        // does not wait. But the code in notify() gets run
+        // after enter() and leave() calls are balanced
        
-        
-        // Do any additional setup after loading the view.
+        group.notify(queue: .main) {
+            
+        }
+ */
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,7 +101,9 @@ class AccueilController: UIViewController {
     
     
    
-    
+    func selectState(){
+       
+    }
 
  
     

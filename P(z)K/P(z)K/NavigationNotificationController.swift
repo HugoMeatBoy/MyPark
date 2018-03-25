@@ -20,7 +20,7 @@ class NavigationNotificationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    /*    let content = UNMutableNotificationContent()
+       let content = UNMutableNotificationContent()
         content.title = "Veuillez indiquer votre état actuel"
         content.body = "RDV dans 2 jours - ON/OFF/DYS"
         content.sound = UNNotificationSound.default()
@@ -36,12 +36,7 @@ class NavigationNotificationController: UINavigationController {
         let requestTest = UNNotificationRequest(identifier: "stateNotification", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(requestTest, withCompletionHandler: nil)
         
-        self.doSegue()*/
+      
     }
     
-    func doSegue(){
-        sleep(10)
-        
-        self.performSegue(withIdentifier: "StateSegue", sender: self)
-    }
 }
