@@ -21,7 +21,10 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     @IBOutlet weak var ActivityTypePicker: UIPickerView!
     
-    @IBOutlet weak var NewActivityType: UITextField!
+
+    @IBAction func AddActivityType(_ sender: Any) {
+    }
+    
     
     
     @IBOutlet weak var DurationH: UITextField!
@@ -61,23 +64,11 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }
         
 
-        if(NewActivityType.text != nil){
-            newActivityTypevar.activityTypeName = NewActivityType.text
-            do {
-                try
-                    activityTypeDAO.save()
-                }
-                catch let error as NSError{
-                    ManageErrorHelper.alertError(view: self, error: error)
-            }
-        }
         
-        if((NewActivityType.text != nil || ActivityTypePicker.selectedRow(inComponent: 0) != nil) && DurationH.text != nil && DurationMin.text != nil){
-            if (NewActivityType.text != nil){
+        if(ActivityTypePicker.selectedRow(inComponent: 0) != nil && DurationH.text != nil && DurationMin.text != nil){
+
                    // newActivity.activityName = ActivityTypePicker.selectedRow(inComponent: 0)  A FAIRE
-            }
-            else{
-                newActivity.activityName = NewActivityType.text
+
             }
             newActivity.activityDurationH = DurationH.text
             newActivity.activityDurationMin = DurationMin.text
@@ -90,7 +81,7 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 ManageErrorHelper.alertError(view: self, error: error)
             }
             
-        }
+
         
         
         

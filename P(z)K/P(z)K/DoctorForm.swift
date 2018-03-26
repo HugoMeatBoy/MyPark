@@ -18,11 +18,13 @@ class DoctorForm : UIViewController, UIPickerViewDelegate{
     
     @IBOutlet weak var SpecialityPicker: UIPickerView!
     
-    @IBOutlet weak var NewSpeciality: UITextField!
-    
     @IBOutlet weak var NewDoctorNum: UITextField!
     
     @IBOutlet weak var NewDoctorAddress: UITextField!
+    
+    
+    @IBAction func NewSpecialityButton(_ sender: Any) {
+    }
     
     
     override func viewDidLoad() {
