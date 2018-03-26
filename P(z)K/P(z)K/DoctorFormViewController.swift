@@ -19,6 +19,7 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
     var specialites: [Speciality] = [Speciality]()
     var specialitesNameTab: [String] = [String]()
     
+    @IBOutlet weak var NewDoctorName: UITextField!
     
     let doctorDAO = CoreDataDAOFactory.getInstance().getDoctorDAO()
     let specialiteDAO = CoreDataDAOFactory.getInstance().getSpecialityDAO()
@@ -30,9 +31,7 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
         SpecialitePicker.delegate = self
         
         do{
-            
             specialites = try specialiteDAO.getAll() as! [Speciality]
-            
             
             for _ in (specialites){
             specialitesNameTab.append(specialites.first?.specialityName as! String)
@@ -45,7 +44,6 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,11 +65,26 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
             return specialitesNameTab[row]
         }else{
             return nil
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        var i = SpecialitePicker.selectedRow(inComponent: 0)
+        
+        if (NewDoctorName.text != nil && specialitesNameTab[i] != nil){
+            if let destination = segue.destination as? DoctorDataForm {
+                
+                destination.doctorName = NewDoctorName.text
+                destination.doctorSpecialite = specialitesNameTab[i]
+            }
             
         }
-        
-        
+            
+            
     }
+    
+    
     
 }
 

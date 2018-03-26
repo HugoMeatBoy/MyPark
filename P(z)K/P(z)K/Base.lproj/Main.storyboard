@@ -748,7 +748,7 @@
                         <viewControllerLayoutGuide type="top" id="Nmg-sh-u41"/>
                         <viewControllerLayoutGuide type="bottom" id="sEH-x5-ODE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pzq-hE-dSq">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="CompteUser" id="Pzq-hE-dSq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -816,7 +816,7 @@
                                 <state key="normal" title="Ajouter un médecin"/>
                                 <connections>
                                     <action selector="AddDoctor:" destination="DoD-i4-CfV" eventType="touchUpInside" id="bdX-JQ-92v"/>
-                                    <segue destination="hfw-3R-4Js" kind="show" id="A0X-YA-2G6"/>
+                                    <segue destination="hfw-3R-4Js" kind="show" id="U56-ms-Eti"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -835,12 +835,12 @@
         <!--Mon compte-->
         <scene sceneID="1VA-Mm-phR">
             <objects>
-                <viewController title="Mon compte" id="hfw-3R-4Js" customClass="DoctorFormViewController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompteUserAddDoc" title="Mon compte" id="hfw-3R-4Js" customClass="DoctorFormViewController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sss-uJ-xRs"/>
                         <viewControllerLayoutGuide type="bottom" id="h9l-zd-PAU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KxG-d5-oSA">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="CompteUserDoc" id="KxG-d5-oSA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -909,7 +909,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90270847080000005" green="0.87982642649999998" blue="0.79202455279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Qg9-dx-qUv"/>
                     <connections>
+                        <outlet property="NewDoctorName" destination="EGK-Rv-wG0" id="ttT-3R-9fI"/>
                         <outlet property="SpecialitePicker" destination="4vm-sE-0wQ" id="0O3-uq-S29"/>
                     </connections>
                 </viewController>
@@ -962,7 +964,6 @@
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="W66-BF-86H"/>
                                     <action selector="ValidateNewSpeciality:" destination="1B5-L0-Bmf" eventType="touchUpInside" id="JaU-I7-ed0"/>
-                                    <segue destination="hfw-3R-4Js" kind="show" id="MAr-o4-v82"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -979,7 +980,7 @@
         <!--Doctor Data Form-->
         <scene sceneID="XcD-oS-yCC">
             <objects>
-                <viewController id="yqn-pn-20l" customClass="DoctorDataForm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoctorDataForm" id="yqn-pn-20l" customClass="DoctorDataForm" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZAa-Dd-0w5"/>
                         <viewControllerLayoutGuide type="bottom" id="VHC-5Z-A5g"/>
@@ -1038,7 +1039,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR1-lK-FS3">
-                                <rect key="frame" x="108" y="571" width="65" height="36"/>
+                                <rect key="frame" x="155" y="575" width="65" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.42424241750000002" green="0.41453153879999999" blue="0.37415854310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -1047,15 +1048,16 @@
                                 </state>
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="6ar-CA-HSu"/>
+                                    <segue destination="DoD-i4-CfV" kind="show" id="sZ5-5L-Y6W"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90110415219999995" green="0.87762016060000003" blue="0.79220849280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="NewDoctorAddress" destination="YO5-df-pHp" id="cpi-8G-Bgd"/>
-                        <outlet property="NewDoctorNum" destination="BlP-Xi-gdI" id="zq0-vK-CVN"/>
-                        <outlet property="TempsTrajet" destination="2ss-u6-eb7" id="pGs-ea-xMr"/>
+                        <outlet property="doctorAdress" destination="YO5-df-pHp" id="ZIQ-eI-wAV"/>
+                        <outlet property="doctorNum" destination="BlP-Xi-gdI" id="pqy-EA-oNA"/>
+                        <outlet property="travelDuration" destination="2ss-u6-eb7" id="xR3-ja-DxL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkl-8c-stw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1813,7 +1815,7 @@ Vous avez un traitement
     <inferredMetricsTieBreakers>
         <segue reference="Qxj-pK-b3u"/>
         <segue reference="cZQ-41-9UV"/>
-        <segue reference="A0X-YA-2G6"/>
+        <segue reference="sZ5-5L-Y6W"/>
         <segue reference="DJB-qt-haV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.29108687108044795" green="0.16781314518775173" blue="0.064231447651561649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

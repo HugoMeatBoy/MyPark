@@ -11,11 +11,26 @@ import UIKit
 import CoreData
 
 class DoctorDataForm : UIViewController {
-
-@IBOutlet weak var NewDoctorNum: UITextField!
-
-@IBOutlet weak var TempsTrajet: UITextField!
-
-@IBOutlet weak var NewDoctorAddress: UITextField!
-
+    
+    var doctorName: String?
+    var doctorSpecialite: String?
+    
+    @IBOutlet weak var doctorAdress: UITextField!
+    
+    @IBOutlet weak var travelDuration: UITextField!
+    
+    @IBOutlet weak var doctorNum: UITextField!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 }

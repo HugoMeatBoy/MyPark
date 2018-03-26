@@ -36,18 +36,9 @@ class AddSpecialityViewController: UIViewController {
             } catch let error as NSError{
                 ManageErrorHelper.alertError(view: self, error: error)
             }
-        }else{
+            }else{
                 print("MABITE")
             }
-            /*
-            newSpecialityVar.specialityName = newSpeciality.text
-         
-            do{
-                try specialityDAO.save()
-            } catch let error as NSError{
-                ManageErrorHelper.alertError(view: self, error: error)
-            }
- */
         }
     
     
