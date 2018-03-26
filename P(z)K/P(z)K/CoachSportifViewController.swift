@@ -12,5 +12,6 @@ import CoreData
 
 class CoachSportifViewController: UIViewController{
     
-
+    @IBOutlet weak var AddActivity: UIButton!
+    
 }

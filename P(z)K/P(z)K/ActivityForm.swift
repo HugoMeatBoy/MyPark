@@ -65,9 +65,10 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
 
         
-        if(ActivityTypePicker.selectedRow(inComponent: 0) != nil && DurationH.text != nil && DurationMin.text != nil){
+        if(activityTypeNameTab[ActivityTypePicker.selectedRow(inComponent: 0)] != nil && DurationH.text != nil && DurationMin.text != nil){
 
-                   // newActivity.activityName = ActivityTypePicker.selectedRow(inComponent: 0)  A FAIRE
+            let i = ActivityTypePicker.selectedRow(inComponent: 0)
+            newActivity.activityName = activityTypeNameTab[i]
 
             }
             newActivity.activityDurationH = DurationH.text

@@ -50,6 +50,7 @@
 		75BD2B4A20611E5200E7380F /* ManageErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B4920611E5200E7380F /* ManageErrorHelper.swift */; };
 		75E4B23520650A2600E53C7B /* TableViewCellDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4B23420650A2600E53C7B /* TableViewCellDoctor.swift */; };
 		75E4B2372065CA0300E53C7B /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4B2362065CA0300E53C7B /* StateViewController.swift */; };
+		75F37B7C206976E90039FE11 /* TableViewCellActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F37B7B206976E90039FE11 /* TableViewCellActivity.swift */; };
 		75F8560F20666C94000021A0 /* NavigationNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8560E20666C94000021A0 /* NavigationNotificationController.swift */; };
 		9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87212046944100C74F3C /* AppDelegate.swift */; };
 		9CAD87272046944100C74F3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD87252046944100C74F3C /* Main.storyboard */; };
@@ -121,6 +122,7 @@
 		75BD2B4920611E5200E7380F /* ManageErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageErrorHelper.swift; sourceTree = "<group>"; };
 		75E4B23420650A2600E53C7B /* TableViewCellDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellDoctor.swift; sourceTree = "<group>"; };
 		75E4B2362065CA0300E53C7B /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
+		75F37B7B206976E90039FE11 /* TableViewCellActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellActivity.swift; sourceTree = "<group>"; };
 		75F8560E20666C94000021A0 /* NavigationNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationNotificationController.swift; sourceTree = "<group>"; };
 		9CAD871E2046944000C74F3C /* P(z)K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P(z)K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CAD87212046944100C74F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				606A3DA92060091F00B9B8FC /* CoachSportifViewController.swift */,
 				9CFC2A5C2064EC220007575A /* ActivityForm.swift */,
 				75BCCE332069502B005B02B3 /* AddActivityTypeViewController.swift */,
+				75F37B7B206976E90039FE11 /* TableViewCellActivity.swift */,
 			);
 			name = "Coach Sportif";
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75F8560F20666C94000021A0 /* NavigationNotificationController.swift in Sources */,
+				75F37B7C206976E90039FE11 /* TableViewCellActivity.swift in Sources */,
 				75BD2B46206112B700E7380F /* PatientCoreDataDAO.swift in Sources */,
 				75BD2B312060258E00E7380F /* Address.swift in Sources */,
 				606A3DB22060095F00B9B8FC /* MedicAlertViewController.swift in Sources */,

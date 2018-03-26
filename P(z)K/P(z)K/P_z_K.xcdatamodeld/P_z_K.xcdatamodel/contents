@@ -13,14 +13,12 @@
     </entity>
     <entity name="Appointment" representedClassName="Appointment" syncable="YES" codeGenerationType="class">
         <attribute name="appointmentDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="doctorFirstName" attributeType="String" syncable="YES"/>
         <attribute name="doctorLastName" attributeType="String" syncable="YES"/>
         <relationship name="isGivenBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Doctor" inverseName="appearInAppointment" inverseEntity="Doctor" syncable="YES"/>
         <relationship name="isGivenTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="haveAppointment" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <entity name="Doctor" representedClassName="Doctor" syncable="YES" codeGenerationType="class">
         <attribute name="doctorAddress" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="doctorFirstName" attributeType="String" syncable="YES"/>
         <attribute name="doctorLastName" attributeType="String" syncable="YES"/>
         <attribute name="doctorNumTel" attributeType="String" syncable="YES"/>
         <relationship name="appearInAppointment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appointment" inverseName="isGivenBy" inverseEntity="Appointment" syncable="YES"/>
@@ -81,8 +79,8 @@
     <elements>
         <element name="Activity" positionX="106" positionY="198" width="128" height="120"/>
         <element name="ActivityType" positionX="79" positionY="387" width="128" height="75"/>
-        <element name="Appointment" positionX="144" positionY="-198" width="128" height="120"/>
-        <element name="Doctor" positionX="304" positionY="11" width="128" height="150"/>
+        <element name="Appointment" positionX="144" positionY="-198" width="128" height="105"/>
+        <element name="Doctor" positionX="304" positionY="11" width="128" height="135"/>
         <element name="Event" positionX="-99" positionY="189" width="128" height="105"/>
         <element name="Medecine" positionX="-83" positionY="-243" width="128" height="90"/>
         <element name="MotorState" positionX="115" positionY="-333" width="128" height="105"/>

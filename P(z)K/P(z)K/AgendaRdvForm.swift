@@ -13,8 +13,9 @@ import CoreData
 class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     
-    
+    var doctorNameTab: [String] = [String]()
     var pickerData: [String] = [String]()
+    var newAppointment: Appointment!
     
     @IBOutlet weak var DocteurPicker: UIPickerView!
     
@@ -23,19 +24,56 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var RdvValidation: UIButton!
     
    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DocteurPicker.delegate = self
         DocteurPicker.dataSource = self
+
         
         // Input data into the Array:
         pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
         
         let doctorDAO = CoreDataDAOFactory.getInstance().getDoctorDAO()
+        let appointmentDAO = CoreDataDAOFactory.getInstance().getAppointmentDAO()
         
+        var doctors : [Doctor] = [Doctor]()
+        
+        do{
+            doctors = try doctorDAO.getAll() as! [Doctor]
+            
+            for _ in (doctors){
+                doctorNameTab.append(doctors.first?.doctorLastName as! String)
+
+                doctors.removeFirst()
+            }
+            
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        
+        //AFFECTER appointment.doctorLastName, appointment.doctorFirstName, appointmentDate
+/*
+        let i = DocteurPicker.selectedRow(inComponent: 0)
+        newAppointment.doctorLastName = doctorNameTab[i]
+            
+
+         
+        newAppointment.appointmentDate = ICI DATE
+
+        
+        do {
+            try
+                appointmentDAO.save()
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        //=======================================
+ */
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,11 +88,11 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return doctorNameTab.count
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return doctorNameTab[row]
     }
 }
