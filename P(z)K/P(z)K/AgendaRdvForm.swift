@@ -16,6 +16,7 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     var doctorNameTab: [String] = [String]()
     var pickerData: [String] = [String]()
     var newAppointment: Appointment!
+   
     
     @IBOutlet weak var DocteurPicker: UIPickerView!
     
@@ -23,21 +24,24 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     @IBOutlet weak var RdvValidation: UIButton!
     
-   
+    @IBAction func ValidateRdv(_ sender: Any) {
+        var i = DocteurPicker.selectedRow(inComponent: 0)
+        print(i)
+        
+    }
+    
+    
+    let doctorDAO = CoreDataDAOFactory.getInstance().getDoctorDAO()
+    let appointmentDAO = CoreDataDAOFactory.getInstance().getAppointmentDAO()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         DocteurPicker.delegate = self
         DocteurPicker.dataSource = self
 
-        
-        // Input data into the Array:
-        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
-        
-        let doctorDAO = CoreDataDAOFactory.getInstance().getDoctorDAO()
-        let appointmentDAO = CoreDataDAOFactory.getInstance().getAppointmentDAO()
-        
+
         var doctors : [Doctor] = [Doctor]()
         
         do{
@@ -45,10 +49,10 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             
             for _ in (doctors){
                 doctorNameTab.append(doctors.first?.doctorLastName as! String)
-
                 doctors.removeFirst()
             }
             
+            print(doctorNameTab)
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
         }

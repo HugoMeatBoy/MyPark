@@ -15,12 +15,37 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
 
     @IBOutlet weak var SpecialitePicker: UIPickerView!
     
+    var doctors : [Doctor] = [Doctor]()
+    var specialites: [Speciality] = [Speciality]()
+    var specialitesNameTab: [String] = [String]()
+    
+    
+    let doctorDAO = CoreDataDAOFactory.getInstance().getDoctorDAO()
+    let specialiteDAO = CoreDataDAOFactory.getInstance().getSpecialityDAO()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         SpecialitePicker.dataSource = self
         SpecialitePicker.delegate = self
+        
+        do{
+            
+            specialites = try specialiteDAO.getAll() as! [Speciality]
+            
+            
+            for _ in (specialites){
+            specialitesNameTab.append(specialites.first?.specialityName as! String)
+                
+                specialites.removeFirst()
+            }
+            
+            print(specialitesNameTab)
+            
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,12 +58,18 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 2
+        return specialitesNameTab.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return nil
+        if(specialitesNameTab != nil){
+            return specialitesNameTab[row]
+        }else{
+            return nil
+            
+        }
+        
         
     }
     

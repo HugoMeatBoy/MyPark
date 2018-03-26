@@ -17,8 +17,6 @@ class RegistrationController: UIViewController, UITableViewDelegate {
     var patient : String = "";
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -116,6 +114,8 @@ class RegistrationController: UIViewController, UITableViewDelegate {
      }
      }
      */
+    
+    
     func savePatient(firstName : String, lastName : String){
         let patientt = Patient(context: CoreDataManager.context)
         patientt.lastName = lastName

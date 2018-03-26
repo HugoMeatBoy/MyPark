@@ -12,7 +12,7 @@ import Foundation
 
 class AddSpecialityViewController: UIViewController {
 
-    var newSpecialityVar : Speciality!
+    let newSpecialityVar = Speciality(context: CoreDataManager.context)
     let specialityDAO = CoreDataDAOFactory.getInstance().getSpecialityDAO()
     
     @IBOutlet weak var newSpeciality: UITextField!
@@ -22,21 +22,37 @@ class AddSpecialityViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        if(newSpeciality.text != nil){
-            newSpecialityVar.specialityName = newSpeciality.text
-        }
+     
 
     }
     
     @IBAction func ValidateNewSpeciality(_ sender: Any) {
-        
-        do{
-            try specialityDAO.save()
-        } catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
+        if(newSpeciality.text != nil){
+           
+            newSpecialityVar.specialityName = newSpeciality.text
+            
+            do{
+                try specialityDAO.save()
+            } catch let error as NSError{
+                ManageErrorHelper.alertError(view: self, error: error)
+            }
+        }else{
+                print("MABITE")
+            }
+            /*
+            newSpecialityVar.specialityName = newSpeciality.text
+         
+            do{
+                try specialityDAO.save()
+            } catch let error as NSError{
+                ManageErrorHelper.alertError(view: self, error: error)
+            }
+ */
         }
+    
+    
         
-    }
+    
     
     
 
