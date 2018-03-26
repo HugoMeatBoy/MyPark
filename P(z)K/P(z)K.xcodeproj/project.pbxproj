@@ -34,6 +34,7 @@
 		75BCCE2D20694994005B02B3 /* SpecialityCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2C20694994005B02B3 /* SpecialityCoreDataDAO.swift */; };
 		75BCCE3220694F0A005B02B3 /* AddSpecialityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE3120694F0A005B02B3 /* AddSpecialityViewController.swift */; };
 		75BCCE342069502B005B02B3 /* AddActivityTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE332069502B005B02B3 /* AddActivityTypeViewController.swift */; };
+		75BCCE36206961A2005B02B3 /* AgendaMedicDoseForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE35206961A2005B02B3 /* AgendaMedicDoseForm.swift */; };
 		75BD2B312060258E00E7380F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2C2060258D00E7380F /* Address.swift */; };
 		75BD2B322060258E00E7380F /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2D2060258E00E7380F /* ActivityModel.swift */; };
 		75BD2B332060258E00E7380F /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2E2060258E00E7380F /* DoctorModel.swift */; };
@@ -104,6 +105,7 @@
 		75BCCE2C20694994005B02B3 /* SpecialityCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityCoreDataDAO.swift; sourceTree = "<group>"; };
 		75BCCE3120694F0A005B02B3 /* AddSpecialityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpecialityViewController.swift; sourceTree = "<group>"; };
 		75BCCE332069502B005B02B3 /* AddActivityTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityTypeViewController.swift; sourceTree = "<group>"; };
+		75BCCE35206961A2005B02B3 /* AgendaMedicDoseForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaMedicDoseForm.swift; sourceTree = "<group>"; };
 		75BD2B2C2060258D00E7380F /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = Models/Address.swift; sourceTree = "<group>"; };
 		75BD2B2D2060258E00E7380F /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = Models/ActivityModel.swift; sourceTree = "<group>"; };
 		75BD2B2E2060258E00E7380F /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorModel.swift; path = Models/DoctorModel.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			children = (
 				606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */,
 				606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */,
+				75BCCE35206961A2005B02B3 /* AgendaMedicDoseForm.swift */,
 			);
 			name = AgendaForms;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */,
 				7540E1292063EFCC00CB9CC4 /* RegistrationController.swift in Sources */,
 				9CFC2A592064E5E10007575A /* ActivityDAO.swift in Sources */,
+				75BCCE36206961A2005B02B3 /* AgendaMedicDoseForm.swift in Sources */,
 				9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */,
 				75BD2B402061029500E7380F /* MedecineModel.swift in Sources */,
 				75BD2B42206102EA00E7380F /* MotorStateModel.swift in Sources */,

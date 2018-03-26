@@ -15,8 +15,8 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     var pickerData : [String] = [String]()
     var activityTypeNameTab: [String] = [String]()
-    var newActivityTypevar : ActivityType
-    var newActivity : Activity
+    var newActivityTypevar : ActivityType!
+    var newActivity : Activity!
     
     
     @IBOutlet weak var ActivityTypePicker: UIPickerView!

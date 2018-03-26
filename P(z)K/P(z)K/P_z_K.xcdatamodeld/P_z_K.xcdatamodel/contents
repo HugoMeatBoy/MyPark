@@ -58,7 +58,7 @@
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Speciality" representedClassName="Speciality" syncable="YES" codeGenerationType="class">
-        <attribute name="speName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="specialityName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="beHeldBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Doctor" inverseName="specialize" inverseEntity="Doctor" syncable="YES"/>
     </entity>
     <entity name="Treatment" representedClassName="Treatment" syncable="YES" codeGenerationType="class">

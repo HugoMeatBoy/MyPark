@@ -7,21 +7,39 @@
 //
 
 import UIKit
+import CoreData
+import Foundation
 
 class AddSpecialityViewController: UIViewController {
 
+    var newSpecialityVar : Speciality!
+    let specialityDAO = CoreDataDAOFactory.getInstance().getSpecialityDAO()
     
     @IBOutlet weak var newSpeciality: UITextField!
     
-    @IBAction func ValidateNewSpeciality(_ sender: Any) {
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        if(newSpeciality.text != nil){
+            newSpecialityVar.specialityName = newSpeciality.text
+        }
+
     }
+    
+    @IBAction func ValidateNewSpeciality(_ sender: Any) {
+        
+        do{
+            try specialityDAO.save()
+        } catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        
+    }
+    
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

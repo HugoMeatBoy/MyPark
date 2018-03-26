@@ -5,7 +5,6 @@
 //  Created by Hugo FAZIO on 19/03/2018.
 //  Copyright © 2018 Thais AURARD. All rights reserved.
 //
-
 import UIKit
 import Foundation
 import CoreData
@@ -19,12 +18,6 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     var medsDoses: [String] = [String]()
     
     @IBOutlet weak var MedicPicker: UIPickerView!
-    
-    @IBOutlet weak var DosagePicker: UIPickerView!
-    
-    @IBOutlet weak var NbJoursMedic: UITextField!
-    
-    @IBOutlet weak var PrisesJourMedic: UITextField!
     
     @IBOutlet weak var MedicValidation: UIButton!
     
@@ -40,16 +33,14 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         MedicPicker.delegate = self
         MedicPicker.dataSource = self
         
-        DosagePicker.delegate = self
-        DosagePicker.dataSource = self
         
         let medecineDAO = CoreDataDAOFactory.getInstance().getMedecineDAO()
         
         var medecines : [Medecine] = [Medecine]()
-
+        
         do{
             medecines = try medecineDAO.getAll() as! [Medecine]
-
+            
             for _ in (medecines){
                 medsName.append(medecines.first?.medecineName as! String)
                 medsDoses.append(medecines.first?.medecineDose as! String)
@@ -74,20 +65,27 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == self.MedicPicker {
-            return medsName.count
-        }else{
-            return medsDoses.count
-        }
+        return 2
+        //return medsName.count
+        
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == self.MedicPicker {
-            return medsName[row]
-        }else{
-            return medsDoses[row]
-        }
+        
+        return medsName[row]
+        
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? AgendaMedicDoseForm {
+            
+            let i = MedicPicker.selectedRow(inComponent: 0)
+            
+            destination.med = medsDoses[i]
+        }
+        
+    }
+    
 }
+

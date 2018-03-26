@@ -1,8 +1,16 @@
 //
-//  AgendaRdvForm.swift
+//  AgendaMedicDoseForm.swift
 //  P(z)K
 //
-//  Created by Hugo FAZIO on 19/03/2018.
+//  Created by Thais Aurard on 26/03/2018.
+//  Copyright © 2018 Thais AURARD. All rights reserved.
+//
+
+//
+//  AgendaMedicDoseForm.swift
+//  P(z)K
+//
+//  Created by Hugo FAZIO on 26/03/2018.
 //  Copyright © 2018 Thais AURARD. All rights reserved.
 //
 
@@ -10,31 +18,30 @@ import UIKit
 import Foundation
 import CoreData
 
-class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+class AgendaMedicDoseForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    var medDoses: [String] = [String]()
+    
+    var med: String = String()
+    
+    @IBOutlet weak var DosagePicker: UIPickerView!
+    
+    @IBOutlet weak var NbJoursTraitement: UITextField!
+    
+    @IBOutlet weak var NbPrisesParJour: UITextField!
     
     
-    
-    var pickerData: [String] = [String]()
-    
-    @IBOutlet weak var DocteurPicker: UIPickerView!
-    
-    @IBOutlet weak var RdvDatePicker: UIDatePicker!
-    
-    @IBOutlet weak var RdvValidation: UIButton!
-    
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DocteurPicker.delegate = self
-        DocteurPicker.dataSource = self
+        DosagePicker.delegate = self
+        DosagePicker.dataSource = self
         
-        // Input data into the Array:
-        pickerData = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"]
+        medDoses = med.components(separatedBy: ",")
         
-        let doctorDAO = CoreDataDAOFactory.getInstance().getDoctorDAO()
         
+        print(medDoses)
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,11 +57,18 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return medDoses.count
+        
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return medDoses[row]
+        
+        // or simply:
+        // let fullNameArr = fullName.characters.split{" "}.map(String.init)
+        // Last
+        
     }
 }
+

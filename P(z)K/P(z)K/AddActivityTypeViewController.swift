@@ -7,21 +7,44 @@
 //
 
 import UIKit
+import CoreData
+import Foundation
 
 class AddActivityTypeViewController: UIViewController {
 
+    
     @IBOutlet weak var NewActivityTypeName: UITextField!
     
-    
-    @IBAction func ValidateNewActivityTypeName(_ sender: Any) {
-    }
-    
+    var newActivityTypeVar : ActivityType!
+    let activityTypeDAO = CoreDataDAOFactory.getInstance().getActivityDAO()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        
+        
+        if(NewActivityTypeName.text != nil){
+            newActivityTypeVar.activityTypeName = NewActivityTypeName.text
+
+            }
+            
+        }
+
+    
+    @IBAction func ValidateNewActivityTypeName(_ sender: Any) {
+        do {
+            try activityTypeDAO.save()
+        } catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+    
+        
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
