@@ -17,7 +17,8 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     var activityTypeNameTab: [String] = [String]()
     var newActivityTypevar : ActivityType!
     var newActivity : Activity!
-    
+    let activityTypeDAO = CoreDataDAOFactory.getInstance().getActivityTypeDAO()
+    let activityDAO = CoreDataDAOFactory.getInstance().getActivityDAO()
     
     @IBOutlet weak var ActivityTypePicker: UIPickerView!
     
@@ -33,6 +34,26 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     
     @IBAction func ValidateAddActivity(_ sender: Any) {
+        var i = ActivityTypePicker.selectedRow(inComponent: 0)
+        print(i)
+        
+        if(DurationH.text != nil && DurationMin.text != nil){
+            
+            let i = ActivityTypePicker.selectedRow(inComponent: 0)
+            
+            newActivity.activityName = activityTypeNameTab[i]
+            
+        }
+        newActivity.activityDurationH = DurationH.text
+        newActivity.activityDurationMin = DurationMin.text
+        
+        do {
+            try
+                activityDAO.save()
+        }
+        catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
         
         
     }
@@ -46,8 +67,7 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         ActivityTypePicker.dataSource = self
 
         
-        let activityTypeDAO = CoreDataDAOFactory.getInstance().getActivityTypeDAO()
-        let activityDAO = CoreDataDAOFactory.getInstance().getActivityDAO()
+        
         
         var activityTypes : [ActivityType] = [ActivityType]()
         
@@ -64,24 +84,7 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }
         
 
-        
-        if(activityTypeNameTab[ActivityTypePicker.selectedRow(inComponent: 0)] != nil && DurationH.text != nil && DurationMin.text != nil){
-
-            let i = ActivityTypePicker.selectedRow(inComponent: 0)
-            newActivity.activityName = activityTypeNameTab[i]
-
-            }
-            newActivity.activityDurationH = DurationH.text
-            newActivity.activityDurationMin = DurationMin.text
-            
-            do {
-                try
-                    activityDAO.save()
-            }
-            catch let error as NSError{
-                ManageErrorHelper.alertError(view: self, error: error)
-            }
-            
+       
 
         
         

@@ -26,20 +26,24 @@ class AddActivityTypeViewController: UIViewController {
         
         
         
-        if(NewActivityTypeName.text != nil){
-            newActivityTypeVar.activityTypeName = NewActivityTypeName.text
-
-            }
+      
             
         }
 
     
     @IBAction func ValidateNewActivityTypeName(_ sender: Any) {
-        do {
-            try activityTypeDAO.save()
-        } catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
+       
+        if(NewActivityTypeName.text != nil){
+            newActivityTypeVar.activityTypeName = NewActivityTypeName.text
+            
+            do {
+                try activityTypeDAO.save()
+            } catch let error as NSError{
+                ManageErrorHelper.alertError(view: self, error: error)
+            }
         }
+        
+     
     
         
     }

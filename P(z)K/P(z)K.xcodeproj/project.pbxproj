@@ -28,6 +28,7 @@
 		7540E12D20640F4F00CB9CC4 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */; };
 		7540E12F206410BC00CB9CC4 /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12E206410BC00CB9CC4 /* PatientDAO.swift */; };
 		7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1362064110200CB9CC4 /* CoreDataDAO.swift */; };
+		75A7858B2069942400C1F21A /* DoctorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7858A2069942400C1F21A /* DoctorFormViewController.swift */; };
 		75BCCE2620691E52005B02B3 /* ActivityTypeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2520691E52005B02B3 /* ActivityTypeDAO.swift */; };
 		75BCCE2820691E63005B02B3 /* ActivityTypeCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2720691E63005B02B3 /* ActivityTypeCoreDataDAO.swift */; };
 		75BCCE2B20694981005B02B3 /* SpecialityDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2A20694981005B02B3 /* SpecialityDAO.swift */; };
@@ -66,7 +67,6 @@
 		9CFC2A592064E5E10007575A /* ActivityDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC2A582064E5E10007575A /* ActivityDAO.swift */; };
 		9CFC2A5B2064E5ED0007575A /* ActivityCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC2A5A2064E5ED0007575A /* ActivityCoreDataDAO.swift */; };
 		9CFC2A5D2064EC220007575A /* ActivityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC2A5C2064EC220007575A /* ActivityForm.swift */; };
-		9CFC2A5F2064F3D90007575A /* DoctorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFC2A5E2064F3D90007575A /* DoctorForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +101,7 @@
 		7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
 		7540E12E206410BC00CB9CC4 /* PatientDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
 		7540E1362064110200CB9CC4 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
+		75A7858A2069942400C1F21A /* DoctorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorFormViewController.swift; sourceTree = "<group>"; };
 		75BCCE2520691E52005B02B3 /* ActivityTypeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeDAO.swift; sourceTree = "<group>"; };
 		75BCCE2720691E63005B02B3 /* ActivityTypeCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCoreDataDAO.swift; sourceTree = "<group>"; };
 		75BCCE2A20694981005B02B3 /* SpecialityDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityDAO.swift; sourceTree = "<group>"; };
@@ -143,7 +144,6 @@
 		9CFC2A582064E5E10007575A /* ActivityDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDAO.swift; sourceTree = "<group>"; };
 		9CFC2A5A2064E5ED0007575A /* ActivityCoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCoreDataDAO.swift; sourceTree = "<group>"; };
 		9CFC2A5C2064EC220007575A /* ActivityForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityForm.swift; sourceTree = "<group>"; };
-		9CFC2A5E2064F3D90007575A /* DoctorForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,10 +217,10 @@
 			isa = PBXGroup;
 			children = (
 				606A3DAD2060093E00B9B8FC /* CompteUserViewController.swift */,
-				9CFC2A5E2064F3D90007575A /* DoctorForm.swift */,
 				75E4B23420650A2600E53C7B /* TableViewCellDoctor.swift */,
 				75BCCE3120694F0A005B02B3 /* AddSpecialityViewController.swift */,
 				75EC22DF206988B900FC16F6 /* DoctorDataForm.swift */,
+				75A7858A2069942400C1F21A /* DoctorFormViewController.swift */,
 			);
 			name = "Compte Utilisateur";
 			sourceTree = "<group>";
@@ -536,7 +536,6 @@
 				9CFC2A562064E4CD0007575A /* AppointmentCoreDataDAO.swift in Sources */,
 				750CF28E20647637000B4DE3 /* MedecineDAO.swift in Sources */,
 				75BD2B48206119D300E7380F /* DAO.swift in Sources */,
-				9CFC2A5F2064F3D90007575A /* DoctorForm.swift in Sources */,
 				75EC22E0206988B900FC16F6 /* DoctorDataForm.swift in Sources */,
 				9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */,
 				75BCCE2D20694994005B02B3 /* SpecialityCoreDataDAO.swift in Sources */,
@@ -574,6 +573,7 @@
 				7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */,
 				750CF28620646B66000B4DE3 /* CoreDataDAOFactory.swift in Sources */,
 				75BCCE2820691E63005B02B3 /* ActivityTypeCoreDataDAO.swift in Sources */,
+				75A7858B2069942400C1F21A /* DoctorFormViewController.swift in Sources */,
 				75BD2B352060258E00E7380F /* EventModel.swift in Sources */,
 				75BD2B3E206045E100E7380F /* CoreDataConnection.swift in Sources */,
 				606A3DB920600DD100B9B8FC /* AgendaMedicForm.swift in Sources */,

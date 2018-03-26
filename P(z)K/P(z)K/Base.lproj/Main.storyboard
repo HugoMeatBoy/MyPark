@@ -336,7 +336,7 @@
         <!--Coach Sportif-->
         <scene sceneID="G6r-Q6-PYg">
             <objects>
-                <viewController title="Coach Sportif" id="Ky7-qP-i1k" customClass="CoachSportifViewController" sceneMemberID="viewController">
+                <viewController title="Coach Sportif" id="Ky7-qP-i1k" customClass="CoachSportifViewController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RXs-tB-PZG"/>
                         <viewControllerLayoutGuide type="bottom" id="kdt-NZ-yYo"/>
@@ -381,7 +381,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gj5-zi-0dR" customClass="TableViewCellActivity" customModule="P_z_K" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" id="gj5-zi-0dR" customClass="TableViewCellActivity" customModule="P_z_K" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="282" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gj5-zi-0dR" id="OQT-m7-S9c">
@@ -406,6 +406,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ky7-qP-i1k" id="V0l-af-Uob"/>
+                                    <outlet property="delegate" destination="Ky7-qP-i1k" id="v4L-1s-l22"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -513,7 +517,6 @@
                                 <connections>
                                     <action selector="AddActivityType:" destination="7K3-iO-KI2" eventType="touchUpInside" id="ifM-QK-ywg"/>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="dt1-DQ-dYH"/>
-                                    <action selector="ValidateAddActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="oph-wb-wYo"/>
                                     <segue destination="C2G-1j-Gea" kind="show" id="NM3-zO-ZAi"/>
                                 </connections>
                             </button>
@@ -584,7 +587,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nouveau type d'activité" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-w9-r2r">
-                                <rect key="frame" x="58" y="64" width="317" height="38"/>
+                                <rect key="frame" x="29" y="83" width="317" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.44554577340000001" green="0.44110958099999997" blue="0.3922263688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="27"/>
@@ -606,7 +609,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-Xn-Vfa">
-                                <rect key="frame" x="184" y="323" width="64" height="36"/>
+                                <rect key="frame" x="155" y="352" width="64" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.42424241750000002" green="0.41453153879999999" blue="0.37415854310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -615,7 +618,6 @@
                                 </state>
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="XYa-Ne-AIM"/>
-                                    <action selector="ValidateAddActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="Qr4-a2-nTD"/>
                                     <action selector="ValidateNewActivityTypeName:" destination="C2G-1j-Gea" eventType="touchUpInside" id="uF9-gu-X7c"/>
                                 </connections>
                             </button>
@@ -814,7 +816,7 @@
                                 <state key="normal" title="Ajouter un médecin"/>
                                 <connections>
                                     <action selector="AddDoctor:" destination="DoD-i4-CfV" eventType="touchUpInside" id="bdX-JQ-92v"/>
-                                    <segue destination="hfw-3R-4Js" kind="show" id="9ZF-yM-UlH"/>
+                                    <segue destination="hfw-3R-4Js" kind="show" id="A0X-YA-2G6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -830,30 +832,26 @@
             </objects>
             <point key="canvasLocation" x="5381.6000000000004" y="1158.1709145427287"/>
         </scene>
-        <!--Doctor Form-->
+        <!--Mon compte-->
         <scene sceneID="1VA-Mm-phR">
             <objects>
-                <viewController id="hfw-3R-4Js" customClass="DoctorForm" sceneMemberID="viewController">
+                <viewController title="Mon compte" id="hfw-3R-4Js" customClass="DoctorFormViewController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sss-uJ-xRs"/>
                         <viewControllerLayoutGuide type="bottom" id="h9l-zd-PAU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="KxG-d5-oSA" customClass="DoctorForm">
+                    <view key="view" contentMode="scaleToFill" id="KxG-d5-oSA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nouveau médecin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3g-tR-ddi">
-                                <rect key="frame" x="20" y="72" width="288" height="38"/>
+                                <rect key="frame" x="29" y="72" width="288" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.44554577340000001" green="0.44110958099999997" blue="0.3922263688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="27"/>
                                 <color key="textColor" red="1" green="0.98532865550000004" blue="0.88821809559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xuq-fk-CyT">
-                                <rect key="frame" x="0.0" y="264" width="329" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spécialité" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHe-oq-CLx">
                                 <rect key="frame" x="16" y="235" width="75" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -871,7 +869,6 @@
                                 </state>
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="xcG-sg-PTC"/>
-                                    <action selector="ValidateAddActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="Gv3-ye-bxO"/>
                                     <segue destination="yqn-pn-20l" kind="show" id="3mX-EY-bWc"/>
                                 </connections>
                             </button>
@@ -886,7 +883,6 @@
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="K6K-vY-ehF"/>
                                     <action selector="NewSpecialityButton:" destination="KxG-d5-oSA" eventType="touchUpInside" id="eIa-yQ-wxc"/>
-                                    <action selector="ValidateAddActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="Pnh-4m-loD"/>
                                     <segue destination="1B5-L0-Bmf" kind="show" id="BBm-qd-rXg"/>
                                 </connections>
                             </button>
@@ -904,14 +900,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vm-sE-0wQ">
+                                <rect key="frame" x="0.0" y="332" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hfw-3R-4Js" id="t8l-YM-GI6"/>
+                                    <outlet property="delegate" destination="hfw-3R-4Js" id="iYx-71-kpK"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.90270847080000005" green="0.87982642649999998" blue="0.79202455279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <connections>
-                            <outlet property="NewDoctorLastName" destination="EGK-Rv-wG0" id="c5h-zR-5bZ"/>
-                            <outlet property="NewDoctorName" destination="EGK-Rv-wG0" id="KkB-JW-T2t"/>
-                            <outlet property="SpecialityPicker" destination="Xuq-fk-CyT" id="Gtj-Tv-ebD"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="SpecialitePicker" destination="4vm-sE-0wQ" id="0O3-uq-S29"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggC-qa-dZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -961,7 +963,6 @@
                                 </state>
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="W66-BF-86H"/>
-                                    <action selector="ValidateAddActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="KZd-ru-Oro"/>
                                     <action selector="ValidateNewSpeciality:" destination="1B5-L0-Bmf" eventType="touchUpInside" id="JaU-I7-ed0"/>
                                 </connections>
                             </button>
@@ -1047,7 +1048,6 @@
                                 </state>
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="6ar-CA-HSu"/>
-                                    <action selector="ValidateAddActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="e8R-uV-Vfm"/>
                                 </connections>
                             </button>
                         </subviews>
