@@ -656,6 +656,7 @@
                                 <color key="tintColor" red="0.9931609146" green="0.99653724269999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Ajouter un médecin"/>
                                 <connections>
+                                    <action selector="AddDoctor:" destination="DoD-i4-CfV" eventType="touchUpInside" id="Wo1-GS-4Pn"/>
                                     <segue destination="hfw-3R-4Js" kind="show" id="o7N-Zy-jQr"/>
                                 </connections>
                             </button>

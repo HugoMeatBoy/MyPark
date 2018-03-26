@@ -28,6 +28,8 @@
 		7540E12D20640F4F00CB9CC4 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */; };
 		7540E12F206410BC00CB9CC4 /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12E206410BC00CB9CC4 /* PatientDAO.swift */; };
 		7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1362064110200CB9CC4 /* CoreDataDAO.swift */; };
+		75BCCE2620691E52005B02B3 /* ActivityTypeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2520691E52005B02B3 /* ActivityTypeDAO.swift */; };
+		75BCCE2820691E63005B02B3 /* ActivityTypeCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2720691E63005B02B3 /* ActivityTypeCoreDataDAO.swift */; };
 		75BD2B312060258E00E7380F /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2C2060258D00E7380F /* Address.swift */; };
 		75BD2B322060258E00E7380F /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2D2060258E00E7380F /* ActivityModel.swift */; };
 		75BD2B332060258E00E7380F /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BD2B2E2060258E00E7380F /* DoctorModel.swift */; };
@@ -92,6 +94,8 @@
 		7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
 		7540E12E206410BC00CB9CC4 /* PatientDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
 		7540E1362064110200CB9CC4 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
+		75BCCE2520691E52005B02B3 /* ActivityTypeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeDAO.swift; sourceTree = "<group>"; };
+		75BCCE2720691E63005B02B3 /* ActivityTypeCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCoreDataDAO.swift; sourceTree = "<group>"; };
 		75BD2B2C2060258D00E7380F /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = Models/Address.swift; sourceTree = "<group>"; };
 		75BD2B2D2060258E00E7380F /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityModel.swift; path = Models/ActivityModel.swift; sourceTree = "<group>"; };
 		75BD2B2E2060258E00E7380F /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoctorModel.swift; path = Models/DoctorModel.swift; sourceTree = "<group>"; };
@@ -256,6 +260,15 @@
 			name = AlertManager;
 			sourceTree = "<group>";
 		};
+		75BCCE2420691E36005B02B3 /* ActivityType */ = {
+			isa = PBXGroup;
+			children = (
+				75BCCE2520691E52005B02B3 /* ActivityTypeDAO.swift */,
+				75BCCE2720691E63005B02B3 /* ActivityTypeCoreDataDAO.swift */,
+			);
+			name = ActivityType;
+			sourceTree = "<group>";
+		};
 		75BD2B282060254E00E7380F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +297,7 @@
 		75BD2B3A206036B700E7380F /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				75BCCE2420691E36005B02B3 /* ActivityType */,
 				9CFC2A572064E5B10007575A /* Activity */,
 				9CFC2A522064E4AA0007575A /* Appointment */,
 				9CFC2A4D2064E28C0007575A /* Doctor */,
@@ -513,6 +527,7 @@
 				75BD2B342060258E00E7380F /* PatientModel.swift in Sources */,
 				7540E12D20640F4F00CB9CC4 /* AbstractDAOFactory.swift in Sources */,
 				606A3DAA2060091F00B9B8FC /* CoachSportifViewController.swift in Sources */,
+				75BCCE2620691E52005B02B3 /* ActivityTypeDAO.swift in Sources */,
 				606A3DA12060084600B9B8FC /* AgendaViewController.swift in Sources */,
 				9CFC2A512064E2B10007575A /* DoctorCoreDataDAO.swift in Sources */,
 				606A3DB620600DBE00B9B8FC /* AgendaRdvForm.swift in Sources */,
@@ -522,6 +537,7 @@
 				75E4B2372065CA0300E53C7B /* StateViewController.swift in Sources */,
 				7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */,
 				750CF28620646B66000B4DE3 /* CoreDataDAOFactory.swift in Sources */,
+				75BCCE2820691E63005B02B3 /* ActivityTypeCoreDataDAO.swift in Sources */,
 				75BD2B352060258E00E7380F /* EventModel.swift in Sources */,
 				75BD2B3E206045E100E7380F /* CoreDataConnection.swift in Sources */,
 				606A3DB920600DD100B9B8FC /* AgendaMedicForm.swift in Sources */,

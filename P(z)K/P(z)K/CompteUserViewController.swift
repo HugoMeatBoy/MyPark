@@ -12,6 +12,11 @@ import CoreData
 
 class CompteUserViewController: UIViewController{
     
+    @IBAction func AddDoctor(_ sender: Any) {
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
