@@ -365,13 +365,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activité recommandée" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-fD-CEo">
-                                <rect key="frame" x="62.5" y="40" width="250.5" height="29.5"/>
+                                <rect key="frame" x="62.5" y="84" width="250.5" height="29.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toutes les activités" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8f-r3-6nf">
-                                <rect key="frame" x="82" y="210" width="211.5" height="30"/>
+                                <rect key="frame" x="82" y="254" width="211.5" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -537,7 +537,6 @@
                                 </state>
                                 <connections>
                                     <action selector="validateActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="m7N-by-xSQ"/>
-                                    <segue destination="Ky7-qP-i1k" kind="show" id="SHo-3w-1bi"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shc-yz-5PO">
@@ -564,9 +563,11 @@
                         <outlet property="activityPicker" destination="wfB-H4-S9l" id="P7F-R3-f7W"/>
                         <outlet property="hourTimeDuration" destination="GPt-G4-wSU" id="2Tz-2G-IWK"/>
                         <outlet property="minutesTimesDuration" destination="lC1-PL-85x" id="mQG-wC-5Cn"/>
+                        <segue destination="QnG-UL-RzR" kind="unwind" identifier="unwindToActivities" unwindAction="unwindToActivitiesWithSegue:" id="Q2I-WC-H9W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZn-N4-X9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QnG-UL-RzR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6333.6000000000004" y="-590.55472263868069"/>
         </scene>
@@ -622,9 +623,11 @@
                     </view>
                     <connections>
                         <outlet property="NewActivityTypeName" destination="0zN-X0-o7E" id="i12-2u-mxg"/>
+                        <segue destination="3Ti-5e-HNJ" kind="unwind" identifier="unwindToAddActivity" unwindAction="unwindToAddActivityWithSegue:" id="HAx-FA-P2X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4u-3C-3Gz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="3Ti-5e-HNJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7407" y="-591"/>
         </scene>
@@ -854,8 +857,8 @@
                             <constraint firstItem="UT2-jb-U1g" firstAttribute="trailing" secondItem="NNc-md-waq" secondAttribute="trailing" id="IZT-ai-9Ec"/>
                             <constraint firstItem="UT2-jb-U1g" firstAttribute="top" secondItem="Pzq-hE-dSq" secondAttribute="top" constant="223" id="MA2-lj-mac"/>
                             <constraint firstItem="UT2-jb-U1g" firstAttribute="centerX" secondItem="hoG-0A-zFt" secondAttribute="centerX" id="Tp6-HX-F0Q"/>
+                            <constraint firstItem="sEH-x5-ODE" firstAttribute="top" secondItem="hoG-0A-zFt" secondAttribute="bottom" constant="39" id="afz-aG-8Od"/>
                             <constraint firstItem="UT2-jb-U1g" firstAttribute="centerX" secondItem="8b3-tr-TMZ" secondAttribute="centerX" id="hZv-ua-0sk"/>
-                            <constraint firstItem="sEH-x5-ODE" firstAttribute="top" secondItem="hoG-0A-zFt" secondAttribute="bottom" constant="39" id="i2g-ln-Gcz"/>
                             <constraint firstItem="UT2-jb-U1g" firstAttribute="leading" secondItem="Pzq-hE-dSq" secondAttribute="leadingMargin" constant="3" id="rEO-Ib-0Bc"/>
                         </constraints>
                     </view>
@@ -1024,9 +1027,11 @@
                     </view>
                     <connections>
                         <outlet property="newSpeciality" destination="On1-PR-vLW" id="4G0-zr-CHl"/>
+                        <segue destination="sjw-ab-JEb" kind="unwind" identifier="unwindToAddDoctor" unwindAction="unwindToAddDoctorWithSegue:" id="Pts-s8-MbW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWu-Jb-2bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sjw-ab-JEb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7930" y="743"/>
         </scene>
@@ -1102,7 +1107,6 @@
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="6ar-CA-HSu"/>
                                     <action selector="ValidateDoctor:" destination="yqn-pn-20l" eventType="touchUpInside" id="xRn-oo-qmd"/>
-                                    <segue destination="DoD-i4-CfV" kind="show" id="sZ5-5L-Y6W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1112,9 +1116,11 @@
                         <outlet property="doctorAdress" destination="YO5-df-pHp" id="ZIQ-eI-wAV"/>
                         <outlet property="doctorNum" destination="BlP-Xi-gdI" id="pqy-EA-oNA"/>
                         <outlet property="travelDuration" destination="2ss-u6-eb7" id="xR3-ja-DxL"/>
+                        <segue destination="fLF-A2-xaN" kind="unwind" identifier="unwindSegueToUserAccount" unwindAction="unwindToUserAccountWithSegue:" id="9K1-xd-jep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkl-8c-stw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fLF-A2-xaN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7928.8000000000002" y="1535.9820089955024"/>
         </scene>
@@ -1131,7 +1137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T2e-jg-bZl">
-                                <rect key="frame" x="63" y="45" width="250" height="29"/>
+                                <rect key="frame" x="63" y="89" width="250" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Nlw-jg-EBe"/>
                                 </constraints>
@@ -1145,7 +1151,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="136" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l4D-xo-QUo">
-                                <rect key="frame" x="26" y="93" width="322" height="411"/>
+                                <rect key="frame" x="26" y="137" width="322" height="367"/>
                                 <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1223,7 +1229,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" sectionIndexMinimumDisplayRowCount="3" rowHeight="103" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3I7-JK-TwV">
-                                <rect key="frame" x="27" y="93" width="321" height="411"/>
+                                <rect key="frame" x="27" y="137" width="321" height="367"/>
                                 <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.97368019819259644" blue="0.90252441167831421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1363,14 +1369,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nouveau traitement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJo-gi-rq6">
-                                <rect key="frame" x="29" y="28" width="317" height="38"/>
+                                <rect key="frame" x="29" y="72" width="317" height="38"/>
                                 <color key="backgroundColor" red="0.44554577340000001" green="0.44110958099999997" blue="0.3922263688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="27"/>
                                 <color key="textColor" red="1" green="0.98532865550000004" blue="0.88821809559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R44-e3-p4E">
-                                <rect key="frame" x="0.0" y="20" width="10" height="168"/>
+                                <rect key="frame" x="0.0" y="64" width="10" height="124"/>
                                 <color key="backgroundColor" red="0.27432167530000001" green="0.61081284280000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Médicament" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5h-NT-cYi">
@@ -1500,7 +1506,6 @@
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="o4K-eB-VBO"/>
                                     <action selector="ValidateTreatment:" destination="rfJ-0S-xU2" eventType="touchUpInside" id="UOV-C1-MFc"/>
-                                    <segue destination="0Ko-jp-r6G" kind="show" id="UhA-IA-g7f"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dosage " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL7-bP-DRQ">
@@ -1522,9 +1527,11 @@
                         <outlet property="DosagePicker" destination="ynM-p4-w4c" id="AQa-NI-pRo"/>
                         <outlet property="NbJoursTraitement" destination="CH9-cV-aFT" id="2iu-LJ-5RM"/>
                         <outlet property="NbPrisesParJour" destination="gWj-gd-0Nf" id="9oM-iS-Vx9"/>
+                        <segue destination="XmS-NE-rNh" kind="unwind" identifier="unwindToAgendaFromTreatment" unwindAction="unwindToAgendaWithSegue:" id="zyC-hc-HJe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kM-qm-WFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XmS-NE-rNh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="8600.7999999999993" y="-2072.1139430284861"/>
         </scene>
@@ -1541,7 +1548,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nouveau RDV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjR-4y-fNO">
-                                <rect key="frame" x="18" y="40" width="338" height="38"/>
+                                <rect key="frame" x="18" y="84" width="338" height="38"/>
                                 <color key="backgroundColor" red="0.44554577340000001" green="0.44110958099999997" blue="0.3922263688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="338" id="G9M-fH-Dzm"/>
@@ -1551,7 +1558,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAy-hn-IFb">
-                                <rect key="frame" x="0.0" y="20" width="10" height="168"/>
+                                <rect key="frame" x="0.0" y="64" width="10" height="124"/>
                                 <color key="backgroundColor" red="0.27432167530000001" green="0.61081284280000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-nV-qOG">
@@ -1562,9 +1569,10 @@
                                 <date key="date" timeIntervalSinceReferenceDate="540834606.41554797">
                                     <!--2018-02-20 15:50:06 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="fr"/>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEJ-O7-XvA">
-                                <rect key="frame" x="29" y="149" width="320" height="216"/>
+                                <rect key="frame" x="29" y="193" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y91-DH-z4M" id="GsJ-5h-1qe"/>
                                     <outlet property="delegate" destination="Y91-DH-z4M" id="Qze-Wp-tcX"/>
@@ -1582,11 +1590,10 @@
                                 </state>
                                 <connections>
                                     <action selector="ValidateRdv:" destination="Y91-DH-z4M" eventType="touchUpInside" id="Whv-YT-or9"/>
-                                    <segue destination="0Ko-jp-r6G" kind="show" id="cZQ-41-9UV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Docteur.e" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdH-bL-B2X">
-                                <rect key="frame" x="29" y="98" width="107" height="26"/>
+                                <rect key="frame" x="29" y="142" width="107" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="CPT-d4-x0V"/>
                                 </constraints>
@@ -1631,9 +1638,11 @@
                         <outlet property="DocteurPicker" destination="jEJ-O7-XvA" id="ata-W5-58g"/>
                         <outlet property="RdvDatePicker" destination="k7U-nV-qOG" id="0wY-wJ-jJS"/>
                         <outlet property="RdvValidation" destination="FO1-I2-dSM" id="OJQ-nW-U16"/>
+                        <segue destination="mWq-W6-3wJ" kind="unwind" identifier="unwindToAgenda" unwindAction="unwindToAgendaWithSegue:" id="bhv-gY-9jk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8W-YH-CER" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mWq-W6-3wJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7359" y="-2890"/>
         </scene>
@@ -1874,9 +1883,6 @@ Vous avez un traitement
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="E5g-ow-chx"/>
-        <segue reference="UhA-IA-g7f"/>
-        <segue reference="sZ5-5L-Y6W"/>
-        <segue reference="SHo-3w-1bi"/>
         <segue reference="DJB-qt-haV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.29108687108044795" green="0.16781314518775173" blue="0.064231447651561649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

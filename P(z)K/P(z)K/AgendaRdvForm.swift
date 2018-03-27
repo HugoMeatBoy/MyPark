@@ -38,6 +38,7 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         do{
             try CoreDataManager.context.save()
+            performSegue(withIdentifier: "unwindToAgenda", sender: self)
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, error: error)
         }

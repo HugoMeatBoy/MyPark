@@ -34,11 +34,11 @@ class ActivityFormViewController : UIViewController, UIPickerViewDelegate, UIPic
             
             do{
                 try activityDAO.save()
+                performSegue(withIdentifier: "unwindToActivities", sender: self)
             }catch let error as NSError {
                 ManageErrorHelper.alertError(view: self, error: error)
             }
-        }
-        
+        }        
         
     }
     
@@ -48,25 +48,10 @@ class ActivityFormViewController : UIViewController, UIPickerViewDelegate, UIPic
         activityPicker.delegate = self
         activityPicker.dataSource = self
 
-        var activityTypes : [ActivityType] = [ActivityType]()
+
         
-        do{
-            activityTypes = try activityTypeDAO.getAll() as! [ActivityType]
-            
-            if(activityTypes != []){
-                for _ in (activityTypes){
-                    if(activityTypes.first?.activityTypeName != nil){
-                        
-                        let type: String = (activityTypes.first?.activityTypeName)!
-                        activityTypeNameTab.append(type)
-                        activityTypes.removeFirst()
-                        
-                    }
-                }
-            }
-        }catch let error as NSError {
-            ManageErrorHelper.alertError(view: self, error: error)
-        }
+        loadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,6 +74,32 @@ class ActivityFormViewController : UIViewController, UIPickerViewDelegate, UIPic
         return activityTypeNameTab[row]
     }
     
+    func loadData(){
+        do{
+            var activityTypes : [ActivityType] = [ActivityType]()
+            
+            activityTypes = try activityTypeDAO.getAll() as! [ActivityType]
+            
+            if(activityTypes != []){
+                for _ in (activityTypes){
+                    if(activityTypes.first?.activityTypeName != nil){
+                        
+                        let type: String = (activityTypes.first?.activityTypeName)!
+                        activityTypeNameTab.append(type)
+                        activityTypes.removeFirst()
+                        
+                    }
+                }
+            }
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+    }
+    
+    @IBAction func unwindToAddActivity(segue: UIStoryboardSegue){
+        
+        loadData()
+    }
 
 
 }

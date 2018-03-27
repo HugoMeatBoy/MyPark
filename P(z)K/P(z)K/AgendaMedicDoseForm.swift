@@ -68,6 +68,7 @@ class AgendaMedicDoseForm: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         do{
             try CoreDataManager.context.save()
+            performSegue(withIdentifier: "unwindToAgendaFromTreatment", sender: self)
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, error: error)
         }

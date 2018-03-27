@@ -52,38 +52,9 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         
         controlleur(0)
         
-        do{
-            treatments = try treatmentDAO.getAll() as! [Treatment]
-            
-            
-            for _ in (treatments){
-                treatmentsMedicsList.append(treatments.first?.medecine as! String)
-                treatmentsDosesList.append(treatments.first?.doseHoursPerDay as! String)
-                treatmentsQuantityDoseList.append(treatments.first?.quantityPerDose as! String)
-                
-                treatments.removeFirst()
-            }
-            
-            
-            
-        }catch let error as NSError {
-                ManageErrorHelper.alertError(view: self, error: error)
-        }
+        loadData()
         
-        do{
-            appointments = try appointmentDAO.getAll() as! [Appointment]
-            
-            
-            for _ in (appointments){
-                appointmentsList.append(appointments.first?.doctorLastName as! String)
-                appointmentsCalendarList.append(appointments.first?.appointmentDate as! Date)
-                appointments.removeFirst()
-            }
-            
-            
-        }catch let error as NSError {
-            ManageErrorHelper.alertError(view: self, error: error)
-        }
+        
         
     }
     
@@ -168,6 +139,46 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         default:
             break
         }
+    }
+    
+    func loadData(){
+        do{
+            treatments = try treatmentDAO.getAll() as! [Treatment]
+            
+            
+            for _ in (treatments){
+                treatmentsMedicsList.append(treatments.first?.medecine as! String)
+                treatmentsDosesList.append(treatments.first?.doseHoursPerDay as! String)
+                treatmentsQuantityDoseList.append(treatments.first?.quantityPerDose as! String)
+                
+                treatments.removeFirst()
+            }
+            
+            
+            
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        
+        do{
+            appointments = try appointmentDAO.getAll() as! [Appointment]
+            
+            
+            for _ in (appointments){
+                appointmentsList.append(appointments.first?.doctorLastName as! String)
+                appointmentsCalendarList.append(appointments.first?.appointmentDate as! Date)
+                appointments.removeFirst()
+            }
+            
+            
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+    }
+    
+    @IBAction func unwindToAgenda(segue: UIStoryboardSegue){
+        
+        loadData()
     }
     
     

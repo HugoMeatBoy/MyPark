@@ -12,7 +12,7 @@ import CoreData
 
 class CoachSportifViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    var activites : [Activity] = [Activity]()
+    var activities : [Activity] = [Activity]()
     let activityDAO = CoreDataDAOFactory.getInstance().getActivityDAO()
     
     var activitesNameTab: [String] = [String]()
@@ -47,20 +47,53 @@ class CoachSportifViewController: UIViewController, UITableViewDelegate, UITable
         activitiesTable.delegate = self
         activitiesTable.dataSource = self
         
-        do{
-            activites = try activityDAO.getAll() as! [Activity]
+        loadData()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") {
+            (action, indexPath) in
+            // delete item at indexPath
+            /*
+             self.doctors.remove(at: indexPath.row)
+             tableView.deleteRows(at: [indexPath], with: .fade)
+             print(self.doctors)*/
             
-            if(activites != []){
-                for _ in (activites){
+            self.activityDAO.delete(obj: self.activities[indexPath.row])
+            do {
+                try self.activityDAO.save()
+            } catch {
+                fatalError("Erreur à la suppression du médecin.")
+            }
+            self.activities.remove(at: indexPath.row)
+        }
+        
+        return [delete]
+    }
+    
+    func loadData(){
+        do{
+            activities = try activityDAO.getAll() as! [Activity]
+            var activitiesP = activities
+            
+            if(activitiesP != []){
+                for _ in (activitiesP){
                     
-                    if(activites.first?.activityName != nil){
+                    if(activitiesP.first?.activityName != nil){
                         
-                        let type: String = (activites.first?.activityName)!
+                        let type: String = (activitiesP.first?.activityName)!
                         
                         activitesNameTab.append(type)
-                        activites.removeFirst()
+                        activitiesP.removeFirst()
                         
-                        activites.first?.activityName
+                        activitiesP.first?.activityName
                         
                     }
                 }
@@ -69,14 +102,11 @@ class CoachSportifViewController: UIViewController, UITableViewDelegate, UITable
             ManageErrorHelper.alertError(view: self, error: error)
         }
         
-        // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func unwindToActivities(segue: UIStoryboardSegue){
+        
+        loadData()
     }
-
-    
     
 }

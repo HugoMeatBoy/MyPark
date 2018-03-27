@@ -15,8 +15,8 @@ class AddActivityTypeViewController: UIViewController {
     
     @IBOutlet weak var NewActivityTypeName: UITextField!
     
-    let newActivityTypeVar = ActivityType(context:CoreDataManager.context)
-    let activityTypeDAO = CoreDataDAOFactory.getInstance().getActivityDAO()
+    let newActivityTypeVar = ActivityType(context: CoreDataManager.context)
+    let activityTypeDAO = CoreDataDAOFactory.getInstance().getActivityTypeDAO()
 
     
     override func viewDidLoad() {
@@ -35,7 +35,8 @@ class AddActivityTypeViewController: UIViewController {
             newActivityTypeVar.activityTypeName = NewActivityTypeName.text
             
             do {
-                try CoreDataManager.context.save()
+                try activityTypeDAO.context.save()
+                performSegue(withIdentifier: "unwindToAddActivity", sender: self)
             } catch let error as NSError{
                 ManageErrorHelper.alertError(view: self, error: error)
             }

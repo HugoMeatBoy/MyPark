@@ -44,9 +44,11 @@ class DoctorDataForm : UIViewController {
             
             do{
                 try doctorDAO.save()
+                performSegue(withIdentifier: "unwindSegueToUserAccount", sender: self)
             } catch let error as NSError{
                 ManageErrorHelper.alertError(view: self, error: error)
             }
         }
     }
+    
 }

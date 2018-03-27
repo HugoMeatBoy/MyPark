@@ -30,19 +30,7 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
         SpecialitePicker.dataSource = self
         SpecialitePicker.delegate = self
         
-        do{
-            specialites = try specialiteDAO.getAll() as! [Speciality]
-            
-            for _ in (specialites){
-            specialitesNameTab.append(specialites.first?.specialityName as! String)
-                
-                specialites.removeFirst()
-            }
-            
-            
-        }catch let error as NSError {
-            ManageErrorHelper.alertError(view: self, error: error)
-        }
+        loadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,6 +73,26 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
         
             
             
+    }
+    func loadData(){
+        do{
+            specialites = try specialiteDAO.getAll() as! [Speciality]
+            
+            for _ in (specialites){
+                specialitesNameTab.append(specialites.first?.specialityName as! String)
+                
+                specialites.removeFirst()
+            }
+            
+            
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+    }
+    
+    @IBAction func unwindToAddDoctor(segue: UIStoryboardSegue){
+        
+        loadData()
     }
     
     

@@ -33,6 +33,7 @@ class AddSpecialityViewController: UIViewController {
             
             do{
                 try specialityDAO.save()
+                performSegue(withIdentifier: "unwindToAddDoctor", sender: self)
             } catch let error as NSError{
                 ManageErrorHelper.alertError(view: self, error: error)
             }
