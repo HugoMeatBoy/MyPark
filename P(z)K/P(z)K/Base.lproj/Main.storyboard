@@ -1105,7 +1105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="T2e-jg-bZl">
-                                <rect key="frame" x="63" y="45" width="250" height="29"/>
+                                <rect key="frame" x="63" y="89" width="250" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Nlw-jg-EBe"/>
                                 </constraints>
@@ -1119,7 +1119,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="136" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="l4D-xo-QUo">
-                                <rect key="frame" x="26" y="93" width="322" height="411"/>
+                                <rect key="frame" x="26" y="137" width="322" height="367"/>
                                 <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1197,7 +1197,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" sectionIndexMinimumDisplayRowCount="3" rowHeight="103" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3I7-JK-TwV">
-                                <rect key="frame" x="27" y="93" width="321" height="411"/>
+                                <rect key="frame" x="27" y="137" width="321" height="367"/>
                                 <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.97368019819259644" blue="0.90252441167831421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1218,12 +1218,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qz-3L-MYb">
-                                                    <rect key="frame" x="15" y="69" width="64" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-iH-llz">
                                                     <rect key="frame" x="244" y="68" width="33" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1236,21 +1230,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="doc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZu-4H-YJ0">
+                                                    <rect key="frame" x="29" y="58" width="163" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="0.97368019819259644" blue="0.90252441167831421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="4qz-3L-MYb" firstAttribute="leading" secondItem="aSg-bN-Di9" secondAttribute="leadingMargin" id="2P1-NL-glo"/>
                                                 <constraint firstItem="BeX-aC-89I" firstAttribute="top" secondItem="aSg-bN-Di9" secondAttribute="topMargin" constant="-1" id="QNJ-Mg-uAS"/>
                                                 <constraint firstItem="BeX-aC-89I" firstAttribute="leading" secondItem="vhC-I1-nYk" secondAttribute="trailing" constant="64" id="U9C-b2-BqM"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="BeX-aC-89I" secondAttribute="trailing" constant="-26" id="UGB-97-Gbm"/>
                                                 <constraint firstItem="Eod-iH-llz" firstAttribute="top" secondItem="BeX-aC-89I" secondAttribute="bottom" constant="37" id="Y47-Ap-WQh"/>
                                                 <constraint firstItem="vhC-I1-nYk" firstAttribute="top" secondItem="aSg-bN-Di9" secondAttribute="topMargin" id="YfE-wa-NZN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Eod-iH-llz" secondAttribute="trailing" constant="29" id="f3o-8B-yQe"/>
-                                                <constraint firstItem="4qz-3L-MYb" firstAttribute="top" secondItem="aSg-bN-Di9" secondAttribute="topMargin" constant="58" id="sYN-iu-SCC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="date" destination="vhC-I1-nYk" id="Atg-zw-cr9"/>
+                                            <outlet property="doctorName" destination="ZZu-4H-YJ0" id="t8m-gd-evJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1266,9 +1266,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <color key="tintColor" red="0.9931609146" green="0.99653724269999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Ajouter Traitement"/>
-                                <connections>
-                                    <segue destination="VW3-Xa-lIu" kind="show" id="tbU-jR-JBE"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8j-zD-vaf">
                                 <rect key="frame" x="32" y="574" width="311" height="54"/>
@@ -1396,7 +1393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VuO-lb-deC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7358" y="-1871"/>
+            <point key="canvasLocation" x="6831" y="-1790"/>
         </scene>
         <!--Agenda Medic Dose Form-->
         <scene sceneID="Crg-yr-Np9">
@@ -1410,21 +1407,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zy-Uo-pFx">
-                                <rect key="frame" x="141" y="537" width="93" height="30"/>
-                                <color key="backgroundColor" red="0.42424241750000002" green="0.41453153879999999" blue="0.37415854310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Qas-PB-Hhj"/>
-                                    <constraint firstAttribute="width" constant="93" id="bIV-h9-SUN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Valider">
-                                    <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="o4K-eB-VBO"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nouveau traitement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBN-Zm-dCa">
                                 <rect key="frame" x="22" y="85" width="317" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1437,13 +1419,6 @@
                                 <rect key="frame" x="22" y="147" width="133" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dosage " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL7-bP-DRQ">
-                                <rect key="frame" x="71" y="366" width="78" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1483,6 +1458,29 @@
                                     <outlet property="delegate" destination="rfJ-0S-xU2" id="jM3-wR-q09"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zy-Uo-pFx">
+                                <rect key="frame" x="141" y="571" width="93" height="39"/>
+                                <color key="backgroundColor" red="0.42424241750000002" green="0.41453153879999999" blue="0.37415854310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Qas-PB-Hhj"/>
+                                    <constraint firstAttribute="width" constant="93" id="bIV-h9-SUN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Valider">
+                                    <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="o4K-eB-VBO"/>
+                                    <action selector="ValidateTreatment:" destination="rfJ-0S-xU2" eventType="touchUpInside" id="UOV-C1-MFc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dosage " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aL7-bP-DRQ">
+                                <rect key="frame" x="49" y="284" width="78" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90110415219999995" green="0.87762016060000003" blue="0.79220849280000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1494,7 +1492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kM-qm-WFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8601" y="-2072"/>
+            <point key="canvasLocation" x="8600.7999999999993" y="-2072.1139430284861"/>
         </scene>
         <!--Agenda-->
         <scene sceneID="WWC-2Y-gWH">
@@ -1509,7 +1507,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nouveau RDV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjR-4y-fNO">
-                                <rect key="frame" x="18" y="40" width="338" height="38"/>
+                                <rect key="frame" x="18" y="84" width="338" height="38"/>
                                 <color key="backgroundColor" red="0.44554577340000001" green="0.44110958099999997" blue="0.3922263688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="338" id="G9M-fH-Dzm"/>
@@ -1519,7 +1517,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAy-hn-IFb">
-                                <rect key="frame" x="0.0" y="20" width="10" height="168"/>
+                                <rect key="frame" x="0.0" y="64" width="10" height="124"/>
                                 <color key="backgroundColor" red="0.27432167530000001" green="0.61081284280000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="k7U-nV-qOG">
@@ -1532,7 +1530,7 @@
                                 </date>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEJ-O7-XvA">
-                                <rect key="frame" x="29" y="149" width="320" height="216"/>
+                                <rect key="frame" x="29" y="193" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y91-DH-z4M" id="GsJ-5h-1qe"/>
                                     <outlet property="delegate" destination="Y91-DH-z4M" id="Qze-Wp-tcX"/>
@@ -1554,7 +1552,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Docteur.e" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdH-bL-B2X">
-                                <rect key="frame" x="29" y="98" width="107" height="26"/>
+                                <rect key="frame" x="29" y="142" width="107" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="CPT-d4-x0V"/>
                                 </constraints>
@@ -1841,9 +1839,8 @@ Vous avez un traitement
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U56-ms-Eti"/>
         <segue reference="E5g-ow-chx"/>
-        <segue reference="cZQ-41-9UV"/>
+        <segue reference="Ckg-T8-Oup"/>
         <segue reference="sZ5-5L-Y6W"/>
         <segue reference="DJB-qt-haV"/>
     </inferredMetricsTieBreakers>

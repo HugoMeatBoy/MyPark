@@ -24,6 +24,8 @@ class AgendaMedicDoseForm: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     var med: String = String()
     
+    var medecine: String = String()
+    
     @IBOutlet weak var DosagePicker: UIPickerView!
     
     @IBOutlet weak var NbJoursTraitement: UITextField!
@@ -49,6 +51,26 @@ class AgendaMedicDoseForm: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func ValidateTreatment(_ sender: Any) {
+        /*var i = DosagePicker.selectedRow(inComponent: 0)
+        
+        
+        let newTreatment = Treatment(context:CoreDataManager.context)
+        
+        
+        newTreatment.medecine = medecine
+        newTreatment.doseHoursPerDay = NbPrisesParJour.text
+        newTreatment.beginningDate = NSDate()
+        newTreatment.quantityPerDose = medDoses[i]
+        
+        
+        
+        do{
+            try CoreDataManager.context.save()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+        }*/
+    }
     
     // The number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

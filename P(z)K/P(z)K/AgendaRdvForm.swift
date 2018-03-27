@@ -26,11 +26,27 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     @IBAction func ValidateRdv(_ sender: Any) {
         var i = DocteurPicker.selectedRow(inComponent: 0)
-        print(i)
+        
+        
+        let newAppointment = Appointment(context:CoreDataManager.context)
+        
+        
+        newAppointment.doctorLastName = doctorsFactory[i].doctorLastName
+        
+        newAppointment.appointmentDate = RdvDatePicker.date as NSDate
+        
+        
+        do{
+            try CoreDataManager.context.save()
+        }catch let error as NSError{
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
         
     }
     
     
+    var doctors : [Doctor] = [Doctor]()
+    var doctorsFactory : [Doctor] = [Doctor]()
     let doctorDAO = CoreDataDAOFactory.getInstance().getDoctorDAO()
     let appointmentDAO = CoreDataDAOFactory.getInstance().getAppointmentDAO()
 
@@ -42,40 +58,18 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         DocteurPicker.dataSource = self
 
 
-        var doctors : [Doctor] = [Doctor]()
         
         do{
             doctors = try doctorDAO.getAll() as! [Doctor]
+            doctorsFactory = doctors
             
             for _ in (doctors){
                 doctorNameTab.append(doctors.first?.doctorLastName as! String)
                 doctors.removeFirst()
             }
-            
-            print(doctorNameTab)
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
         }
-        
-        //AFFECTER appointment.doctorLastName, appointment.doctorFirstName, appointmentDate
-/*
-        let i = DocteurPicker.selectedRow(inComponent: 0)
-        newAppointment.doctorLastName = doctorNameTab[i]
-            
-
-         
-        newAppointment.appointmentDate = ICI DATE
-
-        
-        do {
-            try
-                appointmentDAO.save()
-        }
-        catch let error as NSError{
-            ManageErrorHelper.alertError(view: self, error: error)
-        }
-        //=======================================
- */
     }
     
     

@@ -26,16 +26,21 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     
     
     
-    /// A simple data structure to populate the table view.
+    var appointments : [Appointment] = [Appointment]()
+    let appointmentDAO = CoreDataDAOFactory.getInstance().getAppointmentDAO()
+    var appointmentsList : [String] = [String]()
+    var appointmentsCalendarList : [Date] = [Date]()
     
-    
+    var treatments : [Treatment] = [Treatment]()
+    let treatmentDAO = CoreDataDAOFactory.getInstance().getTreatmentDAO()
+    var treatmentsMedicsList : [String] = [String]()
+     var treatmentsDosesList : [String] = [String]()
+     var treatmentsQuantityDoseList : [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-    
-        
+
         tableView.dataSource = self
         tableView.delegate = self
    
@@ -46,6 +51,39 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         
         
         controlleur(0)
+        
+        do{
+            treatments = try treatmentDAO.getAll() as! [Treatment]
+            
+            
+            for _ in (treatments){
+                treatmentsMedicsList.append(treatments.first?.medecine as! String)
+                treatmentsDosesList.append(treatments.first?.doseHoursPerDay as! String)
+                treatmentsQuantityDoseList.append(treatments.first?.quantityPerDose as! String)
+                
+                treatments.removeFirst()
+            }
+            
+            print(treatmentsMedicsList)
+            
+        }catch let error as NSError {
+                ManageErrorHelper.alertError(view: self, error: error)
+        }
+        
+        do{
+            appointments = try appointmentDAO.getAll() as! [Appointment]
+            
+            
+            for _ in (appointments){
+                appointmentsList.append(appointments.first?.doctorLastName as! String)
+                appointmentsCalendarList.append(appointments.first?.appointmentDate as! Date)
+                appointments.removeFirst()
+            }
+            
+            
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
         
     }
     
@@ -62,11 +100,11 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         var count:Int?
         
         if tableView == self.tableView {
-            count = 3
+            count = appointmentsList.count
         }
         
         if tableView == self.tableView1 {
-            count =  3
+            count = treatmentsMedicsList.count
         }
  
         return count!
@@ -83,16 +121,12 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
             
             cellRdv = (tableView.dequeueReusableCell(withIdentifier: "rdvCell", for: indexPath as IndexPath) as! AgendaRdvTableCell)
    
-
-            
-           
             cellRdv?.date.text = "ok"
             
-            /*
-             TODO here : Charger le core data des rdv
-             
-             cellRdv?.date.text = "ok"
-            */
+            if(appointmentsList != []){
+                cellRdv?.doctorName.text = "Dr " + appointmentsList[indexPath.row]
+                cellRdv?.date.text = appointmentsCalendarList[indexPath.row].description
+            }
             cell = cellRdv
         }
         
@@ -101,6 +135,12 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
             
             
             cellMedics = (tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath as IndexPath) as! AgendaMedicTableCell)
+            
+            if(appointmentsList != []){
+                cellMedics?.MedicName.text = treatmentsMedicsList[indexPath.row]
+                cellMedics?.MedicDose.text = treatmentsDosesList[indexPath.row]
+                cellMedics?.MedicPrises.text = treatmentsMedicsList[indexPath.row]
+            }
             
             cell = cellMedics
             

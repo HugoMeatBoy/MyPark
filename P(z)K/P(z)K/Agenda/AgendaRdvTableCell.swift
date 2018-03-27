@@ -12,4 +12,5 @@ class AgendaRdvTableCell : UITableViewCell {
     
     @IBOutlet weak var date: UILabel!
     
+    @IBOutlet weak var doctorName: UILabel!
 }

@@ -82,6 +82,7 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             
             let i = MedicPicker.selectedRow(inComponent: 0)
             
+            destination.medecine = medsName[i]
             destination.med = medsDoses[i]
         }
         
