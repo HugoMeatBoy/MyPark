@@ -36,10 +36,9 @@ class AddSpecialityViewController: UIViewController {
             } catch let error as NSError{
                 ManageErrorHelper.alertError(view: self, error: error)
             }
-            }else{
-                print("MABITE")
-            }
+            
         }
+    }
     
     
         

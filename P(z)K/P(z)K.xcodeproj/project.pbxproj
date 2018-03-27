@@ -30,7 +30,7 @@
 		7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1362064110200CB9CC4 /* CoreDataDAO.swift */; };
 		75A7858B2069942400C1F21A /* DoctorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7858A2069942400C1F21A /* DoctorFormViewController.swift */; };
 		75A7858E2069DE2000C1F21A /* TreatmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7858D2069DE2000C1F21A /* TreatmentDAO.swift */; };
-		75A785902069DE3500C1F21A /* TreatmentDAOPostgres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7858F2069DE3500C1F21A /* TreatmentDAOPostgres.swift */; };
+		75A785902069DE3500C1F21A /* TreatmentCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7858F2069DE3500C1F21A /* TreatmentCoreDataDAO.swift */; };
 		75BCCE2620691E52005B02B3 /* ActivityTypeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2520691E52005B02B3 /* ActivityTypeDAO.swift */; };
 		75BCCE2820691E63005B02B3 /* ActivityTypeCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2720691E63005B02B3 /* ActivityTypeCoreDataDAO.swift */; };
 		75BCCE2B20694981005B02B3 /* SpecialityDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCCE2A20694981005B02B3 /* SpecialityDAO.swift */; };
@@ -105,7 +105,7 @@
 		7540E1362064110200CB9CC4 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
 		75A7858A2069942400C1F21A /* DoctorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorFormViewController.swift; sourceTree = "<group>"; };
 		75A7858D2069DE2000C1F21A /* TreatmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentDAO.swift; sourceTree = "<group>"; };
-		75A7858F2069DE3500C1F21A /* TreatmentDAOPostgres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentDAOPostgres.swift; sourceTree = "<group>"; };
+		75A7858F2069DE3500C1F21A /* TreatmentCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentCoreDataDAO.swift; sourceTree = "<group>"; };
 		75BCCE2520691E52005B02B3 /* ActivityTypeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeDAO.swift; sourceTree = "<group>"; };
 		75BCCE2720691E63005B02B3 /* ActivityTypeCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTypeCoreDataDAO.swift; sourceTree = "<group>"; };
 		75BCCE2A20694981005B02B3 /* SpecialityDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialityDAO.swift; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				75A7858D2069DE2000C1F21A /* TreatmentDAO.swift */,
-				75A7858F2069DE3500C1F21A /* TreatmentDAOPostgres.swift */,
+				75A7858F2069DE3500C1F21A /* TreatmentCoreDataDAO.swift */,
 			);
 			name = Treatment;
 			sourceTree = "<group>";
@@ -549,7 +549,7 @@
 				75BD2B42206102EA00E7380F /* MotorStateModel.swift in Sources */,
 				9CFC2A562064E4CD0007575A /* AppointmentCoreDataDAO.swift in Sources */,
 				750CF28E20647637000B4DE3 /* MedecineDAO.swift in Sources */,
-				75A785902069DE3500C1F21A /* TreatmentDAOPostgres.swift in Sources */,
+				75A785902069DE3500C1F21A /* TreatmentCoreDataDAO.swift in Sources */,
 				75BD2B48206119D300E7380F /* DAO.swift in Sources */,
 				75EC22E0206988B900FC16F6 /* DoctorDataForm.swift in Sources */,
 				9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */,

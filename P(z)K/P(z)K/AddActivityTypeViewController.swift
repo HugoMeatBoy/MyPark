@@ -15,7 +15,7 @@ class AddActivityTypeViewController: UIViewController {
     
     @IBOutlet weak var NewActivityTypeName: UITextField!
     
-    var newActivityTypeVar : ActivityType!
+    let newActivityTypeVar = ActivityType(context:CoreDataManager.context)
     let activityTypeDAO = CoreDataDAOFactory.getInstance().getActivityDAO()
 
     
@@ -34,6 +34,8 @@ class AddActivityTypeViewController: UIViewController {
     @IBAction func ValidateNewActivityTypeName(_ sender: Any) {
        
         if(NewActivityTypeName.text != nil){
+            
+            print(NewActivityTypeName.text)
             newActivityTypeVar.activityTypeName = NewActivityTypeName.text
             
             do {

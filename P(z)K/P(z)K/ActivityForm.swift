@@ -17,6 +17,8 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     var activityTypeNameTab: [String] = [String]()
     var newActivityTypevar : ActivityType!
     var newActivity : Activity!
+    
+    
     let activityTypeDAO = CoreDataDAOFactory.getInstance().getActivityTypeDAO()
     let activityDAO = CoreDataDAOFactory.getInstance().getActivityDAO()
     
@@ -75,9 +77,13 @@ class ActivityForm : UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             activityTypes = try activityTypeDAO.getAll() as! [ActivityType]
             
             for _ in (activityTypes){
-                activityTypeNameTab.append(activityTypes.first?.activityTypeName as! String)
+            activityTypeNameTab.append(activityTypes.first?.activityTypeName as! String)
                 activityTypeNameTab.removeFirst()
+                
+                
             }
+            
+            print(activityTypeNameTab)
             
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
