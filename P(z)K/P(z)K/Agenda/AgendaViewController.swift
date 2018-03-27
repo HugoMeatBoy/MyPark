@@ -64,7 +64,7 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
                 treatments.removeFirst()
             }
             
-            print(treatmentsMedicsList)
+            
             
         }catch let error as NSError {
                 ManageErrorHelper.alertError(view: self, error: error)
@@ -136,10 +136,10 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
             
             cellMedics = (tableView.dequeueReusableCell(withIdentifier: "medicCell", for: indexPath as IndexPath) as! AgendaMedicTableCell)
             
-            if(appointmentsList != []){
+            if(treatmentsMedicsList != []){
                 cellMedics?.MedicName.text = treatmentsMedicsList[indexPath.row]
-                cellMedics?.MedicDose.text = treatmentsDosesList[indexPath.row]
-                cellMedics?.MedicPrises.text = treatmentsMedicsList[indexPath.row]
+                cellMedics?.MedicDose.text = treatmentsDosesList[indexPath.row] + " fois par jour"
+                cellMedics?.MedicPrises.text = treatmentsQuantityDoseList[indexPath.row]
             }
             
             cell = cellMedics

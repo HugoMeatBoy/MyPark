@@ -39,7 +39,6 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
                 specialites.removeFirst()
             }
             
-            print(specialitesNameTab)
             
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
@@ -69,17 +68,21 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(specialitesNameTab)
         
-        var i = SpecialitePicker.selectedRow(inComponent: 0)
-        
-        if (NewDoctorName.text != nil && specialitesNameTab[i] != nil){
-            if let destination = segue.destination as? DoctorDataForm {
-                
-                destination.doctorName = NewDoctorName.text
-                destination.doctorSpecialite = specialitesNameTab[i]
-            }
+        if(specialitesNameTab != []){
+            var i = SpecialitePicker.selectedRow(inComponent: 0)
             
+            if (NewDoctorName.text != nil && specialitesNameTab[i] != nil){
+                if let destination = segue.destination as? DoctorDataForm {
+                    
+                    destination.doctorName = NewDoctorName.text
+                    destination.doctorSpecialite = specialitesNameTab[i]
+                }
+                
+            }
         }
+        
             
             
     }

@@ -52,7 +52,7 @@ class AgendaMedicDoseForm: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @IBAction func ValidateTreatment(_ sender: Any) {
-        /*var i = DosagePicker.selectedRow(inComponent: 0)
+        var i = DosagePicker.selectedRow(inComponent: 0)
         
         
         let newTreatment = Treatment(context:CoreDataManager.context)
@@ -62,6 +62,7 @@ class AgendaMedicDoseForm: UIViewController, UIPickerViewDelegate, UIPickerViewD
         newTreatment.doseHoursPerDay = NbPrisesParJour.text
         newTreatment.beginningDate = NSDate()
         newTreatment.quantityPerDose = medDoses[i]
+        newTreatment.endDate = Date()+(5*24*3600) as NSDate
         
         
         
@@ -69,7 +70,7 @@ class AgendaMedicDoseForm: UIViewController, UIPickerViewDelegate, UIPickerViewD
             try CoreDataManager.context.save()
         }catch let error as NSError{
             ManageErrorHelper.alertError(view: self, error: error)
-        }*/
+        }
     }
     
     // The number of columns of data
