@@ -11,4 +11,9 @@ import UIKit
 
 class TableViewCellDoctor : UITableViewCell {
     
+    @IBOutlet weak var doctorName: UILabel!
+    
+    @IBOutlet weak var doctorPhone: UILabel!
+
+    @IBOutlet weak var doctorSpeciality: UILabel!
 }

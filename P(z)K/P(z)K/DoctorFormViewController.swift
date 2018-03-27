@@ -15,7 +15,7 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
 
     @IBOutlet weak var SpecialitePicker: UIPickerView!
     
-    var doctors : [Doctor] = [Doctor]()
+    
     var specialites: [Speciality] = [Speciality]()
     var specialitesNameTab: [String] = [String]()
     

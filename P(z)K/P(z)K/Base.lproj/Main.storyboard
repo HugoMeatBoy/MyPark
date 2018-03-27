@@ -752,61 +752,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Médecins suivis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b3-tr-TMZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Médecins suivis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b3-tr-TMZ">
                                 <rect key="frame" x="36" y="176" width="303" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jean.ne DUPONT.E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-md-waq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Jean.ne DUPONT.E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNc-md-waq">
                                 <rect key="frame" x="18" y="86" width="338" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="34"/>
                                 <color key="textColor" red="0.3676513642" green="0.35923585070000003" blue="0.32424833800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UT2-jb-U1g">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UT2-jb-U1g">
                                 <rect key="frame" x="19" y="223" width="337" height="237"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="237" id="OHU-gX-SyI"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="79" id="l3m-T9-uRW" customClass="TableViewCellDoctor" customModule="P_z_K" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="337" height="79"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="doctorCell" rowHeight="158" id="l3m-T9-uRW" customClass="TableViewCellDoctor" customModule="P_z_K" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="337" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l3m-T9-uRW" id="XjV-vV-hNz">
-                                            <rect key="frame" x="0.0" y="0.0" width="337" height="78.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="337" height="157.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dr. Kawashima" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLT-ue-Ejx">
-                                                    <rect key="frame" x="0.0" y="24" width="125.5" height="25.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Kawashima" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLT-ue-Ejx">
+                                                    <rect key="frame" x="100" y="0.0" width="125.5" height="26"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="04.77.82.26.32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CZ-F7-cJF">
-                                                    <rect key="frame" x="207" y="43" width="115" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04.77.82.26.32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CZ-F7-cJF">
+                                                    <rect key="frame" x="103" y="86" width="119.5" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <color key="textColor" red="0.14593681959999999" green="0.1804441161" blue="0.3676513642" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="NEUROLOGUE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oG-h1-RGB">
-                                                    <rect key="frame" x="144" y="14" width="179" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEUROLOGUE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oG-h1-RGB">
+                                                    <rect key="frame" x="106" y="47" width="113.5" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="114" id="avR-0F-GAt"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Thin" family="PingFang TC" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="hLT-ue-Ejx" firstAttribute="leading" secondItem="XjV-vV-hNz" secondAttribute="leading" id="M8V-yI-dgt"/>
-                                                <constraint firstItem="5oG-h1-RGB" firstAttribute="leading" secondItem="XjV-vV-hNz" secondAttribute="leadingMargin" constant="105" id="UVD-7n-OxS"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5oG-h1-RGB" secondAttribute="trailing" constant="24" id="fKF-eK-buN"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5CZ-F7-cJF" secondAttribute="trailing" id="man-kF-BhM"/>
+                                                <constraint firstItem="5CZ-F7-cJF" firstAttribute="leading" secondItem="XjV-vV-hNz" secondAttribute="leadingMargin" constant="88" id="7ro-Ch-t8i"/>
+                                                <constraint firstItem="5CZ-F7-cJF" firstAttribute="top" secondItem="5oG-h1-RGB" secondAttribute="bottom" constant="18" id="Brr-xb-CsO"/>
+                                                <constraint firstItem="hLT-ue-Ejx" firstAttribute="leading" secondItem="XjV-vV-hNz" secondAttribute="leadingMargin" constant="85" id="Dr8-Mc-vy9"/>
+                                                <constraint firstItem="5oG-h1-RGB" firstAttribute="centerX" secondItem="XjV-vV-hNz" secondAttribute="centerX" id="ESd-1i-uQq"/>
+                                                <constraint firstItem="hLT-ue-Ejx" firstAttribute="centerX" secondItem="XjV-vV-hNz" secondAttribute="centerX" id="QE5-sd-2ez"/>
+                                                <constraint firstItem="5oG-h1-RGB" firstAttribute="leading" secondItem="XjV-vV-hNz" secondAttribute="leadingMargin" constant="91" id="Tdg-L2-yu0"/>
+                                                <constraint firstItem="5oG-h1-RGB" firstAttribute="top" secondItem="hLT-ue-Ejx" secondAttribute="bottom" constant="21" id="aou-mD-EMH"/>
+                                                <constraint firstItem="hLT-ue-Ejx" firstAttribute="top" secondItem="XjV-vV-hNz" secondAttribute="top" id="oSH-7X-gKs"/>
+                                                <constraint firstItem="5CZ-F7-cJF" firstAttribute="centerX" secondItem="XjV-vV-hNz" secondAttribute="centerX" id="wav-kv-QgO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.9011041522026062" green="0.8776201605796814" blue="0.79220849275588989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="doctorName" destination="hLT-ue-Ejx" id="aYv-6d-77f"/>
+                                            <outlet property="doctorPhone" destination="5CZ-F7-cJF" id="13b-Lp-vcV"/>
+                                            <outlet property="doctorSpeciality" destination="5oG-h1-RGB" id="TuH-1m-qbd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DoD-i4-CfV" id="qvF-Aa-J9w"/>
+                                    <outlet property="delegate" destination="DoD-i4-CfV" id="2EP-lQ-Al2"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoG-0A-zFt">
                                 <rect key="frame" x="36" y="588" width="303" height="40"/>
@@ -822,11 +839,21 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UT2-jb-U1g" firstAttribute="top" secondItem="8b3-tr-TMZ" secondAttribute="bottom" constant="17" id="4Gl-1O-DrL"/>
                             <constraint firstItem="hoG-0A-zFt" firstAttribute="leading" secondItem="Pzq-hE-dSq" secondAttribute="leadingMargin" constant="20" id="7xY-1h-ff7"/>
+                            <constraint firstItem="UT2-jb-U1g" firstAttribute="centerX" secondItem="NNc-md-waq" secondAttribute="centerX" id="Dmf-qm-WEr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hoG-0A-zFt" secondAttribute="trailing" constant="20" id="Dpb-ZQ-dd1"/>
+                            <constraint firstItem="UT2-jb-U1g" firstAttribute="trailing" secondItem="NNc-md-waq" secondAttribute="trailing" id="IZT-ai-9Ec"/>
+                            <constraint firstItem="UT2-jb-U1g" firstAttribute="top" secondItem="Pzq-hE-dSq" secondAttribute="top" constant="223" id="MA2-lj-mac"/>
+                            <constraint firstItem="UT2-jb-U1g" firstAttribute="centerX" secondItem="hoG-0A-zFt" secondAttribute="centerX" id="Tp6-HX-F0Q"/>
+                            <constraint firstItem="UT2-jb-U1g" firstAttribute="centerX" secondItem="8b3-tr-TMZ" secondAttribute="centerX" id="hZv-ua-0sk"/>
                             <constraint firstItem="sEH-x5-ODE" firstAttribute="top" secondItem="hoG-0A-zFt" secondAttribute="bottom" constant="39" id="i2g-ln-Gcz"/>
+                            <constraint firstItem="UT2-jb-U1g" firstAttribute="leading" secondItem="Pzq-hE-dSq" secondAttribute="leadingMargin" constant="3" id="rEO-Ib-0Bc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="DoctorsTable" destination="UT2-jb-U1g" id="JjW-Sb-nW8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSh-T4-gsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1048,6 +1075,7 @@
                                 </state>
                                 <connections>
                                     <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="6ar-CA-HSu"/>
+                                    <action selector="ValidateDoctor:" destination="yqn-pn-20l" eventType="touchUpInside" id="xRn-oo-qmd"/>
                                     <segue destination="DoD-i4-CfV" kind="show" id="sZ5-5L-Y6W"/>
                                 </connections>
                             </button>
@@ -1813,7 +1841,8 @@ Vous avez un traitement
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qxj-pK-b3u"/>
+        <segue reference="U56-ms-Eti"/>
+        <segue reference="E5g-ow-chx"/>
         <segue reference="cZQ-41-9UV"/>
         <segue reference="sZ5-5L-Y6W"/>
         <segue reference="DJB-qt-haV"/>
