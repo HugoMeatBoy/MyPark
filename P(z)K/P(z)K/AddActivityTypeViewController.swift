@@ -23,11 +23,6 @@ class AddActivityTypeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
-        
-        
-      
-            
         }
 
     
@@ -36,10 +31,11 @@ class AddActivityTypeViewController: UIViewController {
         if(NewActivityTypeName.text != nil){
             
             print(NewActivityTypeName.text)
+            
             newActivityTypeVar.activityTypeName = NewActivityTypeName.text
             
             do {
-                try activityTypeDAO.save()
+                try CoreDataManager.context.save()
             } catch let error as NSError{
                 ManageErrorHelper.alertError(view: self, error: error)
             }

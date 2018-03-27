@@ -11,5 +11,7 @@ import UIKit
 
 class TableViewCellActivity : UITableViewCell {
     
+    @IBOutlet weak var activityName: UILabel!
     
+    @IBOutlet weak var activityDuration: UILabel!
 }

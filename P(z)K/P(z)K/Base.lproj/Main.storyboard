@@ -365,13 +365,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activité recommandée" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0h-fD-CEo">
-                                <rect key="frame" x="62.5" y="84" width="250.5" height="29.5"/>
+                                <rect key="frame" x="62.5" y="40" width="250.5" height="29.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toutes les activités" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8f-r3-6nf">
-                                <rect key="frame" x="82" y="254" width="211.5" height="30"/>
+                                <rect key="frame" x="82" y="210" width="211.5" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -404,6 +404,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityDuration" destination="kXs-92-Rf9" id="axz-pw-nqr"/>
+                                            <outlet property="activityName" destination="G1t-jF-aIp" id="xGo-XJ-gDA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -425,16 +429,17 @@
                     </view>
                     <connections>
                         <outlet property="AddActivity" destination="jbR-UJ-yEs" id="o6o-mO-nhy"/>
+                        <outlet property="activitiesTable" destination="NR0-p0-230" id="3qa-Fy-Zqe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="am1-Nh-MoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5381.6000000000004" y="-589.65517241379314"/>
         </scene>
-        <!--Activity Form-->
+        <!--Activity Form View Controller-->
         <scene sceneID="m6e-tV-DID">
             <objects>
-                <viewController id="7K3-iO-KI2" customClass="ActivityForm" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7K3-iO-KI2" customClass="ActivityFormViewController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XZQ-8b-sqA"/>
                         <viewControllerLayoutGuide type="bottom" id="5Tf-7N-i6E"/>
@@ -451,8 +456,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfB-H4-S9l">
-                                <rect key="frame" x="37" y="90" width="283" height="216"/>
+                                <rect key="frame" x="46" y="164" width="283" height="216"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7K3-iO-KI2" id="p4T-3p-vIe"/>
+                                    <outlet property="delegate" destination="7K3-iO-KI2" id="P2C-sl-gwD"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Durée" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FH-6G-sqR">
                                 <rect key="frame" x="16" y="427" width="46" height="21"/>
@@ -475,29 +484,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gYi-8i-02L">
-                                <rect key="frame" x="147" y="596" width="64" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="khO-0F-QPe">
-                                        <rect key="frame" x="0.0" y="0.0" width="64" height="36"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ck-a3-hQA">
-                                                <rect key="frame" x="0.0" y="0.0" width="64" height="36"/>
-                                                <color key="backgroundColor" red="0.42424241750000002" green="0.41453153879999999" blue="0.37415854310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <state key="normal" title="Valider">
-                                                    <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="jQp-It-eXt"/>
-                                                    <action selector="ValidateAddActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="Das-s7-7VB"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nouvelle activité" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mm-bs-cur">
                                 <rect key="frame" x="29" y="67" width="317" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -506,20 +492,6 @@
                                 <color key="textColor" red="1" green="0.98532865550000004" blue="0.88821809559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndj-jy-3uG">
-                                <rect key="frame" x="111" y="305" width="152" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.42424241750000002" green="0.41453153879999999" blue="0.37415854310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <state key="normal" title="Nouvelle activité">
-                                    <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="AddActivityType:" destination="7K3-iO-KI2" eventType="touchUpInside" id="ifM-QK-ywg"/>
-                                    <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="dt1-DQ-dYH"/>
-                                    <segue destination="C2G-1j-Gea" kind="show" id="NM3-zO-ZAi"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lC1-PL-85x">
                                 <rect key="frame" x="185" y="418" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -555,19 +527,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhD-r3-7pz">
+                                <rect key="frame" x="140" y="593" width="77" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.47725064766839376" green="0.47725064766839376" blue="0.47725064766839376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Vaklider">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="validateActivity:" destination="7K3-iO-KI2" eventType="touchUpInside" id="m7N-by-xSQ"/>
+                                    <segue destination="Ky7-qP-i1k" kind="show" id="SHo-3w-1bi"/>
+                                </connections>
+                            </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shc-yz-5PO">
-                                <rect key="frame" x="185" y="529" width="190" height="63"/>
+                                <rect key="frame" x="185" y="525" width="190" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndj-jy-3uG">
+                                <rect key="frame" x="185" y="135" width="152" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50564623874352344" green="0.22700230993556361" blue="0.30448198849923336" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Nouvelle activité">
+                                    <color key="titleColor" red="1" green="0.97711007120000004" blue="0.88194515120000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="MedicValidate:" destination="VW3-Xa-lIu" eventType="touchUpInside" id="dt1-DQ-dYH"/>
+                                    <segue destination="C2G-1j-Gea" kind="show" id="NM3-zO-ZAi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90270847080000005" green="0.87982642649999998" blue="0.79202455279999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="ActivityTypePicker" destination="wfB-H4-S9l" id="fwm-GL-Pdr"/>
-                        <outlet property="DurationH" destination="lC1-PL-85x" id="1tT-Fy-VYj"/>
-                        <outlet property="DurationMin" destination="GPt-G4-wSU" id="IU9-xh-G0O"/>
-                        <outlet property="NewActivity" destination="ndj-jy-3uG" id="IOa-fH-9J1"/>
-                        <outlet property="activityTypePicker" destination="wfB-H4-S9l" id="0be-gY-SkI"/>
+                        <outlet property="activityPicker" destination="wfB-H4-S9l" id="P7F-R3-f7W"/>
+                        <outlet property="hourTimeDuration" destination="GPt-G4-wSU" id="2Tz-2G-IWK"/>
+                        <outlet property="minutesTimesDuration" destination="lC1-PL-85x" id="mQG-wC-5Cn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZn-N4-X9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -630,7 +626,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4u-3C-3Gz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7184.8000000000002" y="-569.86506746626696"/>
+            <point key="canvasLocation" x="7407" y="-591"/>
         </scene>
         <!--Journal View Controller-->
         <scene sceneID="QIW-r7-Gjr">
@@ -1877,10 +1873,10 @@ Vous avez un traitement
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U56-ms-Eti"/>
         <segue reference="E5g-ow-chx"/>
         <segue reference="UhA-IA-g7f"/>
         <segue reference="sZ5-5L-Y6W"/>
+        <segue reference="SHo-3w-1bi"/>
         <segue reference="DJB-qt-haV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.29108687108044795" green="0.16781314518775173" blue="0.064231447651561649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

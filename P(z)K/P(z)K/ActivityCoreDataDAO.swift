@@ -50,7 +50,5 @@ class ActivityCoreDataDAO : CoreDataDAO, ActivityDAO {
         else {
             return nil
         }
-    }
-
-    
+    }    
 }
