@@ -8,17 +8,44 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
-
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (allowed, error) in
+            //code
+        }
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if(response.actionIdentifier == "oui"||response.actionIdentifier == "non"||response.actionIdentifier == "dyskinesie"){
+            do {
+                print("OOOOOOH")
+              /*  let synthese : Synthese = try CoreDataDAOFactory.getInstance().getSyntheseDAO().create()
+                synthese.date = Date() as NSDate
+                synthese.texte = response.actionIdentifier
+                
+                
+                
+                try CoreDataDAOFactory.getInstance().getTraitementDAO().save()
+                
+            } catch {
+                print("Failed saving")
+            }*/
+        }
+        }
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

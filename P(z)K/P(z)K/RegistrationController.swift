@@ -34,6 +34,8 @@ class RegistrationController: UIViewController, UITableViewDelegate {
                 }
         }
         
+        let pkLogo: UIImage = UIImage(named: "monpketmoi")!
+        logoRegistrationView.image = pkLogo
     }
     
     
@@ -44,22 +46,12 @@ class RegistrationController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var ValidateNameFields: UIButton!
     
+    @IBOutlet weak var logoRegistrationView: UIImageView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        /*guard let appDelegate = UIApplication.shared.delegate as? AppDelegate
-         else {
-         return
-         }*/
-        //let managedContext = appDelegate.persistentContainer.viewContext
-        
-        //let userEntity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)!
-        
         if (UserLastNameField.text != nil && UserFirstNameField.text != nil){
-            //let user = NSManagedObject(entity: userEntity, insertInto: managedContext)
-            //user.setValue(UserLastNameField.text, forKeyPath: "lastName")
-            //user.setValue(UserFirstNameField.text, forKey: "firstName")
-            
+           
             patient = "Bonjour " + UserLastNameField.text!;
             patient += " ";
             patient += UserFirstNameField.text!;
@@ -70,14 +62,6 @@ class RegistrationController: UIViewController, UITableViewDelegate {
             let lastname = UserLastNameField.text
             self.savePatient(firstName: firstname!, lastName: lastname!)
             
-            /*patientt.lastName = UserLastNameField.text
-             patientt.firstName = UserFirstNameField.text*/
-            
-            /* do{
-             try CoreDataManager.save()
-             }catch let error as NSError{
-             ManageErrorHelper.alertError(view: self, error: error)
-             }*/
             
             if let AccueilController = segue.destination as? AccueilController {
                 
@@ -86,34 +70,6 @@ class RegistrationController: UIViewController, UITableViewDelegate {
             
         }
     }
-    
-    /*func alertError(errorMsg error : String, userInfo user : String = ""){
-        let alert = UIAlertController(title: error,
-                                      message: user,
-                                      preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Ok",
-                                         style: .default)
-        alert.addAction(cancelAction)
-        present(alert, animated: true)
-    }
-    
-     func saveNewPatient(withName lastName: String){
-     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
-     self.alertError(errorMsg: "Could not save Patient", userInfo: "unknown reason")
-     return
-     }
-     let context = appDelegate.persistentContainer.viewContext
-     let pati = Patientt(context: context)
-     pati.lastName = lastName
-     do{
-     try context.save()
-     }
-     catch let error as NSError{
-     self.alertError(errorMsg: "\(error)", userInfo: "\(error.userInfo)")
-     return
-     }
-     }
-     */
     
     
     func savePatient(firstName : String, lastName : String){

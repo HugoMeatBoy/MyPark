@@ -86,6 +86,10 @@
                                 <color key="textColor" red="0.42424241750000002" green="0.41453153879999999" blue="0.37415854310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RiR-bp-Uav">
+                                <rect key="frame" x="59" y="542" width="256" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90270847082138062" green="0.87982642650604248" blue="0.79202455282211304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -111,16 +115,17 @@
                         <outlet property="UserFirstNameField" destination="Jkm-qs-hox" id="7I1-x0-WXv"/>
                         <outlet property="UserLastNameField" destination="uoE-Xy-D1m" id="ugm-jT-eM4"/>
                         <outlet property="ValidateNameFields" destination="tVQ-lL-fKS" id="YKQ-Nx-4wu"/>
+                        <outlet property="logoRegistrationView" destination="RiR-bp-Uav" id="qaf-Pf-ynQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3442" y="-871"/>
+            <point key="canvasLocation" x="3440.8000000000002" y="-871.21439280359823"/>
         </scene>
-        <!--Accueil-->
+        <!--Mon PK & moi-->
         <scene sceneID="Eh0-s8-J8e">
             <objects>
-                <viewController title="Accueil" id="2El-YY-QnC" customClass="AccueilController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mon PK &amp; moi" id="2El-YY-QnC" customClass="AccueilController" customModule="P_z_K" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aBy-E7-a3g"/>
                         <viewControllerLayoutGuide type="bottom" id="DtU-Lo-3TE"/>
