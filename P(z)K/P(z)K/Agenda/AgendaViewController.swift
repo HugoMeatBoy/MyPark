@@ -29,7 +29,7 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     var appointments : [Appointment] = [Appointment]()
     let appointmentDAO = CoreDataDAOFactory.getInstance().getAppointmentDAO()
     var appointmentsList : [String] = [String]()
-    var appointmentsCalendarList : [Date] = [Date]()
+    var appointmentsCalendarList : [String] = [String]()
     
     var treatments : [Treatment] = [Treatment]()
     let treatmentDAO = CoreDataDAOFactory.getInstance().getTreatmentDAO()
@@ -169,9 +169,9 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 let date = appointments.first?.appointmentDate as! Date
                 let formatter = DateFormatter()
-                formatter.dateFormat = "dd/MM/yyyy hh.mm"
+                formatter.dateFormat = "dd/MM/yyyy hh:mm"
               
-                appointmentsCalendarList.append(date)
+                appointmentsCalendarList.append(formatter.string(from: date))
                 appointments.removeFirst()
             }
             
