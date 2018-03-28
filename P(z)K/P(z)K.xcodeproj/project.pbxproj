@@ -23,6 +23,7 @@
 		750CF28E20647637000B4DE3 /* MedecineDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750CF28D20647637000B4DE3 /* MedecineDAO.swift */; };
 		750CF2902064764F000B4DE3 /* MedecineCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750CF28F2064764F000B4DE3 /* MedecineCoreDataDAO.swift */; };
 		750EB24F2067F97000ABBE6D /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750EB24E2067F97000ABBE6D /* AlertManager.swift */; };
+		75104E22206B005700B1CD77 /* AgendaMedecineForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75104E21206B005700B1CD77 /* AgendaMedecineForm.swift */; };
 		7513E7CA206A4E550036E420 /* ActivityFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7513E7C9206A4E550036E420 /* ActivityFormViewController.swift */; };
 		7540E1272063EFBB00CB9CC4 /* AccueilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1262063EFBB00CB9CC4 /* AccueilController.swift */; };
 		7540E1292063EFCC00CB9CC4 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1282063EFCB00CB9CC4 /* RegistrationController.swift */; };
@@ -98,6 +99,7 @@
 		750CF28D20647637000B4DE3 /* MedecineDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecineDAO.swift; sourceTree = "<group>"; };
 		750CF28F2064764F000B4DE3 /* MedecineCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedecineCoreDataDAO.swift; sourceTree = "<group>"; };
 		750EB24E2067F97000ABBE6D /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		75104E21206B005700B1CD77 /* AgendaMedecineForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaMedecineForm.swift; sourceTree = "<group>"; };
 		7513E7C9206A4E550036E420 /* ActivityFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFormViewController.swift; sourceTree = "<group>"; };
 		7540E1262063EFBB00CB9CC4 /* AccueilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilController.swift; sourceTree = "<group>"; };
 		7540E1282063EFCB00CB9CC4 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				606A3DB520600DBE00B9B8FC /* AgendaRdvForm.swift */,
 				606A3DB820600DD100B9B8FC /* AgendaMedicForm.swift */,
 				75BCCE35206961A2005B02B3 /* AgendaMedicDoseForm.swift */,
+				75104E21206B005700B1CD77 /* AgendaMedecineForm.swift */,
 			);
 			name = AgendaForms;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */,
 				7540E1292063EFCC00CB9CC4 /* RegistrationController.swift in Sources */,
 				9CFC2A592064E5E10007575A /* ActivityDAO.swift in Sources */,
+				75104E22206B005700B1CD77 /* AgendaMedecineForm.swift in Sources */,
 				75BCCE36206961A2005B02B3 /* AgendaMedicDoseForm.swift in Sources */,
 				9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */,
 				75BD2B402061029500E7380F /* MedecineModel.swift in Sources */,

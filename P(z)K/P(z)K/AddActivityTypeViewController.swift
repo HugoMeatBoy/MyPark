@@ -30,20 +30,22 @@ class AddActivityTypeViewController: UIViewController {
        
         if(NewActivityTypeName.text != nil){
             
-            print(NewActivityTypeName.text)
+         
             
             newActivityTypeVar.activityTypeName = NewActivityTypeName.text
-            
-            do {
-                try activityTypeDAO.context.save()
-                performSegue(withIdentifier: "unwindToAddActivity", sender: self)
-            } catch let error as NSError{
-                ManageErrorHelper.alertError(view: self, error: error)
-            }
-        }
-        
-     
     
+        
+           
+            do {
+                try activityTypeDAO.save()
+               
+            } catch let error as NSError{
+                print(error)
+            }
+             performSegue(withIdentifier: "unwindToAddActivity", sender: self)
+        
+        }
+ 
         
     }
     

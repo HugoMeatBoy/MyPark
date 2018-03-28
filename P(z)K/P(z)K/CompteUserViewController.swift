@@ -103,8 +103,16 @@ class CompteUserViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func unwindToUserAccount(segue: UIStoryboardSegue){
+        doctorsNameTab.removeAll()
+        doctorsNumTab.removeAll()
         
-        loadData()
+        self.viewDidLoad()
+        
+        
+        DoctorsTable.reloadData()
+        
+       
+        
     }
 
 }

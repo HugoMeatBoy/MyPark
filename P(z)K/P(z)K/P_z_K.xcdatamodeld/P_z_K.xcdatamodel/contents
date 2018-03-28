@@ -4,12 +4,10 @@
         <attribute name="activityDurationH" attributeType="String" syncable="YES"/>
         <attribute name="activityDurationMin" attributeType="String" syncable="YES"/>
         <attribute name="activityName" attributeType="String" syncable="YES"/>
-        <relationship name="beA" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ActivityType" inverseName="contain" inverseEntity="ActivityType" syncable="YES"/>
-        <relationship name="isPracticedBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="exercize" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <entity name="ActivityType" representedClassName="ActivityType" syncable="YES" codeGenerationType="class">
         <attribute name="activityTypeName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="contain" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="beA" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="contain" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
     </entity>
     <entity name="Appointment" representedClassName="Appointment" syncable="YES" codeGenerationType="class">
         <attribute name="appointmentDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -46,7 +44,7 @@
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="complete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MotorState" inverseName="qualify" inverseEntity="MotorState" syncable="YES"/>
-        <relationship name="exercize" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="isPracticedBy" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="exercize" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
         <relationship name="haveAppointment" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Appointment" inverseName="isGivenTo" inverseEntity="Appointment" syncable="YES"/>
         <relationship name="haveDoctor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Doctor" inverseName="havePatient" inverseEntity="Doctor" syncable="YES"/>
         <relationship name="notify" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="happenTo" inverseEntity="Event" syncable="YES"/>
@@ -77,7 +75,7 @@
         <relationship name="contain" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MotorState" inverseName="beA" inverseEntity="MotorState" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="106" positionY="198" width="128" height="120"/>
+        <element name="Activity" positionX="106" positionY="198" width="128" height="90"/>
         <element name="ActivityType" positionX="79" positionY="387" width="128" height="75"/>
         <element name="Appointment" positionX="144" positionY="-198" width="128" height="105"/>
         <element name="Doctor" positionX="304" positionY="11" width="128" height="135"/>

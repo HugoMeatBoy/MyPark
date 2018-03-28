@@ -25,6 +25,8 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         
     }
     
+ 
+    
     
     
     override func viewDidLoad() {
@@ -33,23 +35,8 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         MedicPicker.delegate = self
         MedicPicker.dataSource = self
         
+        loadData()
         
-        let medecineDAO = CoreDataDAOFactory.getInstance().getMedecineDAO()
-        
-        var medecines : [Medecine] = [Medecine]()
-        
-        do{
-            medecines = try medecineDAO.getAll() as! [Medecine]
-            
-            for _ in (medecines){
-                medsName.append(medecines.first?.medecineName as! String)
-                medsDoses.append(medecines.first?.medecineDose as! String)
-                medecines.removeFirst()
-            }
-            
-        }catch let error as NSError {
-            ManageErrorHelper.alertError(view: self, error: error)
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,7 +52,7 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 2
+        return medsName.count
         //return medsName.count
         
     }
@@ -86,6 +73,36 @@ class AgendaMedicForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             destination.med = medsDoses[i]
         }
         
+    }
+    
+    func loadData(){
+        let medecineDAO = CoreDataDAOFactory.getInstance().getMedecineDAO()
+        
+        var medecines : [Medecine] = [Medecine]()
+        
+        do{
+            medecines = try medecineDAO.getAll() as! [Medecine]
+            
+            for _ in (medecines){
+                medsName.append(medecines.first?.medecineName as! String)
+                medsDoses.append(medecines.first?.medecineDose as! String)
+                medecines.removeFirst()
+            }
+            
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+    }
+    
+    @IBAction func unwindToTreatmentForm(segue: UIStoryboardSegue){
+        medsName.removeAll()
+        medsDoses.removeAll()
+        
+        print("jjj")
+        MedicPicker.delegate = self
+        MedicPicker.dataSource = self
+        
+        loadData()
     }
     
 }

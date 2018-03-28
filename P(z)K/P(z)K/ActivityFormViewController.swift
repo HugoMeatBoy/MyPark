@@ -20,25 +20,45 @@ class ActivityFormViewController : UIViewController, UIPickerViewDelegate, UIPic
     var activityTypeNameTab: [String] = [String]()
     let activityTypeDAO = CoreDataDAOFactory.getInstance().getActivityTypeDAO()
     let activityDAO = CoreDataDAOFactory.getInstance().getActivityDAO()
+
     
-    var addActivity = Activity(context: CoreDataManager.context)
+    
+    @IBAction func refreshTable(_ sender: Any) {
+        
+       
+       
+    }
     
     @IBAction func validateActivity(_ sender: Any) {
-        var i = activityPicker.selectedRow(inComponent: 0)
+        if(activityPicker.selectedRow(inComponent: 0) != nil){
+            
         
-        if(activityPicker.selectedRow(inComponent: 0) != nil && minutesTimesDuration != nil && hourTimeDuration != nil){
-            addActivity.activityName = activityTypeNameTab[i]
-            addActivity.activityDurationH = minutesTimesDuration.text
-            addActivity.activityDurationMin = hourTimeDuration.text
-            
-            
-            do{
-                try activityDAO.save()
-                performSegue(withIdentifier: "unwindToActivities", sender: self)
-            }catch let error as NSError {
-                ManageErrorHelper.alertError(view: self, error: error)
+            if(minutesTimesDuration.text != "" && hourTimeDuration.text != ""){
+                
+                
+                let i = activityPicker.selectedRow(inComponent: 0)
+                
+              
+                 
+             
+                
+                
+                let addActivity = Activity(context: CoreDataManager.context)
+                
+                addActivity.activityName = activityTypeNameTab[i]
+                addActivity.activityDurationH = minutesTimesDuration.text
+                addActivity.activityDurationMin = hourTimeDuration.text
+                
+               
+                do{
+                    try activityDAO.save()
+                    performSegue(withIdentifier: "unwindToActivities", sender: self)
+                    
+                }catch let error as NSError {
+                    ManageErrorHelper.alertError(view: self, error: error)
+                }
             }
-        }        
+        }
         
     }
     
@@ -49,7 +69,6 @@ class ActivityFormViewController : UIViewController, UIPickerViewDelegate, UIPic
         activityPicker.dataSource = self
 
 
-        
         loadData()
         
     }
@@ -97,6 +116,11 @@ class ActivityFormViewController : UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func unwindToAddActivity(segue: UIStoryboardSegue){
+        
+        activityTypeNameTab.removeAll()
+        
+        activityPicker.delegate = self
+        activityPicker.dataSource = self
         
         loadData()
     }

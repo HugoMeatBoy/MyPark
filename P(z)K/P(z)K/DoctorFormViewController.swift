@@ -91,8 +91,14 @@ class DoctorFormViewController : UIViewController,UIPickerViewDataSource, UIPick
     }
     
     @IBAction func unwindToAddDoctor(segue: UIStoryboardSegue){
+        specialitesNameTab.removeAll()
         
         loadData()
+        
+        SpecialitePicker.dataSource = self
+        SpecialitePicker.delegate = self
+        
+        
     }
     
     

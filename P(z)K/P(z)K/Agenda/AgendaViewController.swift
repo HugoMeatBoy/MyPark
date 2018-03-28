@@ -166,7 +166,12 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
             
             for _ in (appointments){
                 appointmentsList.append(appointments.first?.doctorLastName as! String)
-                appointmentsCalendarList.append(appointments.first?.appointmentDate as! Date)
+                
+                let date = appointments.first?.appointmentDate as! Date
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd/MM/yyyy hh.mm"
+              
+                appointmentsCalendarList.append(date)
                 appointments.removeFirst()
             }
             
@@ -177,8 +182,18 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func unwindToAgenda(segue: UIStoryboardSegue){
+        appointmentsList.removeAll()
+        appointmentsCalendarList.removeAll()
+        treatmentsMedicsList.removeAll()
+        treatmentsDosesList.removeAll()
+        treatmentsQuantityDoseList.removeAll()
         
-        loadData()
+        self.viewDidLoad()
+        
+        tableView.reloadData()
+        tableView1.reloadData()
+        
+        
     }
     
     

@@ -19,12 +19,11 @@ class CoachSportifViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var activitiesTable: UITableView!
     
-    
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activitesNameTab.count
+        return activities.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -32,7 +31,7 @@ class CoachSportifViewController: UIViewController, UITableViewDelegate, UITable
         cell = (tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath as IndexPath) as! TableViewCellActivity)
         
         if(activitesNameTab != []){
-        cell?.activityName.text = activitesNameTab[indexPath.row]
+            cell?.activityName.text = activitesNameTab[indexPath.row]
         }
         
         return cell!
@@ -79,6 +78,7 @@ class CoachSportifViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func loadData(){
+        
         do{
             activities = try activityDAO.getAll() as! [Activity]
             var activitiesP = activities
@@ -93,11 +93,12 @@ class CoachSportifViewController: UIViewController, UITableViewDelegate, UITable
                         activitesNameTab.append(type)
                         activitiesP.removeFirst()
                         
-                        activitiesP.first?.activityName
+                        print(activitiesP.first?.activityName)
                         
                     }
                 }
             }
+            
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
         }
@@ -105,8 +106,14 @@ class CoachSportifViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func unwindToActivities(segue: UIStoryboardSegue){
+        activitesNameTab.removeAll()
+        
+        activitiesTable.delegate = self
+        activitiesTable.dataSource = self
         
         loadData()
+        
+        activitiesTable.reloadData()
     }
     
 }
