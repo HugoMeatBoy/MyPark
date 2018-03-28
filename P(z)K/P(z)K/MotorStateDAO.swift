@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol MotorStateDAO : DAO{
+    typealias Object = MotorState
+}
+

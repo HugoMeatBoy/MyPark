@@ -6,4 +6,10 @@
 //  Copyright © 2018 Thais AURARD. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class EventsJournalTableCell : UITableViewCell {
+
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventName: UILabel!
+}

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol EventDAO : DAO{
+    typealias Object = Event
+}

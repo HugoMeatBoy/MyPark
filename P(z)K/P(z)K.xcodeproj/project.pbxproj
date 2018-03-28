@@ -30,6 +30,8 @@
 		7540E12D20640F4F00CB9CC4 /* AbstractDAOFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */; };
 		7540E12F206410BC00CB9CC4 /* PatientDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E12E206410BC00CB9CC4 /* PatientDAO.swift */; };
 		7540E1372064110200CB9CC4 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7540E1362064110200CB9CC4 /* CoreDataDAO.swift */; };
+		755DDC86206B584200475CA0 /* MotorStateDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755DDC85206B584200475CA0 /* MotorStateDAO.swift */; };
+		755DDC88206B585000475CA0 /* MotorStateCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755DDC87206B585000475CA0 /* MotorStateCoreDataDAO.swift */; };
 		75A7858B2069942400C1F21A /* DoctorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7858A2069942400C1F21A /* DoctorFormViewController.swift */; };
 		75A7858E2069DE2000C1F21A /* TreatmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7858D2069DE2000C1F21A /* TreatmentDAO.swift */; };
 		75A785902069DE3500C1F21A /* TreatmentCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7858F2069DE3500C1F21A /* TreatmentCoreDataDAO.swift */; };
@@ -56,6 +58,10 @@
 		75E4B23520650A2600E53C7B /* TableViewCellDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4B23420650A2600E53C7B /* TableViewCellDoctor.swift */; };
 		75E4B2372065CA0300E53C7B /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4B2362065CA0300E53C7B /* StateViewController.swift */; };
 		75EC22E0206988B900FC16F6 /* DoctorDataForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EC22DF206988B900FC16F6 /* DoctorDataForm.swift */; };
+		75F179F9206B4CDF00A704E6 /* EventDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F179F8206B4CDF00A704E6 /* EventDAO.swift */; };
+		75F179FB206B4CEB00A704E6 /* EventCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F179FA206B4CEB00A704E6 /* EventCoreDataDAO.swift */; };
+		75F179FD206B4EEB00A704E6 /* EventsJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F179FC206B4EEB00A704E6 /* EventsJournalViewController.swift */; };
+		75F179FF206B4F1100A704E6 /* EventsJournalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F179FE206B4F1100A704E6 /* EventsJournalTableCell.swift */; };
 		75F37B7C206976E90039FE11 /* TableViewCellActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F37B7B206976E90039FE11 /* TableViewCellActivity.swift */; };
 		75F8560F20666C94000021A0 /* NavigationNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F8560E20666C94000021A0 /* NavigationNotificationController.swift */; };
 		9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD87212046944100C74F3C /* AppDelegate.swift */; };
@@ -106,6 +112,8 @@
 		7540E12C20640F4F00CB9CC4 /* AbstractDAOFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDAOFactory.swift; sourceTree = "<group>"; };
 		7540E12E206410BC00CB9CC4 /* PatientDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDAO.swift; sourceTree = "<group>"; };
 		7540E1362064110200CB9CC4 /* CoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
+		755DDC85206B584200475CA0 /* MotorStateDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorStateDAO.swift; sourceTree = "<group>"; };
+		755DDC87206B585000475CA0 /* MotorStateCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorStateCoreDataDAO.swift; sourceTree = "<group>"; };
 		75A7858A2069942400C1F21A /* DoctorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorFormViewController.swift; sourceTree = "<group>"; };
 		75A7858D2069DE2000C1F21A /* TreatmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentDAO.swift; sourceTree = "<group>"; };
 		75A7858F2069DE3500C1F21A /* TreatmentCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentCoreDataDAO.swift; sourceTree = "<group>"; };
@@ -132,6 +140,10 @@
 		75E4B23420650A2600E53C7B /* TableViewCellDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellDoctor.swift; sourceTree = "<group>"; };
 		75E4B2362065CA0300E53C7B /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
 		75EC22DF206988B900FC16F6 /* DoctorDataForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDataForm.swift; sourceTree = "<group>"; };
+		75F179F8206B4CDF00A704E6 /* EventDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDAO.swift; sourceTree = "<group>"; };
+		75F179FA206B4CEB00A704E6 /* EventCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCoreDataDAO.swift; sourceTree = "<group>"; };
+		75F179FC206B4EEB00A704E6 /* EventsJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsJournalViewController.swift; sourceTree = "<group>"; };
+		75F179FE206B4F1100A704E6 /* EventsJournalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsJournalTableCell.swift; sourceTree = "<group>"; };
 		75F37B7B206976E90039FE11 /* TableViewCellActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellActivity.swift; sourceTree = "<group>"; };
 		75F8560E20666C94000021A0 /* NavigationNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationNotificationController.swift; sourceTree = "<group>"; };
 		9CAD871E2046944000C74F3C /* P(z)K.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P(z)K.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				606A3DA72060090800B9B8FC /* EventViewController.swift */,
+				75F179FC206B4EEB00A704E6 /* EventsJournalViewController.swift */,
+				75F179FE206B4F1100A704E6 /* EventsJournalTableCell.swift */,
 			);
 			name = Evenements;
 			sourceTree = "<group>";
@@ -286,6 +300,15 @@
 			name = AlertManager;
 			sourceTree = "<group>";
 		};
+		755DDC84206B582F00475CA0 /* MotorState */ = {
+			isa = PBXGroup;
+			children = (
+				755DDC85206B584200475CA0 /* MotorStateDAO.swift */,
+				755DDC87206B585000475CA0 /* MotorStateCoreDataDAO.swift */,
+			);
+			name = MotorState;
+			sourceTree = "<group>";
+		};
 		75A7858C2069DE0300C1F21A /* Treatment */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +364,8 @@
 		75BD2B3A206036B700E7380F /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				755DDC84206B582F00475CA0 /* MotorState */,
+				75F179F7206B4CCE00A704E6 /* Event */,
 				75A7858C2069DE0300C1F21A /* Treatment */,
 				75BCCE2920694965005B02B3 /* Speciality */,
 				75BCCE2420691E36005B02B3 /* ActivityType */,
@@ -355,6 +380,15 @@
 				75BD2B47206119D300E7380F /* DAO.swift */,
 			);
 			name = DAO;
+			sourceTree = "<group>";
+		};
+		75F179F7206B4CCE00A704E6 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				75F179FA206B4CEB00A704E6 /* EventCoreDataDAO.swift */,
+				75F179F8206B4CDF00A704E6 /* EventDAO.swift */,
+			);
+			name = Event;
 			sourceTree = "<group>";
 		};
 		9CAD87152046944000C74F3C = {
@@ -545,16 +579,20 @@
 				7513E7CA206A4E550036E420 /* ActivityFormViewController.swift in Sources */,
 				606A3DB22060095F00B9B8FC /* MedicAlertViewController.swift in Sources */,
 				75BD2B39206030F900E7380F /* AppointmentModel.swift in Sources */,
+				75F179FD206B4EEB00A704E6 /* EventsJournalViewController.swift in Sources */,
 				7540E1292063EFCC00CB9CC4 /* RegistrationController.swift in Sources */,
 				9CFC2A592064E5E10007575A /* ActivityDAO.swift in Sources */,
 				75104E22206B005700B1CD77 /* AgendaMedecineForm.swift in Sources */,
 				75BCCE36206961A2005B02B3 /* AgendaMedicDoseForm.swift in Sources */,
+				75F179F9206B4CDF00A704E6 /* EventDAO.swift in Sources */,
 				9CAD87222046944100C74F3C /* AppDelegate.swift in Sources */,
 				75BD2B402061029500E7380F /* MedecineModel.swift in Sources */,
 				75BD2B42206102EA00E7380F /* MotorStateModel.swift in Sources */,
 				9CFC2A562064E4CD0007575A /* AppointmentCoreDataDAO.swift in Sources */,
 				750CF28E20647637000B4DE3 /* MedecineDAO.swift in Sources */,
 				75A785902069DE3500C1F21A /* TreatmentCoreDataDAO.swift in Sources */,
+				75F179FF206B4F1100A704E6 /* EventsJournalTableCell.swift in Sources */,
+				755DDC86206B584200475CA0 /* MotorStateDAO.swift in Sources */,
 				75BD2B48206119D300E7380F /* DAO.swift in Sources */,
 				75EC22E0206988B900FC16F6 /* DoctorDataForm.swift in Sources */,
 				9CAD872A2046944100C74F3C /* P_z_K.xcdatamodeld in Sources */,
@@ -565,6 +603,7 @@
 				9CFC2A4F2064E2A30007575A /* DoctorDAO.swift in Sources */,
 				750EB24F2067F97000ABBE6D /* AlertManager.swift in Sources */,
 				6005231020612173004CBCD6 /* NavigationHomeController.swift in Sources */,
+				75F179FB206B4CEB00A704E6 /* EventCoreDataDAO.swift in Sources */,
 				750CF2902064764F000B4DE3 /* MedecineCoreDataDAO.swift in Sources */,
 				75BCCE342069502B005B02B3 /* AddActivityTypeViewController.swift in Sources */,
 				75BCCE2B20694981005B02B3 /* SpecialityDAO.swift in Sources */,
@@ -575,6 +614,7 @@
 				606A3D9F2060084600B9B8FC /* AgendaMedicTableCell.swift in Sources */,
 				606A3DA82060090800B9B8FC /* EventViewController.swift in Sources */,
 				75BD2B322060258E00E7380F /* ActivityModel.swift in Sources */,
+				755DDC88206B585000475CA0 /* MotorStateCoreDataDAO.swift in Sources */,
 				9CFC2A542064E4BD0007575A /* AppointmentDAO.swift in Sources */,
 				75BD2B372060259C00E7380F /* CoreDataManager.swift in Sources */,
 				606A3DAE2060093E00B9B8FC /* CompteUserViewController.swift in Sources */,

@@ -103,15 +103,9 @@ class AlertManager{
         
         
         let content = UNMutableNotificationContent()
-        content.title="Alarme rendez-vous"
-        content.body="Tu as un rendez-vous avec ton " + titre + "prépare toi"
-        content.categoryIdentifier="cat"
-        
-
+        content.title="Alarme Rendez-Vous"
+        content.body="Dr" + doctor
       
-        
-        
-        
         let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
         let request = UNNotificationRequest(identifier: "any", content: content, trigger: trigger)
        
@@ -119,31 +113,5 @@ class AlertManager{
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
-    /*
-    func createActiviteNotification(date: DateComponents, titre : String){
-        let content = UNMutableNotificationContent()
-        content.title="Alarme activité"
-        content.body="Tu dois aller faire ton " + titre + " prépare toi"
-        content.categoryIdentifier="cat"
-        
-        
-        
-        var dateuh = date
-        var dateuhh = DateComponents()
-        dateuhh.month = date.month
-        dateuhh.day = date.day
-        dateuhh.hour = date.hour
-        dateuhh.minute = date.minute! + 1
-        dateuhh.second =  date.second
-        dateuhh.month = date.month
-        dateuh.minute = dateuh.minute! + 1
-        dateuh.quarter = 1
-        print(dateuhh)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateuhh, repeats: false)
-        let request = UNNotificationRequest(identifier: "any", content: content, trigger: trigger)
-        print(trigger.nextTriggerDate()!)
-        
- 
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }*/
+
 }
