@@ -47,11 +47,28 @@ class NavigationHomeController: UINavigationController {
     func loadMedecines(){
         let modopar = Medecine(context: CoreDataManager.context)
         modopar.medecineName = "MODOPAR"
-        modopar.medecineDose = "1,2,3"
+        modopar.medecineDose = "62.5,125,250"
         
         let doliprane = Medecine(context: CoreDataManager.context)
-        doliprane.medecineName = "DOLIPRANE"
-        doliprane.medecineDose = "200,500"
+        doliprane.medecineName = "SINEMET"
+        doliprane.medecineDose = "100,250"
+        
+        let sta = Medecine(context: CoreDataManager.context)
+        sta.medecineName = "STALEVO"
+        sta.medecineDose = "50,75,100,125,150,175,200"
+        
+        let par = Medecine(context: CoreDataManager.context)
+        par.medecineName = "PARLODEL"
+        par.medecineDose = "2.5,5,10"
+        
+        let tri = Medecine(context: CoreDataManager.context)
+        tri.medecineName = "TRIVASTAL"
+        tri.medecineDose = "20"
+        
+        
+        let sifrol = Medecine(context: CoreDataManager.context)
+        sifrol.medecineName = "SIFROL"
+        sifrol.medecineDose = "0.18,0.7"
         
         do{
             try CoreDataManager.context.save()

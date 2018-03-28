@@ -31,23 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        if(response.actionIdentifier == "oui"||response.actionIdentifier == "non"||response.actionIdentifier == "dyskinesie"){
-            do {
-                print("OOOOOOH")
-              /*  let synthese : Synthese = try CoreDataDAOFactory.getInstance().getSyntheseDAO().create()
-                synthese.date = Date() as NSDate
-                synthese.texte = response.actionIdentifier
-                
-                
-                
-                try CoreDataDAOFactory.getInstance().getTraitementDAO().save()
-                
-            } catch {
-                print("Failed saving")
-            }*/
-        }
-        }
+    
     }
 
 

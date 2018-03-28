@@ -34,14 +34,14 @@ class MotorStateCoreDataDAO : CoreDataDAO, MotorStateDAO{
         } catch let error {
             throw error
         }
-        return events
+        return motorstates
     }
     
     // MARK: custom methods
     func get() throws -> MotorState? {
         var motorstates: [MotorState] = []
         do {
-            evenmotorstatests = try self.getAll() as! [MotorState]
+            motorstates = try self.getAll() as! [MotorState]
         } catch let error {
             throw error
         }
