@@ -19,6 +19,8 @@ class CompteUserViewController: UIViewController, UITableViewDataSource, UITable
     var doctorsNameTab: [String] = [String]()
     var doctorsNumTab: [String] = [String]()
     
+    @IBOutlet weak var nameUser: UILabel!
+    
     @IBOutlet weak var DoctorsTable: UITableView!
     
     @IBAction func AddDoctor(_ sender: Any) {
@@ -48,6 +50,29 @@ class CompteUserViewController: UIViewController, UITableViewDataSource, UITable
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
         }
+        
+        
+        let patientDAO = CoreDataDAOFactory.getInstance().getPatientDAO()
+        
+        var patientEnregistre : Patient? = nil
+        
+        do{
+            patientEnregistre = try patientDAO.get()
+            
+            let patientFirstName = (patientEnregistre?.firstName)!
+            
+            let patientLastName = (patientEnregistre?.lastName)!
+            
+            let data : String = patientFirstName + " " + patientLastName
+            
+            nameUser.text = data
+            
+            
+        }catch let error as NSError {
+            ManageErrorHelper.alertError(view: self, error: error)
+        }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

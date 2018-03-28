@@ -9,6 +9,7 @@
 
 import Foundation
 import UserNotifications
+import UIKit
 
 class AlertManager{
     private static var instance: AlertManager?
@@ -26,7 +27,7 @@ class AlertManager{
         return instanceAlertManager
     }
     
-    func createStateNotification(date : Date){
+   /* func createStateNotification(date : Date){
         
         let oui = UNNotificationAction(identifier: "oui", title: "oui", options: .destructive)
         let non = UNNotificationAction(identifier: "non", title: "non", options: .destructive)
@@ -45,7 +46,7 @@ class AlertManager{
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
-    /*
+    
     func createTraitementNotification(date : DateComponents){
         let oui = UNNotificationAction(identifier: "ouiTraitement", title: "oui", options: .foreground)
         let non = UNNotificationAction(identifier: "nonTraitement", title: "non, plus tard", options: .foreground)
@@ -96,9 +97,9 @@ class AlertManager{
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60*5, repeats: false)
         let request = UNNotificationRequest(identifier: "any", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
+    }*/
     
-    func createRdvNotification(date : DateComponents, titre : String){
+    func createRdvNotification(date : DateComponents, titre : String, doctor: String){
         
         
         let content = UNMutableNotificationContent()
@@ -106,27 +107,19 @@ class AlertManager{
         content.body="Tu as un rendez-vous avec ton " + titre + "prépare toi"
         content.categoryIdentifier="cat"
         
+
+      
         
         
-        var dateuh = date
-        var dateuhh = DateComponents()
-        dateuhh.month = date.month
-        dateuhh.day = date.day
-        dateuhh.hour = date.hour
-        dateuhh.minute = date.minute! + 1
-        dateuhh.second =  date.second
-        dateuhh.month = date.month
-        dateuh.minute = dateuh.minute! + 1
-        dateuh.quarter = 1
-        print(dateuhh)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateuhh, repeats: false)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
         let request = UNNotificationRequest(identifier: "any", content: content, trigger: trigger)
-        print(trigger.nextTriggerDate()!)
+       
         
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
-    
+    /*
     func createActiviteNotification(date: DateComponents, titre : String){
         let content = UNMutableNotificationContent()
         content.title="Alarme activité"

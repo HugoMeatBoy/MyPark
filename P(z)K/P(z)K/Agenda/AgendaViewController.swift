@@ -120,7 +120,39 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
   
-
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") {
+            (action, indexPath) in
+            // delete item at indexPath
+            
+            if tableView == self.tableView{
+                
+                self.appointmentDAO.delete(obj: self.appointments[indexPath.row])
+                do {
+                    try self.appointmentDAO.save()
+                } catch {
+                    fatalError("Erreur à la suppression du rendez-vous.")
+                }
+                self.appointments.remove(at: indexPath.row)
+                
+             
+            }else{
+                
+                self.treatmentDAO.delete(obj: self.treatments[indexPath.row])
+                do {
+                    try self.treatmentDAO.save()
+                } catch {
+                    fatalError("Erreur à la suppression du rendez-vous.")
+                }
+                self.treatments.remove(at: indexPath.row)
+               
+            }
+            self.reload()
+        }
+        
+        return [delete]
+    }
     
     
     @IBAction func controlleur(_ sender: Any) {
@@ -143,15 +175,17 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
     
     func loadData(){
         do{
+            
+            
             treatments = try treatmentDAO.getAll() as! [Treatment]
+            var treatmentsTmp = treatments
             
-            
-            for _ in (treatments){
-                treatmentsMedicsList.append(treatments.first?.medecine as! String)
-                treatmentsDosesList.append(treatments.first?.doseHoursPerDay as! String)
-                treatmentsQuantityDoseList.append(treatments.first?.quantityPerDose as! String)
+            for _ in (treatmentsTmp){
+                treatmentsMedicsList.append(treatmentsTmp.first?.medecine as! String)
+                treatmentsDosesList.append(treatmentsTmp.first?.doseHoursPerDay as! String)
+                treatmentsQuantityDoseList.append(treatmentsTmp.first?.quantityPerDose as! String)
                 
-                treatments.removeFirst()
+                treatmentsTmp.removeFirst()
             }
             
             
@@ -161,24 +195,39 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         do{
+            
             appointments = try appointmentDAO.getAll() as! [Appointment]
+            var appointmentsTmp = appointments
             
-            
-            for _ in (appointments){
-                appointmentsList.append(appointments.first?.doctorLastName as! String)
+            for _ in (appointmentsTmp){
+                appointmentsList.append(appointmentsTmp.first?.doctorLastName as! String)
                 
-                let date = appointments.first?.appointmentDate as! Date
+                let date = appointmentsTmp.first?.appointmentDate as! Date
                 let formatter = DateFormatter()
                 formatter.dateFormat = "dd/MM/yyyy hh:mm"
               
                 appointmentsCalendarList.append(formatter.string(from: date))
-                appointments.removeFirst()
+                appointmentsTmp.removeFirst()
             }
             
             
         }catch let error as NSError {
             ManageErrorHelper.alertError(view: self, error: error)
         }
+        
+    }
+    
+    func reload(){
+        appointmentsList.removeAll()
+        appointmentsCalendarList.removeAll()
+        treatmentsMedicsList.removeAll()
+        treatmentsDosesList.removeAll()
+        treatmentsQuantityDoseList.removeAll()
+        
+        self.viewDidLoad()
+        
+        tableView.reloadData()
+        tableView1.reloadData()
     }
     
     @IBAction func unwindToAgenda(segue: UIStoryboardSegue){
@@ -192,7 +241,6 @@ class AgendaViewController: UIViewController, UITableViewDataSource, UITableView
         
         tableView.reloadData()
         tableView1.reloadData()
-        
         
     }
     

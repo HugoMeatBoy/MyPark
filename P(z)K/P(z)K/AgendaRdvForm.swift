@@ -43,6 +43,17 @@ class AgendaRdvForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             ManageErrorHelper.alertError(view: self, error: error)
         }
         
+        let dateRdv = RdvDatePicker.date as Date
+        
+        var triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: dateRdv)
+        
+        triggerDate.hour = triggerDate.hour! - 1
+        
+        let doc = doctorsFactory[i].doctorLastName
+        
+        AlertManager.getInstance().createRdvNotification(date : triggerDate, titre: "Alerte Rendez Vous", doctor: doc!)
+        
+        
     }
     
     
